@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { FlexWrapper } from "../../components/FlexWrapper";
-import photo from "../../assets/images/hero.png";
+import { FlexWrapper } from "../../../components/FlexWrapper";
+import photo from "../../../assets/images/hero.png";
+import { TickerTape } from "../../../components/tickerTape/TickerTape";
 
 export const Hero = () => {
   return (
@@ -16,12 +17,13 @@ export const Hero = () => {
             TypeScript, focused on building fast, scalable and user-friendly web
             applications.
           </Description>
-          <FlexWrapper gap='15px'>
+          <FlexWrapper gap="15px">
             <a href="#">See Projects </a>
             <a href="#">Download CV</a>
           </FlexWrapper>
         </FlexWrapper>
       </HeroWrapper>
+      <TickerTape />
     </StyledHero>
   );
 };
@@ -30,8 +32,10 @@ const StyledHero = styled.section`
   min-height: 50vh;
   background-color: lightskyblue;
   display: flex;
-  justify-content: center;
-  padding-block: 50px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+  gap: 70px;
 `;
 
 const Photo = styled.img`
@@ -48,8 +52,7 @@ const HeroWrapper = styled.div`
   gap: 145px;
   border: 1px solid red;
   background-color: lightcyan;
-  border-radius:200px 10px;
-
+  border-radius: 200px 10px;
 `;
 
 const Greeting = styled.div``;
