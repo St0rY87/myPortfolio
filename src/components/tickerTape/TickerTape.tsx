@@ -1,25 +1,21 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-export const TickerTape = () => {
+export const TickerTape = (props: { listItems: Array<string> }) => {
   return (
     <StyledTickerTape>
-        <span>PROBLEM SOLVING</span>
-        <span>&&</span>
-        <span>CEATIVE THINKIG</span>
-        <span>&&</span>
-        <span>DEEP EXPERTISE</span>
-        <span>&&</span>
-        <span>TEAM WORKER</span>
+      {props.listItems.map((item) => (
+        <span key={crypto.randomUUID()}>{item}</span>
+      ))}
     </StyledTickerTape>
-  )
-}
+  );
+};
 
 const StyledTickerTape = styled.div`
-display: flex;
-justify-content: space-between;
-width: 100%;
-font-size: 32px;
-color: #fff;
-background-color: #6666e0;
-padding-block: 12px;
-`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 32px;
+  color: #fff;
+  background-color: #6666e0;
+  padding-block: 12px;
+`;

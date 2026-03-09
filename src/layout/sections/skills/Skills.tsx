@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { TitleSection } from "../../../components/TitleSection";
 import { Skill } from "./skill/Skill";
+import { TickerTape } from "../../../components/tickerTape/TickerTape";
 
 const skillsItems = [
   { iconId: "ts", title: "TypeScript" },
@@ -23,6 +24,8 @@ const skillsItems = [
   { iconId: "nodejs", title: "Node JS", width: '90', height: '55', viewBox: '0 0 90 55' },
 ];
 
+const tickerTape = ['REACT', '&&', 'REDUX', '&&', 'JAVASCRIPT', '&&', 'TYPESCRIPT', '&&', 'ZOD', '&&', 'STYLED COMPONENTS'];
+
 export const Skills = () => {
   return (
     <StyledSkills>
@@ -39,6 +42,7 @@ export const Skills = () => {
           />
         ))}
       </SkillsWrapper>
+      <TickerTape listItems={tickerTape}/>
     </StyledSkills>
   );
 };
@@ -57,4 +61,5 @@ const SkillsWrapper = styled.div`
   gap: 50px 30px;
   width: min(100%, 1180px);
   background-color: lightcyan;
+  margin-bottom: 70px;
 `;

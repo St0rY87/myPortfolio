@@ -5,7 +5,6 @@ import { Menu } from "../../components/menu/Menu";
 import moon from "../../assets/images/moon.png";
 
 const menuItems = ["Home", "Skills", "Works", "Contacts"];
-
 export const Header = () => {
   return (
     <StyledHeader>

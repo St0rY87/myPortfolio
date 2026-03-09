@@ -12,7 +12,6 @@ type SkillPropsType = {
 
 
 export const Skill = (props:SkillPropsType) => {
-//   console.log(props);
   return (
     <StyledSkill>
       <Icon

@@ -3,6 +3,8 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 import photo from "../../../assets/images/hero.png";
 import { TickerTape } from "../../../components/tickerTape/TickerTape";
 
+const tickerTape = ['PROBLEM SOLVING', '&&', 'CEATIVE THINKIG', '&&', 'DEEP EXPERTISE', '&&', 'TEAM WORKER', '&&']
+
 export const Hero = () => {
   return (
     <StyledHero>
@@ -23,7 +25,7 @@ export const Hero = () => {
           </FlexWrapper>
         </FlexWrapper>
       </HeroWrapper>
-      <TickerTape />
+      <TickerTape listItems={tickerTape}/>
     </StyledHero>
   );
 };
