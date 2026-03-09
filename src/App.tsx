@@ -1,12 +1,13 @@
 import "./App.css";
-import styled from "styled-components";
 import { Header } from "./layout/header/Header";
+import { Hero } from "./layout/sections/Hero";
 
 function App() {
   return (
     <div className="App">
       <main>
         <Header />
+        <Hero/>
       </main>
     </div>
   );

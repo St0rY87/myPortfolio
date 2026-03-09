@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Logo } from "../../components/logo/Logo";
 import { FlexWrapper } from "../../components/FlexWrapper";
-import { Menu } from "../../components/menu/menu";
+import { Menu } from "../../components/menu/Menu";
 import moon from "../../assets/images/moon.png";
 
 const menuItems = ["Home", "Skills", "Works", "Contacts"];
