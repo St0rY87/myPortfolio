@@ -6,11 +6,9 @@ import { Skills } from "./layout/sections/skills/Skills";
 function App() {
   return (
     <div className="App">
-      <main>
         <Header />
         <Hero />
         <Skills/>
-      </main>
     </div>
   );
 }
