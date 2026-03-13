@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { Icon } from "../../../../components/icon/Icon";
 import { Link } from "./link/Link";
@@ -26,17 +26,26 @@ export const Project = ({
   icon,
   links,
 }: ProjectPropsType) => {
-  const { iconId, width, height, viewBox, } = icon;
+  const { iconId, width, height, viewBox } = icon;
+  const [isActiveOverlay, setIsActiveOverlay] = useState(false);
 
-
+  function handleBtn() {
+    setIsActiveOverlay((prev) => !prev);
+  }
   return (
     <CardProject>
       <CardWrapper>
         <Img src={img} alt="" />
         <Footer>
           <Actions>
-            {links.map(({name, url}) => <Link key={crypto.randomUUID()} name={name} url={url}/>)}
-           
+            {links.map(({ name, url }) => (
+              <Link key={crypto.randomUUID()} as="a" name={name} url={url} />
+            ))}
+            <Link
+              as="button"
+              name={isActiveOverlay ? "hide" : "about"}
+              onClick={handleBtn}
+            />
           </Actions>
           <Icon
             iconId={iconId}
@@ -45,7 +54,7 @@ export const Project = ({
             viewBox={viewBox}
           />
         </Footer>
-        <Overlay>
+        <Overlay $isActive={isActiveOverlay}>
           <OverlayTitle>{title}</OverlayTitle>
           <Description>{description}</Description>
         </Overlay>
@@ -72,9 +81,14 @@ const Title = styled.h3`
 `;
 
 const Img = styled.img`
+  transition: 0.3s ease-in-out;
   width: 100%;
   height: 200px;
   object-fit: cover;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.03);
+  }
 `;
 
 const Footer = styled.div`
@@ -94,10 +108,11 @@ const Actions = styled.div`
   gap: 8px;
 `;
 
-
-const Overlay = styled.div`
+const Overlay = styled.div<{ $isActive: boolean }>`
+  transition: 0.3s linear;
   position: absolute;
   top: calc(-100% + 40px);
+  top: ${(props) => (props.$isActive ? "0px" : "calc(-100% + 40px)")};
   background-color: rgba(0, 0, 0, 0.8);
   padding: 10px 15px 0;
   color: #fff;
@@ -111,3 +126,5 @@ const OverlayTitle = styled.h3`
 const Description = styled.p`
   font-size: 14px;
 `;
+
+const Button = styled.button``;

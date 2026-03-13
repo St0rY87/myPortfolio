@@ -24,10 +24,6 @@ const projects = [
         name: "code",
         url: "#",
         },
-        {
-        name: "about",
-        url: "#",
-        },
     ],
   },
   {
@@ -44,8 +40,20 @@ const projects = [
         name: "code",
         url: "#",
         },
+    ]
+  },
+  {
+    title: "Interview List",
+    img: { interviewImg },
+    icon: { iconId: "minjs", width: "20", height: "20", viewBox: "0 0 20 20" },
+    description: "JavaScript, React, React Router, Redux, Zod, Vite",
+    links: [
         {
-        name: "about",
+        name: "demo",
+        url: "#",
+        },
+        {
+        name: "code",
         url: "#",
         },
     ]
@@ -64,10 +72,6 @@ const projects = [
         name: "code",
         url: "#",
         },
-        {
-        name: "about",
-        url: "#",
-        },
     ]
   },
   {
@@ -84,10 +88,6 @@ const projects = [
         name: "code",
         url: "#",
         },
-        {
-        name: "about",
-        url: "#",
-        },
     ]
   },
   {
@@ -102,30 +102,6 @@ const projects = [
         },
         {
         name: "code",
-        url: "#",
-        },
-        {
-        name: "about",
-        url: "#",
-        },
-    ]
-  },
-  {
-    title: "Interview List",
-    img: { interviewImg },
-    icon: { iconId: "minjs", width: "20", height: "20", viewBox: "0 0 20 20" },
-    description: "JavaScript, React, React Router, Redux, Zod, Vite",
-    links: [
-        {
-        name: "demo",
-        url: "#",
-        },
-        {
-        name: "code",
-        url: "#",
-        },
-        {
-        name: "about",
         url: "#",
         },
     ]
@@ -165,8 +141,10 @@ const StyledProjects = styled.section`
 
 const MenuWrapper = styled.div``;
 const ProjectsWrapper = styled.div`
+  border: 1px solid red;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 20px;
   max-width: 1200px;
 `;
