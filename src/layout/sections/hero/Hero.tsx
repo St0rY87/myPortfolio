@@ -3,6 +3,7 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 import photo from "../../../assets/images/hero.png";
 import { TickerTape } from "../../../components/tickerTape/TickerTape";
 import { Container } from "../../../components/Container";
+import { theme } from "../../../styles/Theme";
 
 const tickerTape = [
   "PROBLEM SOLVING",
@@ -68,8 +69,10 @@ const HeroWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 145px;
-  border: 1px solid red;
-  background-color: lightcyan;
+  /* background:  linear-gradient(0deg, rgba(79, 172, 254, 0.2) 0%, rgba(62, 115, 141, 0.2) 47.12%, rgba(29, 88, 140, 0.2) 98.08%);; */
+  background: ${theme.colors.secondaryBg};
+  box-shadow: 0 0 21px 0 #fdfdfd;
+  box-shadow: ${theme.colors.mainBoxShadow};
   border-radius: 200px 10px;
 `;
 

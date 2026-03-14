@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Container } from "../../../components/Container";
 import { SocialItem } from "./socialItem/SocialItem";
+import { theme } from "../../../styles/Theme";
 
 const socialIcons = [
   {
@@ -56,6 +57,7 @@ const Socials = () => {
 export default Socials;
 
 const StyledSocials = styled.section`
+background: ${theme.colors.thirdBg};
   padding: 60px;
   min-height: 30vh;
   background-color: #fff;

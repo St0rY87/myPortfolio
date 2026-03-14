@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { theme } from "./Theme";
 
 export const GlobalStyles = createGlobalStyle`
    *,
@@ -15,6 +16,24 @@ export const GlobalStyles = createGlobalStyle`
    }
 
    body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
+    color: ${theme.colors.accentFontColor}
    }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  button {
+    background-color: unset;
+    border: none;
+  }
+
+  section {
+    background: ${theme.colors.primaryBg};
+  }
  `;

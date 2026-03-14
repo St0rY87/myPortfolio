@@ -4,6 +4,7 @@ import { FlexWrapper } from "../../components/FlexWrapper";
 import { Menu } from "../../components/menu/Menu";
 import moon from "../../assets/images/moon.png";
 import { Container } from "../../components/Container";
+import { theme } from "../../styles/Theme";
 
 const menuItems = ["Home", "Skills", "Works", "Contacts"];
 export const Header = () => {
@@ -25,7 +26,7 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-  background-color: lightcoral;
+  background: ${theme.colors.primaryBg};
 `;
 
 const ThemeToggle = styled.button`
