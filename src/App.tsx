@@ -1,4 +1,5 @@
 import "./App.css";
+import { Footer } from "./layout/footer/Footer";
 import { Header } from "./layout/header/Header";
 import { Contacts } from "./layout/sections/contacts/Contacts";
 import { Hero } from "./layout/sections/hero/Hero";
@@ -15,6 +16,7 @@ function App() {
         <Projects/>
         <Contacts/>
         <Socials/>
+        <Footer/>
     </div>
   );
 }

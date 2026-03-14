@@ -12,7 +12,7 @@ type SocialItemProps = {
 export const SocialItem = ({url, iconId, width, height, viewBox}: SocialItemProps) => {
   return (
     <StyledSocialItem>
-      <SocialLink href={url}>
+      <SocialLink target="_blank" href={url}>
         <Icon
           iconId={iconId}
           width={width}
@@ -34,4 +34,8 @@ const SocialLink = styled.a`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    opacity: 0.8
+  }
 `;
