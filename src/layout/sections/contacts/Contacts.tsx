@@ -15,27 +15,27 @@ export const Contacts = () => {
             <Field type="text" placeholder="Your Name" />
             <Field type="text" placeholder="Phone Number" />
             <Field type="email" placeholder="Your email" />
-            <Field as="textarea"></Field>
+            <Field as="textarea" rows={10}></Field>
             <button type="submit">Send message</button>
           </Form>
         </FlexWrapper>
         <ContactInfo>
           <ContactItem>
-            <Icon iconId="minjs" width="20" height="20" viewBox="0 0 20 20" />
+            <Icon iconId="location" width="29" height="36" viewBox="0 0 29 36" />
             <ContactItemInfo>
               <span>Belarus</span>
               <a href="#">Brest</a>
             </ContactItemInfo>
           </ContactItem>
           <ContactItem>
-            <Icon iconId="minjs" width="20" height="20" viewBox="0 0 20 20" />
+            <Icon iconId="phone" width="37" height="37" viewBox="0 0 37 37" />
             <ContactItemInfo>
               <span>Phone</span>
               <a href="tel:+375297290636">+375 29 7290636</a>
             </ContactItemInfo>
           </ContactItem>
           <ContactItem>
-            <Icon iconId="minjs" width="20" height="20" viewBox="0 0 20 20" />
+            <Icon iconId="email" width="36" height="27" viewBox="0 0 36 27" />
             <ContactItemInfo>
               <span>Email</span>
               <a href="mailto:mr.dima337@gmail.com">mr.dima337@gmail.com</a>
@@ -53,17 +53,18 @@ const StyledContacts = styled.section`
 `;
 
 const Form = styled.form`
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   width: min(100%, 500px);
-  gap: 5px;
+  gap: 10px;
   button {
     align-self: center;
   }
 `;
 
 const ContactsWrapper = styled.div`
-  margin-inline: auto;
+  margin: 30px auto;
   width: min(100%, 1100px);
   display: flex;
   align-items: center;
@@ -79,9 +80,11 @@ const FormTitle = styled.h3`
 const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 30px;
 `;
 const ContactItem = styled.div`
   display: flex;
+  align-items: center;
   gap: 30px;
 `;
 const ContactItemInfo = styled.div`

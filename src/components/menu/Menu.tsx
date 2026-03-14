@@ -14,6 +14,7 @@ export const Menu = (props: {menuItems: Array<string>}) => {
 };
 
 const StyledMenu = styled.nav`
+width: max-content;
   ul {
     display: flex;
     gap: 50px;

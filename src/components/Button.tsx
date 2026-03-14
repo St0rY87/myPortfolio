@@ -12,6 +12,5 @@ export const Button = () => {
 
 const StyledButton =styled.button`
     width: max-content;
-    /* background-color:  */
 `
 

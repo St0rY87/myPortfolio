@@ -75,6 +75,7 @@ const CardWrapper = styled.div`
 `;
 
 const Title = styled.h3`
+  margin-top: 10px;
   text-align: center;
   font-size: 18px;
   color: #fff;
@@ -111,7 +112,6 @@ const Actions = styled.div`
 const Overlay = styled.div<{ $isActive: boolean }>`
   transition: 0.3s linear;
   position: absolute;
-  top: calc(-100% + 40px);
   top: ${(props) => (props.$isActive ? "0px" : "calc(-100% + 40px)")};
   background-color: rgba(0, 0, 0, 0.8);
   padding: 10px 15px 0;

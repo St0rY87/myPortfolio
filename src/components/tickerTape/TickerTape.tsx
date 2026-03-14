@@ -14,8 +14,11 @@ const StyledTickerTape = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  font-size: 32px;
+  font-size: 26px;
   color: #fff;
   background-color: #6666e0;
   padding-block: 12px;
+   & span {
+    text-transform: uppercase;
+   }
 `;

@@ -112,7 +112,7 @@ export const Projects = () => {
   return (
     <StyledProjects>
       <TitleSection>Projects</TitleSection>
-      <FlexWrapper direction="column" align="center">
+      <FlexWrapper direction="column" align="center" gap='30px' margin='30px 0 0 0'>
         <MenuWrapper>
           <Menu menuItems={menuItems} />
         </MenuWrapper>
@@ -139,12 +139,18 @@ const StyledProjects = styled.section`
   padding-block: 70px;
 `;
 
-const MenuWrapper = styled.div``;
+const MenuWrapper = styled.div`
+  width: 100%;
+
+`;
+
+
+
 const ProjectsWrapper = styled.div`
-  border: 1px solid red;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
   max-width: 1200px;
+  border: 1px solid red;
 `;

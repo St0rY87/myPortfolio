@@ -2,30 +2,46 @@ import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import photo from "../../../assets/images/hero.png";
 import { TickerTape } from "../../../components/tickerTape/TickerTape";
+import { Container } from "../../../components/Container";
 
-const tickerTape = ['PROBLEM SOLVING', '&&', 'CEATIVE THINKIG', '&&', 'DEEP EXPERTISE', '&&', 'TEAM WORKER', '&&']
+const tickerTape = [
+  "PROBLEM SOLVING",
+  "&&",
+  "CEATIVE THINKIG",
+  "&&",
+  "DEEP EXPERTISE",
+  "&&",
+  "TEAM WORKER",
+  "&&",
+  "positive attitude",
+  "&&",
+  "PROBLEM SOLVING",
+  "&&",
+];
 
 export const Hero = () => {
   return (
     <StyledHero>
-      <HeroWrapper>
-        <Photo src={photo} />
-        <FlexWrapper width="min(100%, 450px)" direction="column">
-          <Greeting>
-            <span>Hello, my name’s</span> <Name>Dmitriy Savin</Name>
-          </Greeting>
-          <Description>
-            I’m a <span>frontend developer</span> specializing in React and
-            TypeScript, focused on building fast, scalable and user-friendly web
-            applications.
-          </Description>
-          <FlexWrapper gap="15px">
-            <a href="#">See Projects </a>
-            <a href="#">Download CV</a>
+      <Container>
+        <HeroWrapper>
+          <Photo src={photo} />
+          <FlexWrapper width="min(100%, 450px)" direction="column" gap='20px'>
+            <Greeting>
+              <span>Hello, my name’s</span> <Name>Dmitriy Savin</Name>
+            </Greeting>
+            <Description>
+              I’m a <span>frontend developer</span> specializing in React and
+              TypeScript, focused on building fast, scalable and user-friendly
+              web applications.
+            </Description>
+            <FlexWrapper gap="15px">
+              <a href="#">See Projects </a>
+              <a href="#">Download CV</a>
+            </FlexWrapper>
           </FlexWrapper>
-        </FlexWrapper>
-      </HeroWrapper>
-      <TickerTape listItems={tickerTape}/>
+        </HeroWrapper>
+      </Container>
+      <TickerTape listItems={tickerTape} />
     </StyledHero>
   );
 };

@@ -26,12 +26,15 @@ export const Skill = (props:SkillPropsType) => {
 };
 
 const StyledSkill = styled.div`
-  min-width: 150px;
-  height: 160px;
+  width: 120px;
+  height: 128px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
   border: 2px solid blue;
+  & span {
+      text-align: center;
+  }
 `;
