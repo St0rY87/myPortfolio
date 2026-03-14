@@ -12,7 +12,7 @@ export const Hero = () => {
         <Photo src={photo} />
         <FlexWrapper width="min(100%, 450px)" direction="column">
           <Greeting>
-            Hello, my name’s <Name>Dmitriy Savin</Name>
+            <span>Hello, my name’s</span> <Name>Dmitriy Savin</Name>
           </Greeting>
           <Description>
             I’m a <span>frontend developer</span> specializing in React and

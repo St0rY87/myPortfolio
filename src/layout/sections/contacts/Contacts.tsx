@@ -8,15 +8,17 @@ export const Contacts = () => {
   return (
     <StyledContacts>
       <TitleSection>Contacts</TitleSection>
-      <FormWrapper>
-        <Form>
-        <FormTitle>Let’s stay in touch</FormTitle>
-        <Field type="text" placeholder="Your Name"/>
-        <Field type="text" placeholder="Phone Number" />
-        <Field type="email" placeholder="Your email" />
-        <Field as='textarea'></Field>
-        <button type='submit'>Send</button>
-        </Form>
+      <ContactsWrapper>
+        <FlexWrapper>
+          <FormTitle>Let’s stay in touch</FormTitle>
+          <Form>
+            <Field type="text" placeholder="Your Name" />
+            <Field type="text" placeholder="Phone Number" />
+            <Field type="email" placeholder="Your email" />
+            <Field as="textarea"></Field>
+            <button type="submit">Send message</button>
+          </Form>
+        </FlexWrapper>
         <ContactInfo>
           <ContactItem>
             <Icon iconId="minjs" width="20" height="20" viewBox="0 0 20 20" />
@@ -40,7 +42,7 @@ export const Contacts = () => {
             </ContactItemInfo>
           </ContactItem>
         </ContactInfo>
-      </FormWrapper>
+      </ContactsWrapper>
     </StyledContacts>
   );
 };
@@ -51,24 +53,28 @@ const StyledContacts = styled.section`
 `;
 
 const Form = styled.form`
-display: flex;
-flex-direction: column;
-align-items: center;
-`
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 500px);
+  gap: 5px;
+  button {
+    align-self: center;
+  }
+`;
 
-const FormWrapper = styled.div`
-    margin-inline: auto;
-    width: min(100%, 1100px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-`
+const ContactsWrapper = styled.div`
+  margin-inline: auto;
+  width: min(100%, 1100px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
 const FormTitle = styled.h3`
-    color: #6190E8;
-    font-size: 48px;
-    font-weight: bold;
-`
+  color: #6190e8;
+  font-size: 48px;
+  font-weight: bold;
+`;
 
 const ContactInfo = styled.div`
   display: flex;
@@ -83,7 +89,4 @@ const ContactItemInfo = styled.div`
   flex-direction: column;
 `;
 
-
-const Field = styled.input`
-    
-`
+const Field = styled.input``;
