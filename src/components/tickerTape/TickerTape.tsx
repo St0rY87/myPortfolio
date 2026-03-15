@@ -1,24 +1,33 @@
 import styled from "styled-components";
+import { theme } from "../../styles/Theme";
 
 export const TickerTape = (props: { listItems: Array<string> }) => {
   return (
     <StyledTickerTape>
-      {props.listItems.map((item) => (
-        <span key={crypto.randomUUID()}>{item}</span>
-      ))}
+      <WrapperWords>
+        {props.listItems.map((item) => (
+          <span key={crypto.randomUUID()}>{item}</span>
+        ))}
+      </WrapperWords>
     </StyledTickerTape>
   );
 };
 
 const StyledTickerTape = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
   font-size: 26px;
   color: #fff;
-  background-color: #6666e0;
+  /* background-color: #6666e0; */
+  background-color: ${theme.colors.accentColor};
   padding-block: 12px;
-   & span {
+  overflow: hidden;
+  & span {
     text-transform: uppercase;
-   }
+  }
+`;
+
+const WrapperWords = styled.div`
+  min-width: max-content;
+  display: flex;
+  gap: 30px;
+  flex-wrap: nowrap;
 `;

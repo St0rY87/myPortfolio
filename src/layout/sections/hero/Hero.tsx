@@ -8,16 +8,23 @@ import { theme } from "../../../styles/Theme";
 const tickerTape = [
   "PROBLEM SOLVING",
   "&&",
-  "CEATIVE THINKIG",
+  "CREATIVE THINKING",
   "&&",
   "DEEP EXPERTISE",
   "&&",
   "TEAM WORKER",
   "&&",
-  "positive attitude",
+  "POSITIVE ATTITUDE",
   "&&",
   "PROBLEM SOLVING",
   "&&",
+  "ATTENTION TO DETAIL",
+  "&&",
+  "ADAPTABILITY",
+  "&&",
+  "RESILIENCE",
+  "&&",
+  "ANIMATIONS",
 ];
 
 export const Hero = () => {
@@ -76,7 +83,7 @@ const HeroWrapper = styled.div`
   background: ${theme.colors.secondaryBg};
   box-shadow: ${theme.colors.mainBoxShadow};
   border-radius: 200px 10px;
-  overflow:hidden;
+  overflow: hidden;
 `;
 
 const Greeting = styled.div`
@@ -96,7 +103,7 @@ const Description = styled.p`
   line-height: 150%;
 `;
 
-const Link= styled.a`
+const Link = styled.a`
   background-color: ${theme.colors.accentColor};
   font-weight: 600;
   font-size: 20px;
@@ -105,11 +112,12 @@ const Link= styled.a`
   color: ${theme.colors.accentFontColor};
   border-radius: 10px;
   transition: 0.3s ease-in-out;
-  & + &, & + &:hover {
+  & + &,
+  & + &:hover {
     background-color: unset;
   }
 
   &:hover {
-    background-color:#3566ee;
+    background-color: #3566ee;
   }
 `;
