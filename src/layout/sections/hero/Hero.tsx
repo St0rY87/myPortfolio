@@ -49,7 +49,6 @@ export const Hero = () => {
 
 const StyledHero = styled.section`
   min-height: 50vh;
-  background-color: lightskyblue;
   display: flex;
   flex-direction: column;
   align-items: center;

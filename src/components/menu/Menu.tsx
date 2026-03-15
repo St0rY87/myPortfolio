@@ -14,10 +14,10 @@ export const Menu = (props: {menuItems: Array<string>}) => {
 };
 
 const StyledMenu = styled.nav`
-width: max-content;
+    width: min(100%, 470px );
   ul {
     display: flex;
-    gap: 50px;
+    justify-content: space-between;
     list-style-type: none;
   }
 `;
