@@ -27,12 +27,13 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
   background: ${theme.colors.primaryBg};
-  padding: 30px;
-  /* position: fixed;
+  padding-block: 20px;
+  opacity: 0.9;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999; */
+  z-index: 9999;
 `;
 
 const ThemeToggle = styled.button`

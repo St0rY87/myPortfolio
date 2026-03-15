@@ -1,7 +1,7 @@
 export const theme = {
     colors: {
         primaryBg: 'linear-gradient(90deg, #a6bcfc 1.92%, #7293ef 96.15%);',
-        secondaryBg: 'linear-gradient(0deg, rgba(79, 172, 254, 0.2) 0%, rgba(62, 115, 141, 0.2) 47.12%, rgba(29, 88, 140, 0.2) 98.08%);',
+        secondaryBg: 'linear-gradient(180deg, rgba(79, 172, 254, 0.2) 0%, rgba(62, 115, 141, 0.2) 47.12%, rgba(29, 88, 140, 0.2) 98.08%);',
         thirdBg: '#fff',
 
         accentColor: '#2157F2',
