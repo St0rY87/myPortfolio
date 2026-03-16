@@ -102,8 +102,6 @@ const HeroWrapper = styled.div`
   justify-content: center;
   gap: 150px;
   align-items: center;
-  /* padding: 0 50px 0 110px; */
-  /* background:  linear-gradient(180deg, rgba(79, 172, 254, 0.2) 0%, rgba(62, 115, 141, 0.2) 47.12%, rgba(29, 88, 140, 0.2) 98.08%);; */
   background: ${theme.colors.secondaryBg};
   box-shadow: ${theme.colors.mainBoxShadow};
   border-radius: 200px 10px;
@@ -135,7 +133,7 @@ const Link = styled.a`
   padding: 10px 25px;
   color: ${theme.colors.accentFontColor};
   border-radius: 10px;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
   & + &,
   & + &:hover {
     background-color: unset;

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { Logo } from "../../components/logo/Logo";
 import { FlexWrapper } from "../../components/FlexWrapper";
-import { Menu } from "../../components/menu/Menu";
 import moon from "../../assets/images/moon.png";
 import { Container } from "../../components/Container";
 import { theme } from "../../styles/Theme";
+import { HeaderMenu } from "./headerMenu/HeaderMenu";
 
 const menuItems = ["Home", "Skills", "Works", "Contacts"];
 export const Header = () => {
@@ -14,7 +14,7 @@ export const Header = () => {
         <FlexWrapper justify="space-between">
           <Logo />
           <FlexWrapper justify="space-between" align="center" width="min(100%, 570px)">
-            <Menu menuItems={menuItems} />
+            <HeaderMenu menuItems={menuItems} />
             <ThemeToggle>
               <img src={moon} />
             </ThemeToggle>

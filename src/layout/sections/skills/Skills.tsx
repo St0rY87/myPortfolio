@@ -131,7 +131,7 @@ export const Skills = () => {
 };
 
 const StyledSkills = styled.section`
-  padding-block: 80px;
+  padding-top: 80px;
   min-height: 70vh;
   background-color: lightskyblue;
 `;

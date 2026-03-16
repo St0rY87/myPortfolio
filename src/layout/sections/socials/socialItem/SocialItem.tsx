@@ -9,7 +9,13 @@ type SocialItemProps = {
   url: string;
 };
 
-export const SocialItem = ({url, iconId, width, height, viewBox}: SocialItemProps) => {
+export const SocialItem = ({
+  url,
+  iconId,
+  width,
+  height,
+  viewBox,
+}: SocialItemProps) => {
   return (
     <StyledSocialItem>
       <SocialLink target="_blank" href={url}>
@@ -36,6 +42,6 @@ const SocialLink = styled.a`
   border-radius: 50%;
   transition: 0.3s ease-in-out;
   &:hover {
-    opacity: 0.8
+    opacity: 0.8;
   }
 `;

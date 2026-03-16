@@ -2,133 +2,169 @@ import React from "react";
 import styled from "styled-components";
 import { TitleSection } from "../../../components/TitleSection";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { Menu } from "../../../components/menu/Menu";
 import { Project } from "./project/Project";
 
 import interviewImg from "../../../assets/images/proj.jpg";
 
-const menuItems = ["all", "react", "js", "ai"];
+import todo from "../../../assets/images/todo.jpg";
+import socialNetwork from "../../../assets/images/social-network.jpg";
+import weatherApp from "../../../assets/images/weather-app.jpg";
+import messenger from "../../../assets/images/messenger.jpg";
+import eCommerce from "../../../assets/images/e-commerce.jpg";
+import dashboard from "../../../assets/images/dashboard.jpg";
+
+import { ProjectMenu } from "./projectMenu/projectMenu";
+import { Container } from "../../../components/Container";
+import { theme } from "../../../styles/Theme";
+
+const menuItems = ["All", "React", "JS", "AI"];
 
 const projects = [
   {
-    title: "Interview List",
-    img: { interviewImg },
+    title: "Social Network",
+    img: socialNetwork,
     icon: { iconId: "minjs", width: "20", height: "20", viewBox: "0 0 20 20" },
-    description: "JavaScript, React, React Router, Redux, Zod, Vite",
+    description:
+      "Mini social platform with user profiles, posts, likes, comments, and follow system. Implemented with React, Redux Toolkit, and Node.js + Express.",
     links: [
-        {
+      {
         name: "demo",
         url: "#",
-        },
-        {
+      },
+      {
         name: "code",
         url: "#",
-        },
+      },
     ],
   },
   {
-    title: "Interview List",
-    img: { interviewImg },
-    icon: { iconId: "minjs", width: "20", height: "20", viewBox: "0 0 20 20" },
-    description: "JavaScript, React, React Router, Redux, Zod, Vite",
+    title: "Todo App",
+    img: todo,
+    icon: {
+      iconId: "minreact",
+      width: "20",
+      height: "19",
+      viewBox: "0 0 20 19",
+    },
+    description:
+      "Task management application with task creation, editing, deletion, and filtering by status. Built with React and TypeScript, using local storage for data persistence.",
     links: [
-        {
+      {
         name: "demo",
         url: "#",
-        },
-        {
+      },
+      {
         name: "code",
         url: "#",
-        },
-    ]
+      },
+    ],
   },
   {
-    title: "Interview List",
-    img: { interviewImg },
-    icon: { iconId: "minjs", width: "20", height: "20", viewBox: "0 0 20 20" },
-    description: "JavaScript, React, React Router, Redux, Zod, Vite",
+    title: " Weather App",
+    img: weatherApp,
+    icon: {
+      iconId: "minredux",
+      width: "20",
+      height: "20",
+      viewBox: "0 0 20 20",
+    },
+    description:
+      "Weather forecast application with city search, current weather, 5-day forecast, and interactive map. Uses OpenWeatherMap API, React, and Leaflet.",
     links: [
-        {
+      {
         name: "demo",
         url: "#",
-        },
-        {
+      },
+      {
         name: "code",
         url: "#",
-        },
-    ]
+      },
+    ],
   },
   {
-    title: "Interview List",
-    img: { interviewImg },
+    title: "Messenger",
+    img: messenger,
     icon: { iconId: "minjs", width: "20", height: "20", viewBox: "0 0 20 20" },
-    description: "JavaScript, React, React Router, Redux, Zod, Vite",
+    description:
+      "Real-time chat application with private messages, typing indicators, and online status. Built with Socket.io, React, and Node.js.",
     links: [
-        {
+      {
         name: "demo",
         url: "#",
-        },
-        {
+      },
+      {
         name: "code",
         url: "#",
-        },
-    ]
+      },
+    ],
   },
   {
-    title: "Interview List",
-    img: { interviewImg },
-    icon: { iconId: "minjs", width: "20", height: "20", viewBox: "0 0 20 20" },
-    description: "JavaScript, React, React Router, Redux, Zod, Vite",
+    title: "E-Commerce",
+    img: eCommerce,
+    icon: {
+      iconId: "minreact",
+      width: "20",
+      height: "20",
+      viewBox: "0 0 20 20",
+    },
+    description:
+      "Full-featured online store with product catalog, shopping cart, filters, and checkout process. Developed with Next.js, Stripe integration, and MongoDB.",
     links: [
-        {
+      {
         name: "demo",
         url: "#",
-        },
-        {
+      },
+      {
         name: "code",
         url: "#",
-        },
-    ]
+      },
+    ],
   },
   {
-    title: "Interview List",
-    img: { interviewImg },
-    icon: { iconId: "minjs", width: "20", height: "20", viewBox: "0 0 20 20" },
-    description: "JavaScript, React, React Router, Redux, Zod, Vite",
+    title: "Dashboard",
+    img: dashboard,
+    icon: {
+      iconId: "minredux",
+      width: "20",
+      height: "20",
+      viewBox: "0 0 20 20",
+    },
+    description:
+      "Analytics dashboard with interactive charts, data tables, and customizable widgets. Created with React, Recharts, and Material-UI.",
     links: [
-        {
+      {
         name: "demo",
         url: "#",
-        },
-        {
+      },
+      {
         name: "code",
         url: "#",
-        },
-    ]
+      },
+    ],
   },
 ];
 
 export const Projects = () => {
   return (
     <StyledProjects>
-      <TitleSection>Projects</TitleSection>
-      <FlexWrapper direction="column" align="center" gap='30px' margin='30px 0 0 0'>
-        <MenuWrapper>
-          <Menu menuItems={menuItems} />
-        </MenuWrapper>
-        <ProjectsWrapper>
-          {projects.map((item) => (
-            <Project
-              title={item.title}
-              img={interviewImg}
-              description={item.description}
-              icon={item.icon}
-              links={item.links}
-              key={crypto.randomUUID()}
-            ></Project>
-          ))}
-        </ProjectsWrapper>
-      </FlexWrapper>
+      <Container>
+        <TitleSection>Projects</TitleSection>
+        <FlexWrapper direction="column" align="center" gap="60px">
+          <ProjectMenu menuItems={menuItems} />
+          <ProjectsWrapper>
+            {projects.map((item) => (
+              <Project
+                title={item.title}
+                img={item.img}
+                description={item.description}
+                icon={item.icon}
+                links={item.links}
+                key={crypto.randomUUID()}
+              ></Project>
+            ))}
+          </ProjectsWrapper>
+        </FlexWrapper>
+      </Container>
     </StyledProjects>
   );
 };
@@ -136,21 +172,16 @@ export const Projects = () => {
 const StyledProjects = styled.section`
   min-height: 50vh;
   background-color: lightgrey;
-  padding-block: 70px;
+  padding-top: 70px;
 `;
-
-const MenuWrapper = styled.div`
-  width: 100%;
-
-`;
-
-
 
 const ProjectsWrapper = styled.div`
+  padding: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
-  max-width: 1200px;
-  border: 1px solid red;
+  border-radius: 50px;
+  gap: 40px 20px;
+  background: ${theme.colors.secondaryBg};
+  box-shadow: ${theme.colors.mainBoxShadow};
 `;

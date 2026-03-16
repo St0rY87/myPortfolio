@@ -41,6 +41,7 @@ const Socials = () => {
         <SocialList>
           {socialIcons.map(({ url, iconId, width, height, viewBox }) => (
             <SocialItem
+              key={crypto.randomUUID()}
               iconId={iconId}
               width={width}
               height={height}
@@ -57,7 +58,7 @@ const Socials = () => {
 export default Socials;
 
 const StyledSocials = styled.section`
-background: ${theme.colors.thirdBg};
+  background: ${theme.colors.thirdBg};
   padding: 60px;
   min-height: 30vh;
   background-color: #fff;

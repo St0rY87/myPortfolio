@@ -16,7 +16,7 @@ export const TitleSection = styled.h2`
     background-color: ${theme.colors.accentColor};
 
     position: absolute;
-    bottom: -30px;
+    bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
   }
