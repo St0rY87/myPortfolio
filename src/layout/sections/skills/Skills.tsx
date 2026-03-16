@@ -3,6 +3,7 @@ import { TitleSection } from "../../../components/TitleSection";
 import { Skill } from "./skill/Skill";
 import { TickerTape } from "../../../components/tickerTape/TickerTape";
 import { Container } from "../../../components/Container";
+import { theme } from "../../../styles/Theme";
 
 const skillsItems = [
   {
@@ -80,7 +81,6 @@ const skillsItems = [
     height: "55",
     viewBox: "0 0 90 55",
   },
-
 ];
 
 const tickerTape = [
@@ -99,6 +99,12 @@ const tickerTape = [
   "REACT ROUTER",
   "&&",
   "BUN",
+  "&&",
+  "Node Js",
+  "&&",
+  "Docker",
+  "&&",
+  "Shadcn/ui",
 ];
 
 export const Skills = () => {
@@ -125,19 +131,20 @@ export const Skills = () => {
 };
 
 const StyledSkills = styled.section`
-  padding-block: 70px;
+  padding-block: 80px;
   min-height: 70vh;
   background-color: lightskyblue;
 `;
 const SkillsWrapper = styled.div`
+  margin-bottom: 70px;
   width: min(100%, 1090px);
-  margin: 40px auto;
+  background: ${theme.colors.secondaryBg};
+  box-shadow: ${theme.colors.mainBoxShadow};
+  margin: 60px auto 90px;
   padding: 40px;
   display: grid;
   grid-template-columns: repeat(auto-fit, 120px);
   justify-content: center;
   gap: 30px 20px;
-
-  background-color: lightcyan;
-  margin-bottom: 70px;
+  border-radius: 50px;
 `;

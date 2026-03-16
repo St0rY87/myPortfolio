@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import photo from "../../../assets/images/Dima.png";
 import { TickerTape } from "../../../components/tickerTape/TickerTape";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
+
+import photo from "../../../assets/images/Dima.png";
+import arrow from "../../../assets/images/arrow-left.svg";
 
 const tickerTape = [
   "PROBLEM SOLVING",
@@ -32,7 +34,11 @@ export const Hero = () => {
     <StyledHero>
       <Container>
         <HeroWrapper>
-          <Photo src={photo} />
+          <PhotoWrapper>
+            <Photo src={photo} />
+            <BracketLeft src={arrow} alt="bracket" />
+            <BracketRight src={arrow} alt="bracket" />
+          </PhotoWrapper>
           <FlexWrapper width="min(100%, 450px)" direction="column" gap="20px">
             <Greeting>
               <span>Hello, my name’s</span> <Name>Dmitriy Savin</Name>
@@ -63,8 +69,25 @@ const StyledHero = styled.section`
   }
 `;
 
-const Photo = styled.img`
+const PhotoWrapper = styled.div`
   margin-top: auto;
+  position: relative;
+`;
+const BracketLeft = styled.img`
+  position: absolute;
+  left: -30%;
+  top: 50%;
+  transform: translateY(-50%);
+`;
+const BracketRight = styled.img`
+  position: absolute;
+  right: -30%;
+  top: 50%;
+  rotate: 180deg;
+  transform: translateY(50%);
+`;
+
+const Photo = styled.img`
   width: 275px;
   object-fit: cover;
   filter: drop-shadow(0 0 51px #fff) drop-shadow(0 0 100px #fff);
@@ -77,8 +100,9 @@ const HeroWrapper = styled.div`
   padding-inline: 20px;
   display: flex;
   justify-content: center;
+  gap: 150px;
   align-items: center;
-  gap: 120px;
+  /* padding: 0 50px 0 110px; */
   /* background:  linear-gradient(180deg, rgba(79, 172, 254, 0.2) 0%, rgba(62, 115, 141, 0.2) 47.12%, rgba(29, 88, 140, 0.2) 98.08%);; */
   background: ${theme.colors.secondaryBg};
   box-shadow: ${theme.colors.mainBoxShadow};

@@ -36,4 +36,6 @@ export const GlobalStyles = createGlobalStyle`
   section {
     background: ${theme.colors.primaryBg};
   }
+
+
  `;
