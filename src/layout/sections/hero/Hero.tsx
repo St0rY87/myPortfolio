@@ -3,9 +3,9 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 import { TickerTape } from "../../../components/tickerTape/TickerTape";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
-
 import photo from "../../../assets/images/Dima.png";
-import arrow from "../../../assets/images/arrow-left.svg";
+
+import arrowRaw from "../../../assets/images/arrow-left.svg?raw";
 
 const tickerTape = [
   "PROBLEM SOLVING",
@@ -36,10 +36,12 @@ export const Hero = () => {
         <HeroWrapper>
           <PhotoWrapper>
             <Photo src={photo} />
-            <BracketLeft src={arrow} alt="bracket" />
-            <BracketRight src={arrow} alt="bracket" />
           </PhotoWrapper>
-          <FlexWrapper width="min(100%, 450px)" direction="column" gap="20px">
+          <FlexWrapper
+            $width="min(100%, 450px)"
+            $direction="column"
+            $gap="20px"
+          >
             <Greeting>
               <span>Hello, my name’s</span> <Name>Dmitriy Savin</Name>
             </Greeting>
@@ -48,7 +50,7 @@ export const Hero = () => {
               TypeScript, focused on building fast, scalable and user-friendly
               web applications.
             </Description>
-            <FlexWrapper gap="30px" margin="50px 0 0">
+            <FlexWrapper $gap="30px" $margin="50px 0 0">
               <Link href="#">See Projects </Link>
               <Link href="#">Download CV</Link>
             </FlexWrapper>
@@ -72,24 +74,33 @@ const StyledHero = styled.section`
 const PhotoWrapper = styled.div`
   margin-top: auto;
   position: relative;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 48px;
+    height: 71px;
+  }
+  &:before {
+    left: -30%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url("data:image/svg+xml;utf8,${encodeURIComponent(arrowRaw)}");
+  }
+  &:after {
+    right: -30%;
+    top: 50%;
+    rotate: 180deg;
+    transform: translateY(50%);
+    background: url("data:image/svg+xml;utf8,${encodeURIComponent(arrowRaw)}");
+  }
 `;
-const BracketLeft = styled.img`
-  position: absolute;
-  left: -30%;
-  top: 50%;
-  transform: translateY(-50%);
-`;
-const BracketRight = styled.img`
-  position: absolute;
-  right: -30%;
-  top: 50%;
-  rotate: 180deg;
-  transform: translateY(50%);
-`;
+
 
 const Photo = styled.img`
   width: 275px;
-  object-fit: cover;
   filter: drop-shadow(0 0 51px #fff) drop-shadow(0 0 100px #fff);
 `;
 

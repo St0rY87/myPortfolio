@@ -1,11 +1,10 @@
-import React from "react";
 import styled from "styled-components";
 import { theme } from "../styles/Theme";
 
 export const Button = styled.button`
   font-family: "Poppins", sans-serif;
   background-color: ${theme.colors.accentColor};
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   padding: 10px 25px;
   color: ${theme.colors.accentFontColor};

@@ -41,10 +41,10 @@ const StyledProjectMenu = styled.nav`
 `;
 
 const List = styled.ul`
+margin-inline: auto;
   width: max-content;
   border-radius: 10px;
   display: flex;
-  justify-content: space-between;
   list-style-type: none;
   background: rgba(0, 0, 0, 0.2);
 `;

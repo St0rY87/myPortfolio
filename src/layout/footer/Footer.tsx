@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Logo } from "../../components/logo/Logo";
+import { theme } from "../../styles/Theme";
 
 export const Footer = () => {
   return (
@@ -13,12 +14,12 @@ export const Footer = () => {
 
 const StyledFooter = styled.footer`
   min-height:150px;
-  background-color: #399dd6;
+  background: ${theme.colors.primaryBg};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
 `;
 
 const Copyright = styled.small`

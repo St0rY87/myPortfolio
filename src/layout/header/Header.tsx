@@ -11,9 +11,9 @@ export const Header = () => {
   return (
     <StyledHeader>
       <Container>
-        <FlexWrapper justify="space-between">
+        <FlexWrapper $justify="space-between">
           <Logo />
-          <FlexWrapper justify="space-between" align="center" width="min(100%, 570px)">
+          <FlexWrapper $align="center" $gap="60px">
             <HeaderMenu menuItems={menuItems} />
             <ThemeToggle>
               <img src={moon} />

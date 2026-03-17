@@ -60,7 +60,6 @@ export default Socials;
 const StyledSocials = styled.section`
   background: ${theme.colors.thirdBg};
   padding: 60px;
-  min-height: 30vh;
   background-color: #fff;
 `;
 

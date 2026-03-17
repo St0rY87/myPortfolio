@@ -2,7 +2,9 @@ import styled from "styled-components";
 import { TitleSection } from "../../../components/TitleSection";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Project } from "./project/Project";
-
+import { ProjectMenu } from "./projectMenu/projectMenu";
+import { Container } from "../../../components/Container";
+import { theme } from "../../../styles/Theme";
 
 import todo from "../../../assets/images/todo.jpg";
 import socialNetwork from "../../../assets/images/social-network.jpg";
@@ -11,9 +13,6 @@ import messenger from "../../../assets/images/messenger.jpg";
 import eCommerce from "../../../assets/images/e-commerce.jpg";
 import dashboard from "../../../assets/images/dashboard.jpg";
 
-import { Container } from "../../../components/Container";
-import { theme } from "../../../styles/Theme";
-import { ProjectMenu } from "./projectMenu/ProjectMenu";
 
 const menuItems = ["All", "React", "JS", "AI"];
 
@@ -147,7 +146,7 @@ export const Projects = () => {
     <StyledProjects>
       <Container>
         <TitleSection>Projects</TitleSection>
-        <FlexWrapper direction="column" align="center" gap="60px">
+        <FlexWrapper $direction="column" $align="center" $gap="60px">
           <ProjectMenu menuItems={menuItems} />
           <ProjectsWrapper>
             {projects.map((item) => (
