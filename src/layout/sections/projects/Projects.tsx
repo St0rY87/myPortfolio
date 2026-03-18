@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { TitleSection } from "../../../components/TitleSection";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Project } from "./project/Project";
-import { ProjectMenu } from "./projectMenu/projectMenu";
+import { ProjectMenu } from "./projectMenu/ProjectMenu";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
 

@@ -3,7 +3,7 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 import { TickerTape } from "../../../components/tickerTape/TickerTape";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
-import photo from "../../../assets/images/Dima.png";
+import photo from "../../../assets/images/hero.png";
 
 import arrowRaw from "../../../assets/images/arrow-left.svg?raw";
 
@@ -84,13 +84,13 @@ const PhotoWrapper = styled.div`
     height: 71px;
   }
   &:before {
-    left: -30%;
+    left: -75px;
     top: 50%;
     transform: translateY(-50%);
     background: url("data:image/svg+xml;utf8,${encodeURIComponent(arrowRaw)}");
   }
   &:after {
-    right: -30%;
+    right: -75px;
     top: 50%;
     rotate: 180deg;
     transform: translateY(50%);
@@ -100,7 +100,7 @@ const PhotoWrapper = styled.div`
 
 
 const Photo = styled.img`
-  width: 275px;
+  width:300px;
   filter: drop-shadow(0 0 51px #fff) drop-shadow(0 0 100px #fff);
 `;
 

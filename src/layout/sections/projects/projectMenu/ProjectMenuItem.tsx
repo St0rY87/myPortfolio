@@ -19,6 +19,14 @@ const ListItem = styled.li`
             height: 0;
         }
     }
+  
+  &:first-child a {
+    background-color: ${theme.colors.accentColor};
+    border-radius: 10px;
+    &:before{
+        background: unset;
+    }
+  }
 `;
 
 

@@ -17,6 +17,5 @@ const StyledHeaderMenu = styled.nav``;
 
 const ListItems = styled.ul`
   display: flex;
-  list-style-type: none;
   gap: 30px;
 `;
