@@ -19,7 +19,7 @@ export const Skill = (props: SkillPropsType) => {
         height={props.height}
         viewBox={props.viewBox}
       />
-      <span>{props.title}</span>
+      <SkillTitle>{props.title}</SkillTitle>
     </StyledSkill>
   );
 };
@@ -36,11 +36,14 @@ const StyledSkill = styled.div`
   gap: 20px;
   box-shadow: ${theme.colors.mainBoxShadow};
   transition: 0.2s ease-in-out;
-  & span {
-    text-align: center;
-  }
-
+    
   &:hover {
     box-shadow: ${theme.colors.mainBoxShadow}, ${theme.colors.mainBoxShadow};
   }
-`;
+`
+
+const SkillTitle = styled.h3`
+  text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+`

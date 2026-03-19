@@ -34,9 +34,7 @@ export const Hero = () => {
     <StyledHero>
       <Container>
         <HeroWrapper>
-          <PhotoWrapper>
-            <Photo src={photo} />
-          </PhotoWrapper>
+          <Photo src={photo} />
           <FlexWrapper
             $width="min(100%, 450px)"
             $direction="column"
@@ -71,11 +69,11 @@ const StyledHero = styled.section`
   }
 `;
 
-const PhotoWrapper = styled.div`
-  margin-top: auto;
-  position: relative;
+// const PhotoWrapper = styled.div`
+//   margin-top: auto;
+//   position: relative;
 
-  &:before,
+/* &:before,
   &:after {
     content: "";
     position: absolute;
@@ -95,11 +93,11 @@ const PhotoWrapper = styled.div`
     rotate: 180deg;
     transform: translateY(50%);
     background: url("data:image/svg+xml;utf8,${encodeURIComponent(arrowRaw)}");
-  }
-`;
-
+  } */
+// `;
 
 const Photo = styled.img`
+  margin-top: auto;
   width:300px;
   filter: drop-shadow(0 0 51px #fff) drop-shadow(0 0 100px #fff);
 `;

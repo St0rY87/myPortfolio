@@ -37,7 +37,7 @@ const Link = styled.a`
   font-size: 28px;
   text-align: center;
   color: ${theme.colors.accentFontColor};
-  font-weight: 700;
+  font-weight: 600;
 
   transition: 0.1s ease-in-out;
 

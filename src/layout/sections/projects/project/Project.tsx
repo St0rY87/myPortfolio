@@ -27,12 +27,14 @@ export const Project = ({
   icon,
   links,
 }: ProjectPropsType) => {
-  const { iconId, width, height, viewBox } = icon;
+  
   const [isActiveOverlay, setIsActiveOverlay] = useState(false);
+  const { iconId, width, height, viewBox } = icon;
 
   function handleBtn() {
     setIsActiveOverlay((prev) => !prev);
   }
+
   return (
     <CardProject>
       <CardWrapper>
@@ -127,8 +129,9 @@ const CardWrapper = styled.div`
 const Title = styled.h3`
   margin-top: 10px;
   text-align: center;
-  font-size: 20px;
+  font-size: 22px;
   color: #fff;
+  font-weight: 500;
 `;
 
 const Img = styled.img`
@@ -169,7 +172,7 @@ const Overlay = styled.div<{ $isActive: boolean }>`
   border-bottom: 1px solid grey;
   padding: 20px 15px;
 `;
-const OverlayTitle = styled.h3`
+const OverlayTitle = styled.h4`
   font-family: "Josefin Sans", sans-serif;
   font-weight: 700;
   font-size: 16px;

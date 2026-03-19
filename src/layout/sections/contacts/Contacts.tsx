@@ -172,6 +172,7 @@ const Button = styled.button`
 `;
 
 const Man = styled.img`
+  transform: scaleX(-1);
   position: absolute;
   z-index: 1;
   bottom: -110px;
