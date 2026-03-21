@@ -8,10 +8,7 @@ import { HeaderMenu } from "./headerMenu/HeaderMenu";
 import { MobileMenu } from "./mobileMenu/MobileMenu";
 
 const menuItems = ["Home", "Skills", "Works", "Contacts"];
-const menuItems2 = [
-  
-  "Home", "Skills", "Works", "Contacts"
-];
+const menuItems2 = ["Home", "Skills", "Works", "Contacts"];
 export const Header = () => {
   return (
     <StyledHeader>
@@ -40,6 +37,10 @@ const StyledHeader = styled.header`
   left: 0;
   right: 0;
   z-index: 9999;
+
+  @media ${theme.media.mobile} {
+    padding: 5px 8px;
+  }
 `;
 
 const ThemeToggle = styled.button`
@@ -54,5 +55,12 @@ const ThemeToggle = styled.button`
 
   @media ${theme.media.tablet} {
     margin-right: 75px;
+    img {
+    width: 35px;
+  }
+  }
+  @media ${theme.media.mobile} {
+    margin-right: 55px;
+    padding: 0;
   }
 `;

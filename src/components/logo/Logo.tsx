@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Icon } from "../icon/Icon";
+import { theme } from "../../styles/Theme";
 
 export const Logo = () => {
   return (
@@ -18,5 +19,11 @@ const StyledLogo = styled.a`
   transition: 0.3s ease-in-out;
   &:hover {
     opacity: 0.8;
+  }
+
+  @media ${theme.media.tablet} {
+    svg {
+      width: 45px;
+    }
   }
 `;

@@ -13,12 +13,12 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <Skills />
+        {/* <Skills />
         <Projects />
         <Contacts />
-        <Socials />
+        <Socials /> */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
