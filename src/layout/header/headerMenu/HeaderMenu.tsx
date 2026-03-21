@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { HeaderMenuItem } from "./headerMenuItem/HeaderMenuItem";
+import { theme } from "../../../styles/Theme";
 
 export const HeaderMenu = (props: { menuItems: Array<string> }) => {
   return (
@@ -13,7 +14,12 @@ export const HeaderMenu = (props: { menuItems: Array<string> }) => {
   );
 };
 
-const StyledHeaderMenu = styled.nav``;
+const StyledHeaderMenu = styled.nav`
+
+  @media ${theme.media.tablet} {
+    display: none;
+  }
+`;
 
 const ListItems = styled.ul`
   display: flex;

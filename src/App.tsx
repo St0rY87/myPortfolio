@@ -10,13 +10,15 @@ import Socials from "./layout/sections/socials/Socials";
 function App() {
   return (
     <div className="App">
-        <Header />
+      <Header />
+      <main>
         <Hero />
-        <Skills/>
-        <Projects/>
-        <Contacts/>
-        <Socials/>
-        <Footer/>
+        <Skills />
+        <Projects />
+        <Contacts />
+        <Socials />
+      </main>
+      <Footer />
     </div>
   );
 }

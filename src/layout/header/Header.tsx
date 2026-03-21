@@ -5,8 +5,13 @@ import moon from "../../assets/images/moon.png";
 import { Container } from "../../components/Container";
 import { theme } from "../../styles/Theme";
 import { HeaderMenu } from "./headerMenu/HeaderMenu";
+import { MobileMenu } from "./mobileMenu/MobileMenu";
 
 const menuItems = ["Home", "Skills", "Works", "Contacts"];
+const menuItems2 = [
+  
+  "Home", "Skills", "Works", "Contacts"
+];
 export const Header = () => {
   return (
     <StyledHeader>
@@ -15,6 +20,7 @@ export const Header = () => {
           <Logo />
           <FlexWrapper $align="center" $gap="60px">
             <HeaderMenu menuItems={menuItems} />
+            <MobileMenu menuItems={menuItems} />
             <ThemeToggle>
               <img src={moon} />
             </ThemeToggle>
@@ -27,7 +33,7 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
   background: ${theme.colors.primaryBg};
-  padding-block: 20px;
+  padding-block: 10px;
   opacity: 0.9;
   position: fixed;
   top: 0;
@@ -37,10 +43,16 @@ const StyledHeader = styled.header`
 `;
 
 const ThemeToggle = styled.button`
+  padding: 10px;
+
   border: none;
   background-color: transparent;
   cursor: pointer;
   img {
     width: 40px;
+  }
+
+  @media ${theme.media.tablet} {
+    margin-right: 75px;
   }
 `;

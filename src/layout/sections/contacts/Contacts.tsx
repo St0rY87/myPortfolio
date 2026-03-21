@@ -13,8 +13,8 @@ export const Contacts = () => {
       <Container>
         <TitleSection>Contacts</TitleSection>
         <ContactsWrapper>
-          <FormWrapper>
-            <FormTitle>Let’s stay in touch</FormTitle>
+          <FormTitle>Let’s stay in touch</FormTitle>
+          <FlexWrapper $justify='space-between' $gap='40px'>
             <Form>
               <Field type="text" placeholder="Your Name" />
               <Field type="text" placeholder="Phone Number" />
@@ -22,44 +22,55 @@ export const Contacts = () => {
               <TextArea rows={7} placeholder="Your message"></TextArea>
               <Button type="submit">Send</Button>
             </Form>
-          </FormWrapper>
-          <ContactInfo>
-            <ContactItem>
-              <Icon
-                iconId="location"
-                width="29"
-                height="36"
-                viewBox="0 0 29 36"
-              />
-              <ContactItemInfo>
-                <span>Belarus</span>
-                <ContactItemLink
-                  href="https://maps.app.goo.gl/THZQkt5aDuEe48bo7"
-                  target="_blank"
-                >
-                  Brest
-                </ContactItemLink>
-              </ContactItemInfo>
-            </ContactItem>
-            <ContactItem>
-              <Icon iconId="phone" width="37" height="37" viewBox="0 0 37 37" />
-              <ContactItemInfo>
-                <span>Phone</span>
-                <ContactItemLink href="tel:+375297290636">
-                  +375 29 7290636
-                </ContactItemLink>
-              </ContactItemInfo>
-            </ContactItem>
-            <ContactItem>
-              <Icon iconId="email" width="36" height="27" viewBox="0 0 36 27" />
-              <ContactItemInfo>
-                <span>Email</span>
-                <ContactItemLink href="mailto:mr.dima337@gmail.com">
-                  mr.dima337@gmail.com
-                </ContactItemLink>
-              </ContactItemInfo>
-            </ContactItem>
-          </ContactInfo>
+            <ContactInfo>
+              <ContactItem>
+                <Icon
+                  iconId="location"
+                  width="29"
+                  height="36"
+                  viewBox="0 0 29 36"
+                />
+                <ContactItemInfo>
+                  <span>Belarus</span>
+                  <ContactItemLink
+                    href="https://maps.app.goo.gl/THZQkt5aDuEe48bo7"
+                    target="_blank"
+                  >
+                    Brest
+                  </ContactItemLink>
+                </ContactItemInfo>
+              </ContactItem>
+              <ContactItem>
+                <Icon
+                  iconId="phone"
+                  width="37"
+                  height="37"
+                  viewBox="0 0 37 37"
+                />
+                <ContactItemInfo>
+                  <span>Phone</span>
+                  <ContactItemLink href="tel:+375297290636">
+                    +375 29 7290636
+                  </ContactItemLink>
+                </ContactItemInfo>
+              </ContactItem>
+              <ContactItem>
+                <Icon
+                  iconId="email"
+                  width="36"
+                  height="27"
+                  viewBox="0 0 36 27"
+                />
+                <ContactItemInfo>
+                  <span>Email</span>
+                  <ContactItemLink href="mailto:mr.dima337@gmail.com">
+                    mr.dima337@gmail.com
+                  </ContactItemLink>
+                </ContactItemInfo>
+              </ContactItem>
+            </ContactInfo>
+          </FlexWrapper>
+
           <Man src={man} alt="" />
         </ContactsWrapper>
       </Container>
@@ -72,7 +83,8 @@ const StyledContacts = styled.section`
 `;
 
 const Form = styled.form`
-  margin-top: 50px;
+  width: min(100%, 500px);
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -85,7 +97,7 @@ const ContactsWrapper = styled.div`
   margin-inline: auto;
   width: min(100%, 1100px);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 50px 80px;
   background-color: #fff;
   border-radius: 50px;
@@ -94,18 +106,14 @@ const ContactsWrapper = styled.div`
   position: relative;
 `;
 
-const FormWrapper = styled.div`
-  width: min(100%, 500px);
-`;
+
 const FormTitle = styled.h3`
   color: #6190e8;
   font-size: 46px;
   font-weight: bold;
 `;
 
-const ContactInfo = styled.div`
-  margin-top: 110px;
-`;
+const ContactInfo = styled.div``;
 const ContactItem = styled.div`
   display: flex;
   align-items: center;

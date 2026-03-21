@@ -14,6 +14,11 @@ export const theme = {
 
         mainBoxShadow: '0 0 21px 0 #fdfdfd'
 
+    },
+     media: {
+        tablet: 'screen and (max-width: 768px)',
+        mobile: 'screen and (max-width: 576px)',
+
     }
 }
 

@@ -34,7 +34,7 @@ export const Hero = () => {
     <StyledHero>
       <Container>
         <HeroWrapper>
-          <Photo src={photo} />
+          <Photo src={photo} alt="Dmitriy Savin, frontend developer" />
           <FlexWrapper
             $width="min(100%, 450px)"
             $direction="column"
