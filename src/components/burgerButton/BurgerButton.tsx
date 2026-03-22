@@ -76,11 +76,12 @@ const StyledBurgerButton = styled.button`
 
   @media ${theme.media.tablet} {
     top: 9px;
+    right: 10px;
   }
 
-  @media ${theme.media.mobile} {
+  /* @media ${theme.media.mobile} {
     height: 40px;
     right: 0;
     top: 7px;
-  }
+  } */
 `;

@@ -34,21 +34,29 @@ export const Hero = () => {
     <StyledHero>
       <Container>
         <HeroWrapper>
-          <Photo src={photo} alt="Dmitriy Savin, frontend developer" />
+          <PhotoWrapper>
+            <Photo src={photo} alt="Dmitriy Savin, frontend developer" />
+          </PhotoWrapper>
           <FlexWrapper
             $width="min(100%, 450px)"
             $direction="column"
             $gap="20px"
+            $gapMobile="10px"
           >
             <Greeting>
               <span>Hello, my name’s</span> <Name>Dmitriy Savin</Name>
             </Greeting>
             <Description>
-              I’m a <span>frontend developer</span> specializing in React and
-              TypeScript, focused on building fast, scalable and user-friendly
-              web applications.
+              I’m a <strong>frontend developer</strong> specializing in{" "}
+              <strong>React and TypeScript</strong>, focused on building fast,
+              scalable and user-friendly web applications.
             </Description>
-            <FlexWrapper $gap="30px" $margin="50px 0 0">
+            <FlexWrapper
+              $gap="20px"
+              $gapMobile="10px"
+              $margin="50px 0 0"
+              $marginTablet="20px 0 0"
+            >
               <Link href="#">See Projects </Link>
               <Link href="#">Download CV</Link>
             </FlexWrapper>
@@ -68,10 +76,6 @@ const StyledHero = styled.section`
     margin-block: auto;
   }
 `;
-
-// const PhotoWrapper = styled.div`
-//   margin-top: auto;
-//   position: relative;
 
 /* &:before,
   &:after {
@@ -96,10 +100,62 @@ const StyledHero = styled.section`
   } */
 // `;
 
+const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+  margin: 50px 0 0;
+  @media ${theme.media.tablet} {
+    margin: 20px 0 0;
+  }
+  @media ${theme.media.mobile} {
+    gap: 10px;
+  }
+`;
+
+const PhotoWrapper = styled.div`
+  margin-top: auto;
+
+  @media ${theme.media.tablet} {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 280px;
+    aspect-ratio: 1;
+    border: 8px solid rgba(255, 255, 255, 0.6);
+    filter: drop-shadow(0 0 51px #fff);
+  }
+
+  @media ${theme.media.mobile} {
+    width: 220px;
+    border-width: 5px;
+  }
+`;
+
 const Photo = styled.img`
   margin-top: auto;
-  width:300px;
+  width: 285px;
   filter: drop-shadow(0 0 51px #fff) drop-shadow(0 0 100px #fff);
+
+  /* @media ${theme.media.tablet} {
+    border-radius: 50%;
+    width: 280px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: 0 -15%;
+    border: 8px solid rgba(255, 255, 255, 0.6);
+  }
+  
+
+  @media ${theme.media.mobile} {
+    width: 220px;
+    border-width: 5px;
+  } */
+
+  @media ${theme.media.tablet} {
+    width: 100%;
+    margin-top: 20px;
+    /* object-fit: cover;
+    object-position: 0 -15%; */
+  }
 `;
 
 const HeroWrapper = styled.div`
@@ -108,36 +164,52 @@ const HeroWrapper = styled.div`
   min-height: 490px;
   padding-inline: 20px;
   display: flex;
-  justify-content: center;
-  gap: 150px;
+  justify-content: space-around;
   align-items: center;
+  gap: 30px;
   background: ${theme.colors.secondaryBg};
   box-shadow: ${theme.colors.mainBoxShadow};
   border-radius: 200px 10px;
   overflow: hidden;
+
+  @media ${theme.media.tablet} {
+    padding: 40px 30px;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  @media ${theme.media.mobile} {
+    padding: 30px 20px;
+    border-radius: 110px 10px;
+  }
 `;
 
 const Greeting = styled.div`
   font-weight: 700;
   font-size: 58px;
-  line-height: 136%;
+  font-size: ${theme.fonts.heroTitle};
+  line-height: 1.3;
 `;
 
 const Name = styled.h1`
   color: #2157f2;
   font-size: 58px;
+  font-size: inherit;
 `;
 
 const Description = styled.p`
   font-weight: 400;
   font-size: 20px;
   line-height: 150%;
+  font-size: ${theme.fonts.heroDesc};
+  strong {
+    font-weight: inherit;
+  }
 `;
 
 const Link = styled.a`
   background-color: ${theme.colors.accentColor};
   font-weight: 600;
-  font-size: 20px;
+  font-size: ${theme.fonts.heroDesc};
   line-height: 150%;
   padding: 10px 25px;
   color: ${theme.colors.accentFontColor};
@@ -150,5 +222,12 @@ const Link = styled.a`
 
   &:hover {
     background-color: #3566ee;
+  }
+
+  @media ${theme.media.tablet} {
+    font-weight: 400;
+    line-height: 141%;
+    padding: 7px 12px;
+    border-radius: 5px;
   }
 `;

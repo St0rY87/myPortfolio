@@ -44,7 +44,7 @@ const StyledMobileMenu = styled.nav`
 const MobileMenuPopup = styled.div<{ $isOpen: boolean }>`
   position: fixed;
   z-index: 999;
-  background-color: rgba(0, 0, 0, 0.98);
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,20 +52,18 @@ const MobileMenuPopup = styled.div<{ $isOpen: boolean }>`
   bottom: 0;
   width: 100%;
   left: -100%;
-  transition: 0.5s ease-in 0s;
+  transition: 0.5s ease-in;
 
   &:before {
-    /* transition: 0.7s ease-in 0.3s; */
     transition: 0.5s ease-in 0.3s;
     content: "";
-    width: 120vw;
+    width: 100%;
     position: fixed;
-    top: 0;
-    bottom: 0;
+    inset: 0;
     pointer-events: none;
-    background-color: rgba(0, 0, 0, 0.792);
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: -1;
-    left: -120vw;
+    opacity: 0;
   }
 
   ${(props) =>
@@ -75,7 +73,7 @@ const MobileMenuPopup = styled.div<{ $isOpen: boolean }>`
       left: 0;
       &:before {
         transition: 0.5s ease-in;
-        left: 0;
+        opacity: 1;
       }
     `}
 `;

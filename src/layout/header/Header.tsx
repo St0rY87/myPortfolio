@@ -31,15 +31,14 @@ export const Header = () => {
 const StyledHeader = styled.header`
   background: ${theme.colors.primaryBg};
   padding-block: 10px;
-  opacity: 0.9;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
-
+  z-index: 99;
   @media ${theme.media.mobile} {
-    padding: 5px 8px;
+    /* padding: 5px 8px; */
+    opacity: unset;
   }
 `;
 
@@ -56,11 +55,14 @@ const ThemeToggle = styled.button`
   @media ${theme.media.tablet} {
     margin-right: 75px;
     img {
-    width: 35px;
-  }
+      width: 35px;
+    }
   }
   @media ${theme.media.mobile} {
+    margin-right: 60px;
+  }
+  /* @media ${theme.media.mobile} {
     margin-right: 55px;
     padding: 0;
-  }
+  } */
 `;

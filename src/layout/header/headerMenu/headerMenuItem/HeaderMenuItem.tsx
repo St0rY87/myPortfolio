@@ -19,9 +19,9 @@ const Link = styled.a`
   font-size: 32px;
   text-align: center;
   color: ${theme.colors.accentFontColor};
-
+  opacity: 0.8;
   transition: 0.3s ease-in-out;
   &:hover {
-    opacity: 0.8;
+    opacity: 1;
   }
 `
