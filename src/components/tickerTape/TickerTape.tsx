@@ -14,11 +14,11 @@ export const TickerTape = (props: { listItems: Array<string> }) => {
 };
 
 const StyledTickerTape = styled.div`
-  font-size: 26px;
+  font-size: ${theme.fonts.tickerTape};
   color: #fff;
-  /* background-color: #6666e0; */
   background-color: ${theme.colors.accentColor};
-  padding-block: 12px;
+  /* background-color: #6666e0; */
+  padding-block: 10px;
   overflow: hidden;
   & span {
     text-transform: uppercase;

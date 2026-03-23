@@ -146,7 +146,7 @@ export const Projects = () => {
     <StyledProjects>
       <Container>
         <TitleSection>Projects</TitleSection>
-        <FlexWrapper $direction="column" $align="center" $gap="60px">
+        <FlexWrapper $direction="column" $align="center" $gap="40px" $gapMobile="30px">
           <ProjectMenu menuItems={menuItems} />
           <ProjectsWrapper>
             {projects.map((item) => (
@@ -167,18 +167,33 @@ export const Projects = () => {
 };
 
 const StyledProjects = styled.section`
-  min-height: 50vh;
-  background-color: lightgrey;
-  padding-top: 70px;
+  padding-top: 80px;
+
+  @media ${theme.media.tablet} {
+     padding-top: 60px;
+  }
+
+  @media ${theme.media.mobile} {
+    padding-top: 30px;
+  }
 `;
 
 const ProjectsWrapper = styled.div`
-  padding: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  border-radius: 50px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px 20px;
+  justify-items: center;
+
+  padding: 40px;
+  border-radius: 50px;
   background: ${theme.colors.secondaryBg};
   box-shadow: ${theme.colors.mainBoxShadow};
+
+  @media ${theme.media.mobile} {
+    background: unset;
+    box-shadow: unset;
+    padding: unset;
+    gap: 30px;
+  }
 `;

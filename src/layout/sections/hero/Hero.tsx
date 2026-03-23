@@ -38,7 +38,7 @@ export const Hero = () => {
             <Photo src={photo} alt="Dmitriy Savin, frontend developer" />
           </PhotoWrapper>
           <FlexWrapper
-            $width="min(100%, 450px)"
+            $width="min(100%, 550px)"
             $direction="column"
             $gap="20px"
             $gapMobile="10px"
@@ -74,6 +74,13 @@ const StyledHero = styled.section`
   flex-direction: column;
   ${Container} {
     margin-block: auto;
+  }
+
+  @media ${theme.media.tablet} {
+    padding-top: 75px;
+  }
+  @media ${theme.media.mobile} {
+    padding-top: 65px;
   }
 `;
 
@@ -118,7 +125,7 @@ const PhotoWrapper = styled.div`
   @media ${theme.media.tablet} {
     overflow: hidden;
     border-radius: 50%;
-    width: 280px;
+    width: 260px;
     aspect-ratio: 1;
     border: 8px solid rgba(255, 255, 255, 0.6);
     filter: drop-shadow(0 0 51px #fff);
@@ -166,16 +173,18 @@ const HeroWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
   background: ${theme.colors.secondaryBg};
   box-shadow: ${theme.colors.mainBoxShadow};
   border-radius: 200px 10px;
   overflow: hidden;
 
   @media ${theme.media.tablet} {
-    padding: 40px 30px;
+    width: min(100%, 550px);
+    padding: 30px;
     flex-wrap: wrap;
     flex-direction: column;
+    gap: 20px;
   }
   @media ${theme.media.mobile} {
     padding: 30px 20px;
@@ -188,6 +197,10 @@ const Greeting = styled.div`
   font-size: 58px;
   font-size: ${theme.fonts.heroTitle};
   line-height: 1.3;
+
+  @media ${theme.media.mobile} {
+    line-height: 1.2;
+  }
 `;
 
 const Name = styled.h1`
@@ -203,6 +216,10 @@ const Description = styled.p`
   font-size: ${theme.fonts.heroDesc};
   strong {
     font-weight: inherit;
+  }
+
+  @media ${theme.media.mobile} {
+    line-height: 1.3;
   }
 `;
 

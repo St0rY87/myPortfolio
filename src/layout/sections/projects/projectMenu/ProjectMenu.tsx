@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ProjectMenuItem } from "./ProjectMenuItem";
+import { theme } from "../../../../styles/Theme";
 
 export const ProjectMenu = (props: { menuItems: Array<string> }) => {
   return (
@@ -18,7 +19,7 @@ const StyledProjectMenu = styled.nav`
   width: 100%;
   position: relative;
 
-  &:before,
+  /* &:before,
   &:after {
     content: "";
     position: absolute;
@@ -37,7 +38,7 @@ const StyledProjectMenu = styled.nav`
 
   &:before {
     top: -2px;
-  }
+  } */
 `;
 
 const List = styled.ul`
@@ -47,4 +48,8 @@ margin-inline: auto;
   display: flex;
   list-style-type: none;
   background: rgba(0, 0, 0, 0.2);
+
+  @media ${theme.media.mobile} {
+    border-radius: 7px;
+  }
 `;

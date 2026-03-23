@@ -11,7 +11,7 @@ export const Button = styled.button`
   border-radius: 10px;
   cursor: pointer;
   letter-spacing: 1.75px;
-
+  width: max-content;
   position: relative;
   z-index: 0;
   transition: 0.2s ease-in-out;

@@ -44,6 +44,7 @@ const StyledMobileMenu = styled.nav`
 const MobileMenuPopup = styled.div<{ $isOpen: boolean }>`
   position: fixed;
   z-index: 999;
+  /* background: ${theme.colors.primaryBg}; */
   background-color: black;
   display: flex;
   justify-content: center;

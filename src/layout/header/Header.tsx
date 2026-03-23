@@ -30,14 +30,14 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
   background: ${theme.colors.primaryBg};
-  padding-block: 10px;
+  padding-top: 10px;
   position: fixed;
+  opacity: 0.95;
   top: 0;
   left: 0;
   right: 0;
   z-index: 99;
-  @media ${theme.media.mobile} {
-    /* padding: 5px 8px; */
+  @media ${theme.media.tablet} {
     opacity: unset;
   }
 `;
@@ -61,8 +61,4 @@ const ThemeToggle = styled.button`
   @media ${theme.media.mobile} {
     margin-right: 60px;
   }
-  /* @media ${theme.media.mobile} {
-    margin-right: 55px;
-    padding: 0;
-  } */
 `;

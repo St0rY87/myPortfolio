@@ -27,7 +27,6 @@ export const Project = ({
   icon,
   links,
 }: ProjectPropsType) => {
-  
   const [isActiveOverlay, setIsActiveOverlay] = useState(false);
   const { iconId, width, height, viewBox } = icon;
 
@@ -72,7 +71,8 @@ export const Project = ({
 };
 
 const CardProject = styled.article`
-  min-height: 230px;
+  width: 100%;
+  max-width: 380px;
 `;
 
 const ImageWrapper = styled.div`
@@ -102,7 +102,7 @@ const ImageWrapper = styled.div`
     }
   }
 
-   ${Button} {
+  ${Button} {
     opacity: 0;
     position: absolute;
     top: 44%;
@@ -115,12 +115,10 @@ const ImageWrapper = styled.div`
   }
 `;
 
-
 const CardWrapper = styled.div`
   z-index: 0;
   border-radius: 10px;
   overflow: hidden;
-  width: 350px;
   height: 200px;
   box-shadow: 0 0 8px 8px rgba(255, 255, 255, 0.27);
   position: relative;
@@ -168,6 +166,7 @@ const Overlay = styled.div<{ $isActive: boolean }>`
   background-color: rgba(0, 0, 0, 0.9);
   color: #fff;
   width: 100%;
+  overflow: auto;
   height: calc(100% - 40px);
   border-bottom: 1px solid grey;
   padding: 20px 15px;

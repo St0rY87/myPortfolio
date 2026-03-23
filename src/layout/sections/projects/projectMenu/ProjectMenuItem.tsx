@@ -13,40 +13,39 @@ const ListItem = styled.li`
   &:last-child a:before {
     height: 0;
   }
-  
+
   &:has(+ li a:hover) {
-        & a:before {
-            height: 0;
-        }
+    & a:before {
+      height: 0;
     }
-  
+  }
+
   &:first-child a {
     background-color: ${theme.colors.accentColor};
     border-radius: 10px;
-    &:before{
-        background: unset;
+    &:before {
+      background: unset;
     }
   }
 `;
 
-
 const Link = styled.a`
   display: inline-block;
-  padding: 0px 30px;
+  padding: 0px 26px;
   line-height: 1.5;
-  font-size: 28px;
+  /* font-size: 28px; */
+  font-size: 22px;
   text-align: center;
   color: ${theme.colors.accentFontColor};
   font-weight: 600;
 
   transition: 0.1s ease-in-out;
 
-
   &:hover {
     background-color: ${theme.colors.accentColor};
     border-radius: 10px;
-    &:before{
-        background: unset;
+    &:before {
+      background: unset;
     }
   }
 
@@ -68,5 +67,9 @@ const Link = styled.a`
       rgba(255, 255, 255, 0) 100%
     );
     opacity: 0.3;
+  }
+
+  @media ${theme.media.tablet} {
+    padding: 0px 20px;
   }
 `;

@@ -132,19 +132,32 @@ export const Skills = () => {
 
 const StyledSkills = styled.section`
   padding-top: 80px;
-  min-height: 70vh;
-  background-color: lightskyblue;
+
+  @media ${theme.media.tablet} {
+     padding-top: 60px;
+  }
+
+  @media ${theme.media.mobile} {
+    padding-top: 30px;
+  }
+
 `;
 const SkillsWrapper = styled.div`
-  margin-bottom: 70px;
   width: min(100%, 1090px);
   background: ${theme.colors.secondaryBg};
   box-shadow: ${theme.colors.mainBoxShadow};
-  margin: 60px auto 90px;
-  padding: 40px;
+  margin: 0px auto 90px;
+  padding: 40px 30px;
   display: grid;
   grid-template-columns: repeat(auto-fit, 120px);
   justify-content: center;
   gap: 30px 20px;
   border-radius: 50px;
+
+  @media ${theme.media.mobile} {
+    height: 340px;
+    overflow: auto;
+    padding: 30px;
+    margin-bottom: 30px;
+  }
 `;

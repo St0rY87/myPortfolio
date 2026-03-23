@@ -5,11 +5,11 @@ export const TitleSection = styled.h2`
   position: relative;
   margin: 0;
   text-align: center;
-  font-size: 50px;
+  font-size: ${theme.fonts.mainTitle};
   margin-bottom: 90px;
 
   &::before {
-    content: '';
+    content: "";
     display: inline-block;
     width: 90px;
     height: 5px;
@@ -20,5 +20,11 @@ export const TitleSection = styled.h2`
     left: 50%;
     transform: translateX(-50%);
   }
-`;
 
+  @media ${theme.media.tablet} {
+    margin-bottom: 60px;
+    &::before {
+      bottom: -15px;
+    }
+  }
+`;
