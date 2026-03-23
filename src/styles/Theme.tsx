@@ -17,6 +17,8 @@ export const theme = {
 
     },
      media: {
+        desktopLaptop: 'screen and (min-width: 769px)',
+        laptop: 'screen and (max-width: 1024px)',
         tablet: 'screen and (max-width: 768px)',
         mobile: 'screen and (max-width: 576px)',
 
@@ -27,6 +29,7 @@ export const theme = {
         heroDesc: 'clamp(18px, 17.1724px + 0.2299vw, 20px)',
         tickerTape: 'clamp(18px, 14.6897px + 0.9195vw, 26px)',
         mainTitle: 'clamp(30px, 21.7241px + 2.2989vw, 50px)',
+        contactsTitle: 'clamp(26px, 17.7241px + 2.2989vw, 46px)',
     }
 
 }

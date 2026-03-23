@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Icon } from "../../../../components/icon/Icon";
 import { Link } from "./link/Link";
 import { Button } from "../../../../components/Button";
+import { theme } from "../../../../styles/Theme";
 
 type ProjectPropsType = {
   title: string;
@@ -92,17 +93,7 @@ const ImageWrapper = styled.div`
     transition: 0.3s ease-in-out;
   }
 
-  &:hover {
-    &::before {
-      content: "";
-      opacity: 1;
-    }
-    ${Button} {
-      opacity: 1;
-    }
-  }
-
-  ${Button} {
+   ${Button} {
     opacity: 0;
     position: absolute;
     top: 44%;
@@ -113,6 +104,29 @@ const ImageWrapper = styled.div`
       height: 100%;
     }
   }
+
+  &:hover {
+    &::before {
+      content: "";
+      opacity: 1;
+    }
+    ${Button} {
+      opacity: 1;
+    }
+  }
+
+
+  @media ${theme.media.tablet} {
+      &::before {
+      content: "";
+      opacity: 1;
+    }
+    ${Button} {
+      opacity: 1;
+    }
+  }
+
+ 
 `;
 
 const CardWrapper = styled.div`

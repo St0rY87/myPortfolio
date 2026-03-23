@@ -6,6 +6,10 @@ import { Icon } from "../../../components/icon/Icon";
 import { theme } from "../../../styles/Theme";
 import man from "../../../assets/images/man-with-laptop.svg";
 import { Container } from "../../../components/Container";
+import {
+  ContactInfo,
+  StyledContactInfo,
+} from "../../../components/ContactInfo/ContactInfo";
 
 export const Contacts = () => {
   return (
@@ -14,7 +18,7 @@ export const Contacts = () => {
         <TitleSection>Contacts</TitleSection>
         <ContactsWrapper>
           <FormTitle>Let’s stay in touch</FormTitle>
-          <FlexWrapper $justify='space-between' $gap='40px'>
+          <FlexWrapper $justify="space-between" $gap="40px">
             <Form>
               <Field type="text" placeholder="Your Name" />
               <Field type="text" placeholder="Phone Number" />
@@ -22,74 +26,88 @@ export const Contacts = () => {
               <TextArea rows={7} placeholder="Your message"></TextArea>
               <Button type="submit">Send</Button>
             </Form>
-            <ContactInfo>
-              <ContactItem>
-                <Icon
-                  iconId="location"
-                  width="29"
-                  height="36"
-                  viewBox="0 0 29 36"
-                />
-                <ContactItemInfo>
-                  <span>Belarus</span>
-                  <ContactItemLink
-                    href="https://maps.app.goo.gl/THZQkt5aDuEe48bo7"
-                    target="_blank"
-                  >
-                    Brest
-                  </ContactItemLink>
-                </ContactItemInfo>
-              </ContactItem>
-              <ContactItem>
-                <Icon
-                  iconId="phone"
-                  width="37"
-                  height="37"
-                  viewBox="0 0 37 37"
-                />
-                <ContactItemInfo>
-                  <span>Phone</span>
-                  <ContactItemLink href="tel:+375297290636">
-                    +375 29 7290636
-                  </ContactItemLink>
-                </ContactItemInfo>
-              </ContactItem>
-              <ContactItem>
-                <Icon
-                  iconId="email"
-                  width="36"
-                  height="27"
-                  viewBox="0 0 36 27"
-                />
-                <ContactItemInfo>
-                  <span>Email</span>
-                  <ContactItemLink href="mailto:mr.dima337@gmail.com">
-                    mr.dima337@gmail.com
-                  </ContactItemLink>
-                </ContactItemInfo>
-              </ContactItem>
-            </ContactInfo>
+            <ContactInfo />
           </FlexWrapper>
-
           <Man src={man} alt="" />
         </ContactsWrapper>
+
+        <ContactInfoWrapper>
+          <ContactInfo />
+          <Man src={man} alt="" />
+        </ContactInfoWrapper>
       </Container>
     </StyledContacts>
   );
 };
 
 const StyledContacts = styled.section`
-  padding-block: 90px;
+  padding-block: 80px;
+  @media ${theme.media.tablet} {
+    padding-block: 60px;
+  }
+  @media ${theme.media.mobile} {
+    padding-block: 30px;
+  }
+`;
+
+const Man = styled.img`
+  transform: scaleX(-1);
+  position: absolute;
+  z-index: 1;
+  bottom: -110px;
+  right: 75px;
+  width: 220px;
+
+  @media ${theme.media.tablet} {
+    display: none;
+  }
+`;
+
+const ContactInfoWrapper = styled.div`
+  background-color: ${theme.colors.thirdBg};
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 50px;
+  margin-top: 20px;
+  position: relative;
+  @media ${theme.media.desktopLaptop} {
+    display: none;
+  }
+  @media ${theme.media.mobile} {
+    padding: 30px;
+  }
+  ${Man} {
+    display: block;
+    bottom: -85px;
+    right: 39px;
+    width: 160px;
+  }
+  @media (max-width: 510px) {
+    padding: 30px 0 180px 30px;
+    ${Man} {
+      display: block;
+      bottom: -85px;
+      right: 100px;
+      width: 160px;
+    }
+  }
 `;
 
 const Form = styled.form`
   width: min(100%, 500px);
-  min-width: 300px;
+  min-width: 270px;
   display: flex;
   flex-direction: column;
   gap: 30px;
   button {
     align-self: center;
+  }
+
+  @media ${theme.media.tablet} {
+    margin-inline: auto;
+  }
+  @media ${theme.media.mobile} {
+    gap: 20px;
   }
 `;
 
@@ -104,39 +122,30 @@ const ContactsWrapper = styled.div`
   gap: 40px;
 
   position: relative;
-`;
 
+  @media ${theme.media.laptop} {
+    padding: 50px;
+  }
 
-const FormTitle = styled.h3`
-  color: #6190e8;
-  font-size: 46px;
-  font-weight: bold;
-`;
-
-const ContactInfo = styled.div``;
-const ContactItem = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  &:nth-child(2) {
-    margin: 30px 0 30px;
+  @media ${theme.media.tablet} {
+    ${StyledContactInfo} {
+      display: none;
+    }
+    ${Man} {
+      display: none;
+    }
+  }
+  @media ${theme.media.mobile} {
+    padding: 30px;
   }
 `;
 
-const ContactItemInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  color: black;
-`;
-
-const ContactItemLink = styled.a`
-  font-weight: 500;
-  font-size: 16px;
-  color: #8b8b8b;
-  transition: 0.2s ease-in-out;
-  &:hover {
-    opacity: 0.8;
+const FormTitle = styled.h3`
+  color: #6190e8;
+  font-size: ${theme.fonts.contactsTitle};
+  font-weight: bold;
+  @media ${theme.media.tablet} {
+    text-align: center;
   }
 `;
 
@@ -177,13 +186,9 @@ const Button = styled.button`
   &:hover {
     opacity: 0.9;
   }
-`;
 
-const Man = styled.img`
-  transform: scaleX(-1);
-  position: absolute;
-  z-index: 1;
-  bottom: -110px;
-  right: 100px;
-  width: 220px;
+  @media ${theme.media.mobile} {
+    width: 140px;
+    margin-top: 0;
+  }
 `;

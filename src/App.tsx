@@ -15,7 +15,7 @@ function App() {
         <Hero />
         <Skills />
         <Projects />
-        {/* <Contacts /> */}
+        <Contacts />
         {/* <Socials /> */}
       </main>
       {/* <Footer /> */}
