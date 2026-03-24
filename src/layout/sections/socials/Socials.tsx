@@ -75,6 +75,6 @@ const SocialList = styled.ul`
   gap: 30px;
 
   @media ${theme.media.mobile} {
-    gap: 15px;
+    gap: 20px;
   }
 `;

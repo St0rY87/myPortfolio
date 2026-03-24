@@ -5,20 +5,21 @@ import { theme } from "../../styles/Theme";
 export const Footer = () => {
   return (
     <StyledFooter>
-        <Logo />
-        <Copyright>All Rights Reserved 2026©</Copyright>
+      <Logo />
+      <Copyright>All Rights Reserved 2026©</Copyright>
     </StyledFooter>
   );
 };
 
 const StyledFooter = styled.footer`
-  min-height:150px;
+  padding-block: 30px;
   background: ${theme.colors.primaryBg};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
+
 `;
 
 const Copyright = styled.small`
