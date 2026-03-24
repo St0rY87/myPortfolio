@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Icon } from "../../../../components/icon/Icon";
+import { theme } from "../../../../styles/Theme";
 
 type SocialItemProps = {
   iconId: string;
@@ -43,5 +44,12 @@ const SocialLink = styled.a`
   transition: 0.3s ease-in-out;
   &:hover {
     opacity: 0.8;
+  }
+
+  @media ${theme.media.mobile} {
+    width: 50px;
+    svg {
+      width: 27px;
+    }
   }
 `;

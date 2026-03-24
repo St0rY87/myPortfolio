@@ -12,13 +12,14 @@ export const Logo = () => {
 
 const StyledLogo = styled.a`
   display: flex;
+  opacity: 0.8;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
   svg {
     width: 50px;
     height: auto;
-  }
-  transition: 0.3s ease-in-out;
-  &:hover {
-    opacity: 0.8;
   }
 
   @media ${theme.media.tablet} {

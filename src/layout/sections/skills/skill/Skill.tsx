@@ -38,7 +38,7 @@ const StyledSkill = styled.div`
   transition: 0.2s ease-in-out;
     
   &:hover {
-    box-shadow: ${theme.colors.mainBoxShadow}, ${theme.colors.mainBoxShadow};
+    /* box-shadow: ${theme.colors.mainBoxShadow}, ${theme.colors.mainBoxShadow}; */
   }
 `
 

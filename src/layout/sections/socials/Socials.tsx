@@ -61,6 +61,10 @@ const StyledSocials = styled.section`
   background: ${theme.colors.thirdBg};
   padding: 60px;
   background-color: #fff;
+
+  @media ${theme.media.mobile} {
+   padding-block: 50px;
+  }
 `;
 
 const SocialList = styled.ul`
@@ -69,4 +73,8 @@ const SocialList = styled.ul`
   align-items: center;
   list-style-type: none;
   gap: 30px;
+
+  @media ${theme.media.mobile} {
+    gap: 15px;
+  }
 `;
