@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { MobileMenuItem } from "./mobileMenuItem/MobileMenuItem";
 import { theme } from "../../../styles/Theme";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { BurgerButton } from "../../../components/burgerButton/BurgerButton";
 
 export const MobileMenu = (props: { menuItems: Array<string> }) => {

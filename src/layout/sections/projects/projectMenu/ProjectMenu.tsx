@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { ProjectMenuItem } from "./ProjectMenuItem";
 import { theme } from "../../../../styles/Theme";

@@ -1,8 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 import { TitleSection } from "../../../components/TitleSection";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { Icon } from "../../../components/icon/Icon";
 import { theme } from "../../../styles/Theme";
 import man from "../../../assets/images/man-with-laptop.svg";
 import { Container } from "../../../components/Container";

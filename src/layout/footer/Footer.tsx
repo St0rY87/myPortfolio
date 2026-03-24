@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { Logo } from "../../components/logo/Logo";
 import { theme } from "../../styles/Theme";
@@ -67,29 +66,29 @@ const Copyright = styled.small`
 //   color: #fff;
 // `;
 
-const Wave = styled.div`
-  svg {
-    fill: #355ecf;
-  }
+// const Wave = styled.div`
+//   svg {
+//     fill: #355ecf;
+//   }
 
-  svg path {
-    animation: wave 3s linear;
-    animation-iteration-count: infinite;
-  }
-  svg #wave {
-    animation-duration: 5s;
-    animation-direction: reverse;
-    opacity: 0.6;
-  }
+//   svg path {
+//     animation: wave 3s linear;
+//     animation-iteration-count: infinite;
+//   }
+//   svg #wave {
+//     animation-duration: 5s;
+//     animation-direction: reverse;
+//     opacity: 0.6;
+//   }
 
-  svg #wave2 {
-    animation-duration: 7s;
-    opacity: 0.3;
-  }
+//   svg #wave2 {
+//     animation-duration: 7s;
+//     opacity: 0.3;
+//   }
 
-  @keyframes wave {
-    to {
-      transform: translateX(-100%);
-    }
-  }
-`;
+//   @keyframes wave {
+//     to {
+//       transform: translateX(-100%);
+//     }
+//   }
+// `;

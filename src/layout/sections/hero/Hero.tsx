@@ -5,7 +5,7 @@ import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
 import photo from "../../../assets/images/hero.png";
 
-import arrowRaw from "../../../assets/images/arrow-left.svg?raw";
+// import arrowRaw from "../../../assets/images/arrow-left.svg?raw";
 
 const tickerTape = [
   "PROBLEM SOLVING",
@@ -107,17 +107,17 @@ const StyledHero = styled.section`
   } */
 // `;
 
-const ButtonWrapper = styled.div`
-  display: flex;
-  gap: 20px;
-  margin: 50px 0 0;
-  @media ${theme.media.tablet} {
-    margin: 20px 0 0;
-  }
-  @media ${theme.media.mobile} {
-    gap: 10px;
-  }
-`;
+// const ButtonWrapper = styled.div`
+//   display: flex;
+//   gap: 20px;
+//   margin: 50px 0 0;
+//   @media ${theme.media.tablet} {
+//     margin: 20px 0 0;
+//   }
+//   @media ${theme.media.mobile} {
+//     gap: 10px;
+//   }
+// `;
 
 const PhotoWrapper = styled.div`
   margin-top: auto;
