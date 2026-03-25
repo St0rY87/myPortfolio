@@ -31,7 +31,12 @@ export const SocialItem = ({
   );
 };
 
-const StyledSocialItem = styled.li``;
+const StyledSocialItem = styled.li`
+  transition: 0.3s ease-in-out;
+  &:hover {
+    transform: translateY(-5px);
+  }
+`;
 
 const SocialLink = styled.a`
   display: flex;
@@ -41,9 +46,17 @@ const SocialLink = styled.a`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: 0.3s ease-in-out;
+  transition: 0.6s ease-in-out;
   &:hover {
-    opacity: 0.8;
+    background-color: #2157f2;
+    & svg {
+      fill: #e4eafb;
+    }
+  }
+
+  svg {
+    fill: #2157f2;
+    transition: 0.3s ease-in-out;
   }
 
   @media ${theme.media.mobile} {
@@ -53,3 +66,5 @@ const SocialLink = styled.a`
     }
   }
 `;
+
+

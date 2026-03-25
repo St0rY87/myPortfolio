@@ -9,9 +9,9 @@ export const Button = styled.button`
   padding: 10px 25px;
   color: ${theme.colors.accentFontColor};
   border-radius: 10px;
+  width: max-content;
   cursor: pointer;
   letter-spacing: 1.75px;
-  width: max-content;
   position: relative;
   z-index: 0;
   transition: 0.2s ease-in-out;

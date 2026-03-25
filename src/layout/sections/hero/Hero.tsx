@@ -237,10 +237,62 @@ const Link = styled.a`
   & + &,
   & + &:hover {
     background-color: unset;
+    transform: unset;
+  }
+
+  & + & {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: ${theme.colors.accentColor};
+      border-radius: 100%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0;
+    }
+    &:hover {
+      transition: transform .3s ease-in-out .7s;
+    
+     transform: translateY(-5px);
+    }
+
+    &:hover::before {
+      width: 200px;
+      height: 200px;
+      animation: ripple78 1s ease-out;
+      opacity: 1;
+    }
+
+    @keyframes ripple78 {
+      0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+      }
+      70% {
+        width: 200px;
+        height: 200px;
+        opacity: 0.2;
+      }
+      100% {
+        width: 200px;
+        height: 200px;
+        opacity: 1;
+      }
+    }
   }
 
   &:hover {
-    background-color: #3566ee;
+    transform: translateY(-5px);
   }
 
   @media ${theme.media.tablet} {

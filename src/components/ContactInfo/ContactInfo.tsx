@@ -6,7 +6,7 @@ export const ContactInfo = () => {
   return (
     <StyledContactInfo>
       <ContactItem>
-        <Icon iconId="location" width="29" height="36" viewBox="0 0 29 36" />
+        <Icon iconId="location" width="37" height="36" viewBox="0 0 29 36" />
         <ContactItemInfo>
           <span>Belarus</span>
           <ContactItemLink
@@ -52,7 +52,6 @@ const ContactItem = styled.div`
     &:nth-child(2) {
       margin: 20px 0 20px;
     }
-    
   }
 `;
 

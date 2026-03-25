@@ -48,6 +48,8 @@ margin-inline: auto;
   list-style-type: none;
   /* background: rgba(0, 0, 0, 0.2); */
 
+  gap: 10px;
+
   @media ${theme.media.mobile} {
     border-radius: 7px;
   }

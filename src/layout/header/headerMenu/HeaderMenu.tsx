@@ -15,14 +15,12 @@ export const HeaderMenu = (props: { menuItems: Array<string> }) => {
 };
 
 const StyledHeaderMenu = styled.nav`
-
   @media ${theme.media.tablet} {
     display: none;
   }
-
 `;
 
 const ListItems = styled.ul`
   display: flex;
-  gap: 30px;
+  gap: 5px;
 `;

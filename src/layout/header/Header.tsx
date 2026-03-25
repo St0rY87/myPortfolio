@@ -7,7 +7,7 @@ import { theme } from "../../styles/Theme";
 import { HeaderMenu } from "./headerMenu/HeaderMenu";
 import { MobileMenu } from "./mobileMenu/MobileMenu";
 
-const menuItems = ["Home", "Skills", "Works", "Contacts"];
+const menuItems = ["Home", "Skills", "Projects", "Contacts"];
 // const menuItems2 = ["Home", "Skills", "Works", "Contacts"];
 export const Header = () => {
   return (
@@ -15,7 +15,7 @@ export const Header = () => {
       <Container>
         <FlexWrapper $justify="space-between">
           <Logo />
-          <FlexWrapper $align="center" $gap="60px">
+          <FlexWrapper $align="center" $gap="20px">
             <HeaderMenu menuItems={menuItems} />
             <MobileMenu menuItems={menuItems} />
             <ThemeToggle>
@@ -49,7 +49,7 @@ const ThemeToggle = styled.button`
   background-color: transparent;
   cursor: pointer;
   img {
-    width: 40px;
+    width: 30px;
   }
 
   @media ${theme.media.tablet} {

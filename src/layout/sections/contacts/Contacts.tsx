@@ -93,7 +93,6 @@ const ContactInfoWrapper = styled.div`
 
 const Form = styled.form`
   width: min(100%, 500px);
-  min-width: 270px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -183,7 +182,8 @@ const Button = styled.button`
   transition: 0.2s ease-in-out;
   margin-top: 10px;
   &:hover {
-    opacity: 0.9;
+    transition: transform 0.3s;
+    transform: translateY(-4px);
   }
 
   @media ${theme.media.mobile} {

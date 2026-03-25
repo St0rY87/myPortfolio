@@ -96,13 +96,10 @@ const ImageWrapper = styled.div`
   ${Button} {
     opacity: 0;
     position: absolute;
-    top: 44%;
+    top: -5%;
     left: 50%;
     transform: translate(-50%, -50%);
-    &::before {
-      width: 100%;
-      height: 100%;
-    }
+    transition: .5s ease-in-out;
   }
 
   &:hover {
@@ -112,6 +109,7 @@ const ImageWrapper = styled.div`
     }
     ${Button} {
       opacity: 1;
+      top: 44%;
     }
   }
 
