@@ -16,7 +16,7 @@ const ListItem = styled.li`
 `
 const Link = styled.a`
   font-weight: 400;
-  font-size: 32px;
+  font-size: 24px;
   text-align: center;
   color: ${theme.colors.accentFontColor};
   opacity: 0.8;

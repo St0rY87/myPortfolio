@@ -28,13 +28,14 @@ const StyledSkill = styled.div`
   width: 120px;
   height: 128px;
   border-radius: 10px;
-  background: linear-gradient(0deg, #679ecf 0%, #3e738d 41.35%, #1d588c 100%);
+  /* background: linear-gradient(0deg, #679ecf 0%, #3e738d 41.35%, #1d588c 100%); */
+  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  box-shadow: ${theme.colors.mainBoxShadow};
+  /* box-shadow: ${theme.colors.mainBoxShadow}; */
   transition: 0.2s ease-in-out;
     
   &:hover {
@@ -46,4 +47,5 @@ const SkillTitle = styled.h3`
   text-align: center;
     font-weight: 400;
     font-size: 16px;
+    color: ${theme.colors.secondFontColor};
 `

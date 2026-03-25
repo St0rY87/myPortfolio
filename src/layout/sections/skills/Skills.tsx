@@ -125,7 +125,7 @@ export const Skills = () => {
           ))}
         </SkillsWrapper>
       </Container>
-      <TickerTape listItems={tickerTape} />
+      {/* <TickerTape listItems={tickerTape} /> */}
     </StyledSkills>
   );
 };
@@ -134,20 +134,19 @@ const StyledSkills = styled.section`
   padding-top: 80px;
 
   @media ${theme.media.tablet} {
-     padding-top: 60px;
+    padding-top: 60px;
   }
 
   @media ${theme.media.mobile} {
     padding-top: 30px;
   }
-
 `;
 const SkillsWrapper = styled.div`
   width: min(100%, 1090px);
-  background: ${theme.colors.secondaryBg};
-  box-shadow: ${theme.colors.mainBoxShadow};
-  margin: 0px auto 90px;
-  padding: 40px 30px;
+  /* background: ${theme.colors.secondaryBg};
+  box-shadow: ${theme.colors.mainBoxShadow}; */
+  margin-inline: auto;
+  /* padding: 40px 30px; */
   display: grid;
   grid-template-columns: repeat(auto-fit, 120px);
   justify-content: center;
@@ -155,9 +154,15 @@ const SkillsWrapper = styled.div`
   border-radius: 50px;
 
   @media ${theme.media.mobile} {
-    height: 340px;
+    /* height: 450px;
+    overflow: auto; */
+    /* width: 260px; */
+    /* height: 410px; */
     overflow: auto;
-    padding: 30px;
-    margin-bottom: 30px;
+    justify-content: start;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, 130px);
+    gap: 10px;
+    border-radius: 0;
   }
 `;

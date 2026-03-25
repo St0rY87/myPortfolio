@@ -138,7 +138,7 @@ const PhotoWrapper = styled.div`
 `;
 
 const Photo = styled.img`
-  margin-top: auto;
+  display: flex;
   width: 285px;
   filter: drop-shadow(0 0 51px #fff) drop-shadow(0 0 100px #fff);
 
@@ -175,7 +175,8 @@ const HeroWrapper = styled.div`
   align-items: center;
   gap: 40px;
   background: ${theme.colors.secondaryBg};
-  box-shadow: ${theme.colors.mainBoxShadow};
+  /* box-shadow: ${theme.colors.mainBoxShadow}; */
+  border: 1px solid #ffffff70;
   border-radius: 200px 10px;
   overflow: hidden;
 
