@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { TitleSection } from "../../../components/TitleSection";
 import { Skill } from "./skill/Skill";
-import { TickerTape } from "../../../components/tickerTape/TickerTape";
+// import { TickerTape } from "../../../components/tickerTape/TickerTape";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
 
@@ -83,29 +83,29 @@ const skillsItems = [
   },
 ];
 
-const tickerTape = [
-  "REACT",
-  "&&",
-  "REDUX",
-  "&&",
-  "JAVASCRIPT",
-  "&&",
-  "TYPESCRIPT",
-  "&&",
-  "ZOD",
-  "&&",
-  "STYLED COMPONENTS",
-  "&&",
-  "REACT ROUTER",
-  "&&",
-  "BUN",
-  "&&",
-  "Node Js",
-  "&&",
-  "Docker",
-  "&&",
-  "Shadcn/ui",
-];
+// const tickerTape = [
+//   "REACT",
+//   "&&",
+//   "REDUX",
+//   "&&",
+//   "JAVASCRIPT",
+//   "&&",
+//   "TYPESCRIPT",
+//   "&&",
+//   "ZOD",
+//   "&&",
+//   "STYLED COMPONENTS",
+//   "&&",
+//   "REACT ROUTER",
+//   "&&",
+//   "BUN",
+//   "&&",
+//   "Node Js",
+//   "&&",
+//   "Docker",
+//   "&&",
+//   "Shadcn/ui",
+// ];
 
 export const Skills = () => {
   return (
