@@ -46,7 +46,7 @@ margin-inline: auto;
   border-radius: 10px;
   display: flex;
   list-style-type: none;
-  background: rgba(0, 0, 0, 0.2);
+  /* background: rgba(0, 0, 0, 0.2); */
 
   @media ${theme.media.mobile} {
     border-radius: 7px;

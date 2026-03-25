@@ -21,7 +21,9 @@ const ListItem = styled.li`
   }
 
   &:first-child a {
+    /* background-color: ${theme.colors.accentColor}; */
     background-color: ${theme.colors.accentColor};
+    color: ${theme.colors.accentFontColor};
     border-radius: 10px;
     &:before {
       background: unset;
@@ -36,13 +38,15 @@ const Link = styled.a`
   /* font-size: 28px; */
   font-size: 22px;
   text-align: center;
-  color: ${theme.colors.accentFontColor};
+  /* color: ${theme.colors.accentFontColor}; */
+  color: ${theme.colors.secondFontColor};
   font-weight: 600;
 
   transition: 0.1s ease-in-out;
 
   &:hover {
     background-color: ${theme.colors.accentColor};
+    color: ${theme.colors.accentFontColor};
     border-radius: 10px;
     &:before {
       background: unset;

@@ -13,7 +13,6 @@ import messenger from "../../../assets/images/messenger.jpg";
 import eCommerce from "../../../assets/images/e-commerce.jpg";
 import dashboard from "../../../assets/images/dashboard.jpg";
 
-
 const menuItems = ["All", "React", "JS", "AI"];
 
 const projects = [
@@ -146,7 +145,12 @@ export const Projects = () => {
     <StyledProjects>
       <Container>
         <TitleSection>Projects</TitleSection>
-        <FlexWrapper $direction="column" $align="center" $gap="40px" $gapMobile="30px">
+        <FlexWrapper
+          $direction="column"
+          $align="center"
+          $gap="40px"
+          $gapMobile="30px"
+        >
           <ProjectMenu menuItems={menuItems} />
           <ProjectsWrapper>
             {projects.map((item) => (
@@ -167,10 +171,14 @@ export const Projects = () => {
 };
 
 const StyledProjects = styled.section`
-  padding-top: 80px;
+  background: #fcfcfc;
+  padding-block: 80px;
+  ${TitleSection} {
+    color: ${theme.colors.secondFontColor};
+  }
 
   @media ${theme.media.tablet} {
-     padding-top: 60px;
+    padding-top: 60px;
   }
 
   @media ${theme.media.mobile} {
@@ -185,10 +193,10 @@ const ProjectsWrapper = styled.div`
   gap: 40px 20px;
   justify-items: center;
 
-  padding: 40px;
+  /* padding: 40px; */
   border-radius: 50px;
-  background: ${theme.colors.secondaryBg};
-  box-shadow: ${theme.colors.mainBoxShadow};
+  /* background: ${theme.colors.secondaryBg};
+  box-shadow: ${theme.colors.mainBoxShadow}; */
 
   @media ${theme.media.mobile} {
     background: unset;

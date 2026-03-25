@@ -139,7 +139,8 @@ const ContactsWrapper = styled.div`
 `;
 
 const FormTitle = styled.h3`
-  color: #6190e8;
+  /* color: #6190e8; */
+  color: ${theme.colors.accentColor};
   font-size: ${theme.fonts.contactsTitle};
   font-weight: bold;
   @media ${theme.media.tablet} {
@@ -173,7 +174,7 @@ const Button = styled.button`
   border-radius: 10px;
   height: 40px;
   width: 170px;
-  background-color: #6190e8;
+  background-color: ${theme.colors.accentColor};
   font-size: 14px;
   letter-spacing: 0.07em;
   text-transform: uppercase;

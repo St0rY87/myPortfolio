@@ -93,7 +93,7 @@ const ImageWrapper = styled.div`
     transition: 0.3s ease-in-out;
   }
 
-   ${Button} {
+  ${Button} {
     opacity: 0;
     position: absolute;
     top: 44%;
@@ -115,9 +115,8 @@ const ImageWrapper = styled.div`
     }
   }
 
-
   @media ${theme.media.tablet} {
-      &::before {
+    &::before {
       content: "";
       opacity: 1;
     }
@@ -125,25 +124,24 @@ const ImageWrapper = styled.div`
       opacity: 1;
     }
   }
-
- 
 `;
 
 const CardWrapper = styled.div`
   z-index: 0;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
   height: 200px;
-  box-shadow: 0 0 8px 8px rgba(255, 255, 255, 0.27);
+  /* box-shadow: 0 0 8px 8px rgba(255, 255, 255, 0.27); */
+  box-shadow: 0 0 6px 2px rgb(79 75 75 / 27%);
   position: relative;
 `;
 
 const Title = styled.h3`
   margin-top: 10px;
-  text-align: center;
+  /* text-align: center; */
   font-size: 22px;
-  color: #fff;
-  font-weight: 500;
+  color: ${theme.colors.secondFontColor};
+  /* font-weight: 500; */
 `;
 
 const Img = styled.img`

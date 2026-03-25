@@ -27,7 +27,7 @@ export const Skill = (props: SkillPropsType) => {
 const StyledSkill = styled.div`
   width: 120px;
   height: 128px;
-  border-radius: 10px;
+  border-radius: 15px;
   /* background: linear-gradient(0deg, #679ecf 0%, #3e738d 41.35%, #1d588c 100%); */
   background: #fff;
   display: flex;

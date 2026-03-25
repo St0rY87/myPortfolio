@@ -131,7 +131,7 @@ export const Skills = () => {
 };
 
 const StyledSkills = styled.section`
-  padding-top: 80px;
+  padding-block: 80px;
 
   @media ${theme.media.tablet} {
     padding-top: 60px;

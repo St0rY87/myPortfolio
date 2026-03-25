@@ -60,10 +60,19 @@ export default Socials;
 const StyledSocials = styled.section`
   background: ${theme.colors.thirdBg};
   padding: 60px;
+  margin-bottom: -175px;
   background-color: #fff;
 
+  @media ${theme.media.laptop} {
+    margin-bottom: -145px;
+  }
+  @media ${theme.media.tablet} {
+    padding-block: 50px;
+    margin-bottom: -85px;
+  }
   @media ${theme.media.mobile} {
-   padding-block: 50px;
+    padding-block: 40px;
+    margin-bottom: -55px;
   }
 `;
 
@@ -73,6 +82,8 @@ const SocialList = styled.ul`
   align-items: center;
   list-style-type: none;
   gap: 30px;
+  position: relative;
+  z-index: 1;
 
   @media ${theme.media.mobile} {
     gap: 20px;
