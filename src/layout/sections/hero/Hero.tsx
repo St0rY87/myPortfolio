@@ -81,6 +81,7 @@ const StyledHero = styled.section`
   }
   @media ${theme.media.mobile} {
     padding-top: 65px;
+    min-height: 100dvh;
   }
 `;
 

@@ -47,9 +47,9 @@ const SocialLink = styled.a`
   }
 
   @media ${theme.media.mobile} {
-    width: 50px;
+    width: 60px;
     svg {
-      width: 27px;
+      width: 35px;
     }
   }
 `;
