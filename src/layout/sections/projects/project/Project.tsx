@@ -120,6 +120,7 @@ const ImageWrapper = styled.div`
     }
     ${Button} {
       opacity: 1;
+      top: 44%;
     }
   }
 `;
