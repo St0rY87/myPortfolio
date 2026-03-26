@@ -171,7 +171,7 @@ const projects = [
 ];
 
 export const Projects = () => {
-  const [currentStatus, setStatus] = useState("all");
+  const [currentStatus, setStatus] = useState<menuItemsStatusType>("all");
 
   let filteredProjects = projects;
 
