@@ -29,7 +29,7 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
   background: ${theme.colors.primaryBg};
-  padding-top: 10px;
+  padding: 10px 0;
   position: fixed;
   opacity: 0.95;
   top: 0;
@@ -37,7 +37,7 @@ const StyledHeader = styled.header`
   right: 0;
   z-index: 99;
   @media ${theme.media.tablet} {
-    padding-top: 0;
+    padding: 0;
     opacity: unset;
   }
 `;
@@ -53,6 +53,7 @@ const ThemeToggle = styled.button`
   }
 
   @media ${theme.media.tablet} {
+   
     margin-right: 75px;
     img {
       width: 35px;

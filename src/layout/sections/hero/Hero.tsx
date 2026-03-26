@@ -7,6 +7,7 @@ import Typewriter from "typewriter-effect";
 import photo from "../../../assets/images/hero.png";
 
 const tickerTape = [
+  " ",
   "PROBLEM SOLVING",
   "&&",
   "CREATIVE THINKING",
@@ -26,6 +27,7 @@ const tickerTape = [
   "RESILIENCE",
   "&&",
   "ANIMATIONS",
+  "&&",
 ];
 
 export const Hero = () => {
@@ -151,7 +153,19 @@ const PhotoWrapper = styled.div`
 const Photo = styled.img`
   display: flex;
   width: 285px;
-  filter: drop-shadow(0 0 51px #fff) drop-shadow(0 0 100px #fff);
+  animation: pulseGlow 5s ease-in-out infinite;
+
+  @keyframes pulseGlow {
+    0% {
+      filter: drop-shadow(0 0 51px #fff) drop-shadow(0 0 100px #fff);
+    }
+    50% {
+      filter: drop-shadow(0 0 100px #fff) drop-shadow(0 0 150px #2157f2);
+    }
+    100% {
+      filter: drop-shadow(0 0 51px #fff) drop-shadow(0 0 100px #fff);
+    }
+  }
 
   /* @media ${theme.media.tablet} {
     border-radius: 50%;
@@ -186,7 +200,6 @@ const HeroWrapper = styled.div`
   align-items: center;
   gap: 40px;
   background: ${theme.colors.secondaryBg};
-  /* box-shadow: ${theme.colors.mainBoxShadow}; */
   border: 1px solid #ffffff70;
   border-radius: 200px 10px;
   overflow: hidden;
