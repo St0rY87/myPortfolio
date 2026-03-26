@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 export const TickerTape = (props: { listItems: Array<string> }) => {
   return (
     <StyledTickerTape>
-      <Marquee>
+      <Marquee speed={40}>
         <WrapperWords>
           {props.listItems.map((item) => (
             <span key={crypto.randomUUID()}>{item}</span>
@@ -33,4 +33,8 @@ const WrapperWords = styled.div`
   display: flex;
   gap: 30px;
   flex-wrap: nowrap;
+
+  @media ${theme.media.tablet} {
+     gap: 20px;
+  }
 `;

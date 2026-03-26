@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
 
    html {
     box-sizing: border-box;
-    scroll-behavior: smooth
+    /* scroll-behavior: smooth; */
    }
 
    body {
