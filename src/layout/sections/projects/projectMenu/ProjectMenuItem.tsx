@@ -1,10 +1,29 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { theme } from "../../../../styles/Theme";
+import { menuItemsStatusType } from "../Projects";
 
-export const ProjectMenuItem = (props: { item: string }) => {
+type ProjectMenuItemProps = {
+  item: { title: string; status: menuItemsStatusType };
+  changeFilterStatus: (value: menuItemsStatusType) => void;
+  currentStatus: menuItemsStatusType;
+};
+
+export const ProjectMenuItem = ({
+  item,
+  changeFilterStatus,
+  currentStatus,
+}: ProjectMenuItemProps) => {
   return (
     <ListItem>
-      <Link href="#">{props.item}</Link>
+      <Link
+        active={currentStatus === item.status ? true : false}
+        onClick={() => {
+          changeFilterStatus(item.status);
+        }}
+        as={"button"}
+      >
+        {item.title}
+      </Link>
     </ListItem>
   );
 };
@@ -31,7 +50,7 @@ const ListItem = styled.li`
   }
 `;
 
-const Link = styled.a`
+const Link = styled.a<{ active?: boolean }>`
   display: inline-block;
   padding: 0px 20px;
   line-height: 1.5;
@@ -46,6 +65,7 @@ const Link = styled.a`
   &:hover {
     background-color: ${theme.colors.accentColor};
     color: ${theme.colors.accentFontColor};
+
     &:before {
       background: unset;
     }
@@ -54,7 +74,7 @@ const Link = styled.a`
   position: relative;
   z-index: 0;
 
-  &:before {
+  /* &:before {
     content: "";
     position: absolute;
     top: 10%;
@@ -69,7 +89,14 @@ const Link = styled.a`
       rgba(255, 255, 255, 0) 100%
     );
     opacity: 0.3;
-  }
+  } */
+
+  ${(props) =>
+    props.active &&
+    css<{ active?: boolean }>`
+      background-color: ${theme.colors.accentColor};
+      color: ${theme.colors.accentFontColor};
+    `}
 
   @media ${theme.media.tablet} {
     /* padding: 0px 20px; */

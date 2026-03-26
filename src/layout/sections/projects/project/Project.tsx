@@ -9,6 +9,7 @@ type ProjectPropsType = {
   title: string;
   img: string;
   description: string;
+  type: string;
   icon: {
     iconId: string;
     width?: string;
@@ -27,6 +28,7 @@ export const Project = ({
   description,
   icon,
   links,
+  type,
 }: ProjectPropsType) => {
   const [isActiveOverlay, setIsActiveOverlay] = useState(false);
   const { iconId, width, height, viewBox } = icon;
@@ -99,7 +101,7 @@ const ImageWrapper = styled.div`
     top: -5%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: .5s ease-in-out;
+    transition: 0.5s ease-in-out;
   }
 
   &:hover {

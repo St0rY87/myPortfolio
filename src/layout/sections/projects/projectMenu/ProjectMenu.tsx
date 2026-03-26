@@ -2,12 +2,32 @@ import styled from "styled-components";
 import { ProjectMenuItem } from "./ProjectMenuItem";
 import { theme } from "../../../../styles/Theme";
 
-export const ProjectMenu = (props: { menuItems: Array<string> }) => {
+// export const ProjectMenu = (props: { menuItems: Array<string> }) => {
+//   return (
+//     <StyledProjectMenu>
+//       <List>
+//         {props.menuItems.map((item) => (
+//           <ProjectMenuItem key={item} item={item} />
+//         ))}
+//       </List>
+//     </StyledProjectMenu>
+//   );
+// };
+
+import { menuItemsStatusType } from "../Projects";
+
+type ProjectMenuProps = {
+   menuItems: Array<{title: string, status: menuItemsStatusType}>
+   changeFilterStatus : (value:menuItemsStatusType) => void 
+   currentStatus: menuItemsStatusType;
+}
+
+export const ProjectMenu = ({menuItems, changeFilterStatus, currentStatus}: ProjectMenuProps) => {
   return (
     <StyledProjectMenu>
       <List>
-        {props.menuItems.map((item) => (
-          <ProjectMenuItem key={item} item={item} />
+        {menuItems.map((item) => (
+          <ProjectMenuItem changeFilterStatus={changeFilterStatus} key={item.title} item={item} currentStatus={currentStatus} />
         ))}
       </List>
     </StyledProjectMenu>
