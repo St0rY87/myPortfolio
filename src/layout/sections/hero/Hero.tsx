@@ -3,9 +3,8 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 import { TickerTape } from "../../../components/tickerTape/TickerTape";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
+import Typewriter from "typewriter-effect";
 import photo from "../../../assets/images/hero.png";
-
-// import arrowRaw from "../../../assets/images/arrow-left.svg?raw";
 
 const tickerTape = [
   "PROBLEM SOLVING",
@@ -44,7 +43,18 @@ export const Hero = () => {
             $gapMobile="10px"
           >
             <Greeting>
-              <span>Hello, my name’s</span> <Name>Dmitriy Savin</Name>
+              <span>Hello, my name’s</span>{" "}
+              <Name>
+                <p>Dmitriy Savin</p>
+                <Typewriter
+                  options={{
+                    strings: ["Dmitriy Savin"],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+                
+              </Name>
             </Greeting>
             <Description>
               I’m a <strong>frontend developer</strong> specializing in{" "}
@@ -209,6 +219,9 @@ const Name = styled.h1`
   color: #2157f2;
   font-size: 58px;
   font-size: inherit;
+  p {
+    display: none;
+  }
 `;
 
 const Description = styled.p`
@@ -244,7 +257,7 @@ const Link = styled.a`
     position: relative;
     overflow: hidden;
     z-index: 1;
-    
+
     &::before {
       content: "";
       position: absolute;
@@ -260,9 +273,9 @@ const Link = styled.a`
       opacity: 0;
     }
     &:hover {
-      transition: transform .3s ease-in-out .7s;
-    
-     transform: translateY(-5px);
+      transition: transform 0.3s ease-in-out 0.7s;
+
+      transform: translateY(-5px);
     }
 
     &:hover::before {
