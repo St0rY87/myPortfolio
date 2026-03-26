@@ -8,7 +8,6 @@ import { HeaderMenu } from "./headerMenu/HeaderMenu";
 import { MobileMenu } from "./mobileMenu/MobileMenu";
 
 const menuItems = ["Home", "Skills", "Projects", "Contacts"];
-// const menuItems2 = ["Home", "Skills", "Works", "Contacts"];
 export const Header = () => {
   return (
     <StyledHeader>

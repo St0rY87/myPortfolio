@@ -109,7 +109,7 @@ const skillsItems = [
 
 export const Skills = () => {
   return (
-    <StyledSkills>
+    <StyledSkills id="skills">
       <Container>
         <TitleSection>My Skills</TitleSection>
         <SkillsWrapper>

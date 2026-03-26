@@ -3,6 +3,7 @@ import { HeaderMenuItem } from "./headerMenuItem/HeaderMenuItem";
 import { theme } from "../../../styles/Theme";
 
 export const HeaderMenu = (props: { menuItems: Array<string> }) => {
+  
   return (
     <StyledHeaderMenu>
       <ListItems>

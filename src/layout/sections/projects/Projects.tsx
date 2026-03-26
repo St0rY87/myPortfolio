@@ -142,7 +142,7 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <StyledProjects>
+    <StyledProjects id='projects'>
       <Container>
         <TitleSection>Projects</TitleSection>
         <FlexWrapper

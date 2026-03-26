@@ -4,7 +4,7 @@ import { theme } from "../../../../styles/Theme";
 export const HeaderMenuItem = (props: { item: string }) => {
   return (
     <ListItem>
-      <Link href="#">{props.item}</Link>
+      <Link href={`#${props.item.toLowerCase()}`}>{props.item}</Link>
     </ListItem>
   );
 };

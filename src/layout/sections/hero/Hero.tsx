@@ -31,7 +31,7 @@ const tickerTape = [
 
 export const Hero = () => {
   return (
-    <StyledHero>
+    <StyledHero id="home">
       <Container>
         <HeroWrapper>
           <PhotoWrapper>

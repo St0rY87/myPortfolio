@@ -11,7 +11,7 @@ import {
 
 export const Contacts = () => {
   return (
-    <StyledContacts>
+    <StyledContacts id='contacts'>
       <Container>
         <TitleSection>Contacts</TitleSection>
         <ContactsWrapper>
