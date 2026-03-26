@@ -75,7 +75,7 @@ const StyledBurgerButton = styled.button`
   }
 
   @media ${theme.media.tablet} {
-    top: 9px;
+    top: 0;
     right: 10px;
   }
 

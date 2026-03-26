@@ -143,10 +143,7 @@ const StyledSkills = styled.section`
 `;
 const SkillsWrapper = styled.div`
   width: min(100%, 1090px);
-  /* background: ${theme.colors.secondaryBg};
-  box-shadow: ${theme.colors.mainBoxShadow}; */
   margin-inline: auto;
-  /* padding: 40px 30px; */
   display: grid;
   grid-template-columns: repeat(auto-fit, 120px);
   justify-content: center;
@@ -154,15 +151,14 @@ const SkillsWrapper = styled.div`
   border-radius: 50px;
 
   @media ${theme.media.mobile} {
-    /* height: 450px;
-    overflow: auto; */
-    /* width: 260px; */
-    /* height: 410px; */
     overflow: auto;
     justify-content: start;
     grid-auto-flow: column;
     grid-template-rows: repeat(3, 130px);
     gap: 10px;
     border-radius: 0;
+
+    grid-template-rows: repeat(3, 118px);
+    grid-template-columns: repeat(auto-fit, 115px);
   }
 `;

@@ -37,6 +37,7 @@ const StyledHeader = styled.header`
   right: 0;
   z-index: 99;
   @media ${theme.media.tablet} {
+    padding-top: 0;
     opacity: unset;
   }
 `;
@@ -59,5 +60,6 @@ const ThemeToggle = styled.button`
   }
   @media ${theme.media.mobile} {
     margin-right: 60px;
+    
   }
 `;
