@@ -242,11 +242,7 @@ const ProjectsWrapper = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px 20px;
   justify-items: center;
-
-  /* padding: 40px; */
   border-radius: 50px;
-  /* background: ${theme.colors.secondaryBg};
-  box-shadow: ${theme.colors.mainBoxShadow}; */
 
   @media ${theme.media.mobile} {
     background: unset;

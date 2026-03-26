@@ -75,7 +75,17 @@ export const Project = ({
 
 const CardProject = styled.article`
   width: 100%;
-  max-width: 380px;
+  max-width: 450px;
+
+  @media (min-width: 950px) {
+    &:first-child {
+      margin-left: auto;
+    }
+    &:last-child {
+      margin-right: auto;
+    }
+  }
+  
 `;
 
 const ImageWrapper = styled.div`
@@ -131,7 +141,7 @@ const CardWrapper = styled.div`
   z-index: 0;
   border-radius: 15px;
   overflow: hidden;
-  height: 200px;
+  /* height: 200px; */
   /* box-shadow: 0 0 8px 8px rgba(255, 255, 255, 0.27); */
   box-shadow: 0 0 6px 2px rgb(79 75 75 / 27%);
   position: relative;
@@ -148,7 +158,8 @@ const Title = styled.h3`
 const Img = styled.img`
   transition: 0.3s ease-in-out;
   width: 100%;
-  height: 200px;
+  /* height: 200px; */
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   cursor: pointer;
   &:hover {
