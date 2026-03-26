@@ -28,7 +28,6 @@ export const Project = ({
   description,
   icon,
   links,
-  type,
 }: ProjectPropsType) => {
   const [isActiveOverlay, setIsActiveOverlay] = useState(false);
   const { iconId, width, height, viewBox } = icon;
@@ -85,7 +84,6 @@ const CardProject = styled.article`
       margin-right: auto;
     }
   }
-  
 `;
 
 const ImageWrapper = styled.div`
