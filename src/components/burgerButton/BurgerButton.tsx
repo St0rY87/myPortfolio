@@ -2,14 +2,14 @@ import styled from "styled-components";
 import { theme } from "../../styles/Theme";
 
 type BurgerButtonPropsType = {
-  onClick: () => void;
+  showMenu: () => void;
   isOpen: boolean;
 };
 
-export const BurgerButton = ({ onClick, isOpen }: BurgerButtonPropsType) => {
+export const BurgerButton = ({ showMenu, isOpen }: BurgerButtonPropsType) => {
   return (
     <StyledBurgerButton
-      onClick={onClick}
+      onClick={showMenu}
       aria-expanded={isOpen}
       aria-label="Toggle menu"
     >
@@ -79,9 +79,4 @@ const StyledBurgerButton = styled.button`
     right: 10px;
   }
 
-  /* @media ${theme.media.mobile} {
-    height: 40px;
-    right: 0;
-    top: 7px;
-  } */
 `;

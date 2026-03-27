@@ -1,10 +1,18 @@
 import styled from "styled-components";
 import { theme } from "../../../../styles/Theme";
+import { Link } from "react-scroll";
 
-export const MobileMenuItem = (props: { item: string }) => {
+type MobileMenuItemProps = {
+  item: string;
+  showMenu: () => void;
+};
+
+export const MobileMenuItem = ({ item, showMenu }: MobileMenuItemProps) => {
   return (
     <ListItem>
-      <Link href="#">{props.item}</Link>
+      <NavLink smooth={true} onClick={showMenu} to={`${item.toLowerCase()}`}>
+        {item}
+      </NavLink>
     </ListItem>
   );
 };
@@ -15,7 +23,7 @@ const ListItem = styled.li`
     transform: scale(1.1);
   }
 `;
-const Link = styled.a`
+const NavLink = styled(Link)`
   font-weight: 400;
   font-size: 32px;
   text-align: center;

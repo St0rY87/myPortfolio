@@ -9,6 +9,7 @@ import { MobileMenu } from "./mobileMenu/MobileMenu";
 
 const menuItems = ["Home", "Skills", "Projects", "Contacts"];
 export const Header = () => {
+   
   return (
     <StyledHeader>
       <Container>
