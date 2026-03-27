@@ -16,7 +16,7 @@ export const ProjectMenuItem = ({
   return (
     <ListItem>
       <Link
-        active={currentStatus === item.status ? true : false}
+        $active={currentStatus === item.status ? true : false}
         onClick={() => {
           changeFilterStatus(item.status);
         }}
@@ -50,7 +50,7 @@ const ListItem = styled.li`
   }
 `;
 
-const Link = styled.a<{ active?: boolean }>`
+const Link = styled.a<{ $active?: boolean }>`
   display: inline-block;
   padding: 0px 20px;
   line-height: 1.5;
@@ -92,8 +92,8 @@ const Link = styled.a<{ active?: boolean }>`
   } */
 
   ${(props) =>
-    props.active &&
-    css<{ active?: boolean }>`
+    props.$active &&
+    css<{ $active?: boolean }>`
       background-color: ${theme.colors.accentColor};
       color: ${theme.colors.accentFontColor};
     `}
