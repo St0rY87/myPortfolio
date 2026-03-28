@@ -12,10 +12,13 @@ export const useElasticLine = () => {
   const endPath =
     "M1 0.999512C1 0.999512 61.5 7.5 151 7.5C240.5 7.5 301 0.999512 301 0.999512";
 
+  const getTopValue = () => (window.innerWidth < 576 ? -21 : -25);
+
   useEffect(() => {
     const input = inputRef.current;
     const line = lineRef.current;
     const placeholder = placeholderRef.current;
+    const topValue = getTopValue();
 
     if (!input || !line || !placeholder) return;
 
@@ -27,24 +30,24 @@ export const useElasticLine = () => {
           line,
           { attr: { d: startPath } },
           { attr: { d: endPath }, ease: "power2.out", duration: 0.75 },
-          0
+          0,
         );
         tl.to(
           line,
           { attr: { d: startPath }, ease: "elastic.out(3, 0.5)" },
-          "<50%"
+          "<50%",
         );
 
         tl.to(
           placeholder,
           {
-            top: -25,
+            top: topValue,
             left: 0,
             scale: 0.9,
             duration: 0.5,
             ease: "power2.out",
           },
-          "<15%"
+          "<15%",
         );
       }
     };
