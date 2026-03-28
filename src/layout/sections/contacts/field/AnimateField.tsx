@@ -2,19 +2,13 @@ import styled from "styled-components";
 import { useElasticLine } from "./ElasticInput";
 import { theme } from "../../../../styles/Theme";
 
-export const AnimateField = (props: { type: string, placeholder: string }) => {
+export const AnimateField = (props: { type: string; placeholder: string }) => {
   const { inputRef, lineRef, placeholderRef, containerRef } = useElasticLine();
 
   return (
-    <InputWrapper ref={containerRef} >
-      <Placeholder ref={placeholderRef} >
-        {props.placeholder}
-      </Placeholder>
-      <Input
-        ref={inputRef}
-        type={props.type}
-        autoComplete="off"
-      />
+    <InputWrapper ref={containerRef}>
+      <Placeholder ref={placeholderRef}>{props.placeholder}</Placeholder>
+      <Input ref={inputRef} type={props.type} autoComplete="off" />
       <LineSvg
         width="100%"
         height="2"
@@ -55,6 +49,10 @@ const Placeholder = styled.p`
   pointer-events: none;
   transform-origin: left;
   margin: 0;
+
+  @media ${theme.media.mobile} {
+    font-size: 12px;
+  }
 `;
 
 const Input = styled.input`
@@ -75,10 +73,6 @@ const Input = styled.input`
     outline: none;
   }
 
-  @media ${theme.media.mobile} {
-    font-size: 12px;
-  }
-
   /* &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
@@ -93,7 +87,6 @@ const Input = styled.input`
   &:-moz-autofill {
     background-color: transparent !important;
   } */
-
 `;
 
 const LineSvg = styled.svg`

@@ -151,10 +151,9 @@ const SkillsWrapper = styled.div`
   border-radius: 50px;
 
   @media ${theme.media.mobile} {
-    overflow: auto;
+    overflow-x: scroll;
     justify-content: start;
     grid-auto-flow: column;
-    grid-template-rows: repeat(3, 130px);
     gap: 10px;
     border-radius: 0;
 
