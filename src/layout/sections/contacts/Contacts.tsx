@@ -8,6 +8,7 @@ import {
   ContactInfo,
   StyledContactInfo,
 } from "../../../components/ContactInfo/ContactInfo";
+import { AnimateField } from "./field/animateField";
 
 export const Contacts = () => {
   return (
@@ -18,9 +19,9 @@ export const Contacts = () => {
           <FormTitle>Let’s stay in touch</FormTitle>
           <FlexWrapper $justify="space-between" $gap="40px">
             <Form>
-              <Field type="text" placeholder="Your Name" />
-              <Field type="text" placeholder="Phone Number" />
-              <Field type="email" placeholder="Your email" />
+              <AnimateField type='text' placeholder="Your Name"/>
+              <AnimateField type='text' placeholder="Phone Number"/>
+              <AnimateField type='email'placeholder="Your email"/>
               <TextArea rows={7} placeholder="Your message"></TextArea>
               <Button type="submit">Send</Button>
             </Form>
@@ -138,7 +139,6 @@ const ContactsWrapper = styled.div`
 `;
 
 const FormTitle = styled.h3`
-  /* color: #6190e8; */
   color: ${theme.colors.accentColor};
   font-size: ${theme.fonts.contactsTitle};
   font-weight: bold;
@@ -156,12 +156,12 @@ const baseTextStyles = `
   }
 `;
 
-const Field = styled.input`
-  ${baseTextStyles}
-  border: none;
-  border-bottom: 2px solid ${theme.colors.thirdFontColor};
-  padding: 10px 0 6px;
-`;
+// const Field = styled.input`
+//   ${baseTextStyles}
+//   border: none;
+//   border-bottom: 2px solid ${theme.colors.thirdFontColor};
+//   padding: 10px 0 6px;
+// `;
 
 const TextArea = styled.textarea`
   ${baseTextStyles}

@@ -12,8 +12,9 @@ export const Logo = () => {
 
 const StyledLogo = styled.a`
   display: flex;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
   &:hover {
+    scale: 1.03;
   }
   svg {
     width: 50px;
