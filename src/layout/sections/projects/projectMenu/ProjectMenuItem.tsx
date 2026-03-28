@@ -101,4 +101,8 @@ const Link = styled.a<{ $active?: boolean }>`
   @media ${theme.media.tablet} {
     /* padding: 0px 20px; */
   }
+  @media ${theme.media.mobile} {
+    padding: 0px 15px;
+    font-size: 16px;
+  }
 `;

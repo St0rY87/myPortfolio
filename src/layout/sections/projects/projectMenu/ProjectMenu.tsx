@@ -72,5 +72,6 @@ margin-inline: auto;
 
   @media ${theme.media.mobile} {
     border-radius: 7px;
+    gap: 5px;
   }
 `;
