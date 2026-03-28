@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { BurgerButton } from "../../../components/burgerButton/BurgerButton";
 
 export const MobileMenu = (props: { menuItems: Array<string> }) => {
-
   const [isOpen, setIsOpen] = useState(false);
 
   const showMenu = () => {
@@ -23,11 +22,12 @@ export const MobileMenu = (props: { menuItems: Array<string> }) => {
 
   return (
     <StyledMobileMenu>
+      <Overlay $isOpen={isOpen} />
       <BurgerButton showMenu={showMenu} isOpen={isOpen} />
       <MobileMenuPopup $isOpen={isOpen}>
         <ListItems>
           {props.menuItems.map((item) => (
-            <MobileMenuItem key={item} item={item} showMenu={showMenu}/>
+            <MobileMenuItem key={item} item={item} showMenu={showMenu} />
           ))}
         </ListItems>
       </MobileMenuPopup>
@@ -45,7 +45,13 @@ const MobileMenuPopup = styled.div<{ $isOpen: boolean }>`
   position: fixed;
   z-index: 999;
   /* background: ${theme.colors.primaryBg}; */
-  background-color: black;
+  /* background-color: black; */
+  background: linear-gradient(
+    78deg,
+    rgb(37 143 234) 0%,
+    rgb(58 88 208) 47.12%,
+    rgb(2 88 165) 98.08%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +61,7 @@ const MobileMenuPopup = styled.div<{ $isOpen: boolean }>`
   left: -100%;
   transition: 0.5s ease-in;
 
-  &:before {
+  /* &:before {
     transition: 0.5s ease-in 0.3s;
     content: "";
     width: 100%;
@@ -65,7 +71,7 @@ const MobileMenuPopup = styled.div<{ $isOpen: boolean }>`
     background-color: rgba(0, 0, 0, 0.4);
     z-index: -1;
     opacity: 0;
-  }
+  } */
 
   ${(props) =>
     props.$isOpen &&
@@ -76,6 +82,25 @@ const MobileMenuPopup = styled.div<{ $isOpen: boolean }>`
         transition: 0.5s ease-in;
         opacity: 1;
       }
+    `}
+`;
+
+const Overlay = styled.div<{ $isOpen: boolean }>`
+  transition: 0.5s ease-in 0.3s;
+  content: "";
+  width: 100%;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+  opacity: 0;
+
+  ${(props) =>
+    props.$isOpen &&
+    css`
+      opacity: 1;
+      transition: 0.5s ease-in;
     `}
 `;
 
