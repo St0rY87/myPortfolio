@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useElasticLine } from "./ElasticInput";
+import { theme } from "../../../../styles/Theme";
 
 export const AnimateField = (props: { type: string, placeholder: string }) => {
   const { inputRef, lineRef, placeholderRef, containerRef } = useElasticLine();
@@ -73,6 +74,26 @@ const Input = styled.input`
   &:focus {
     outline: none;
   }
+
+  @media ${theme.media.mobile} {
+    font-size: 12px;
+  }
+
+  /* &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #000;
+    background-clip: text;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 0px 1000px transparent;
+  }
+
+  &:-moz-autofill {
+    background-color: transparent !important;
+  } */
+
 `;
 
 const LineSvg = styled.svg`

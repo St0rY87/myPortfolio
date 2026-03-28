@@ -8,20 +8,20 @@ import {
   ContactInfo,
   StyledContactInfo,
 } from "../../../components/ContactInfo/ContactInfo";
-import { AnimateField } from "./field/animateField";
+import { AnimateField } from "./field/AnimateField";
 
 export const Contacts = () => {
   return (
-    <StyledContacts id='contacts'>
+    <StyledContacts id="contacts">
       <Container>
         <TitleSection>Contacts</TitleSection>
         <ContactsWrapper>
           <FormTitle>Let’s stay in touch</FormTitle>
           <FlexWrapper $justify="space-between" $gap="40px">
             <Form>
-              <AnimateField type='text' placeholder="Your Name"/>
-              <AnimateField type='text' placeholder="Phone Number"/>
-              <AnimateField type='email'placeholder="Your email"/>
+              <AnimateField type="text" placeholder="Your Name" />
+              <AnimateField type="text" placeholder="Phone Number" />
+              <AnimateField type="email" placeholder="Your email" />
               <TextArea rows={7} placeholder="Your message"></TextArea>
               <Button type="submit">Send</Button>
             </Form>
