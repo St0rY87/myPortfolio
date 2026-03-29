@@ -13,7 +13,9 @@ import { AnimateField } from "./field/AnimateField";
 import emailjs from "@emailjs/browser";
 
 export const Contacts = () => {
-  const [staus, setStatus] = useState< 'idle' | "loading" | "success" | "error" >('idle');
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
   const form = useRef<HTMLFormElement>(null);
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -21,17 +23,22 @@ export const Contacts = () => {
 
     if (!form.current) return;
 
-      try {
-        setStatus("loading");
-        await emailjs.sendForm("service_b23njip", "template_hl26369", form.current, {
-          publicKey: "ko6wMywjRT382kDvA",
-        });
-        setStatus("success");
-        form.current.reset();
-      } catch (error) {
-        console.error("FAILED...", error);
-        setStatus("error");
-      }
+    try {
+      setStatus("loading");
+      await emailjs.sendForm(
+        "service_b23njip",
+        "template_hl26369",
+        form.current,
+        {
+          publicKey: "ko6wMywjRT382kDvA!!!",
+        },
+      );
+      setStatus("success");
+      form.current.reset();
+    } catch (error) {
+      console.error("FAILED...", error);
+      setStatus("error");
+    }
   };
 
   return (
@@ -62,7 +69,15 @@ export const Contacts = () => {
                 placeholder="Your message"
                 name="message"
               ></TextArea>
-              <Button type="submit">Send</Button>
+              <Button disabled={status === "loading"} type="submit">
+                {status === "loading" ? (
+                  <>
+                    Sending... <Loader />
+                  </>
+                ) : (
+                  "Send"
+                )}
+              </Button>
             </Form>
             <ContactInfo />
           </FlexWrapper>
@@ -220,13 +235,43 @@ const Button = styled.button`
   cursor: pointer;
   transition: 0.2s ease-in-out;
   margin-top: 10px;
+  position: relative;
   &:hover {
     transition: transform 0.3s;
     transform: translateY(-4px);
   }
 
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+
   @media ${theme.media.mobile} {
     width: 140px;
     margin-top: 0;
+  }
+`;
+
+const Loader = styled.span`
+  width: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 2px solid #fff;
+  border-right: 2px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+
+  position: absolute;
+  top: 50%;
+  right: 8%;
+
+  @keyframes rotation {
+    0% {
+      transform: translateY(-50%) rotate(0deg);
+    }
+    100% {
+      transform: translateY(-50%) rotate(360deg);
+    }
   }
 `;
