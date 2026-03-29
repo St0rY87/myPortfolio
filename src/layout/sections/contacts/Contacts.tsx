@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import styled from "styled-components";
 import { TitleSection } from "../../../components/TitleSection";
 import { FlexWrapper } from "../../../components/FlexWrapper";
@@ -9,8 +10,30 @@ import {
   StyledContactInfo,
 } from "../../../components/ContactInfo/ContactInfo";
 import { AnimateField } from "./field/AnimateField";
+import emailjs from "@emailjs/browser";
 
 export const Contacts = () => {
+  const [staus, setStatus] = useState< 'idle' | "loading" | "success" | "error" >('idle');
+
+  const form = useRef<HTMLFormElement>(null);
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+      try {
+        setStatus("loading");
+        await emailjs.sendForm("service_b23njip", "template_hl26369", form.current, {
+          publicKey: "ko6wMywjRT382kDvA",
+        });
+        setStatus("success");
+        form.current.reset();
+      } catch (error) {
+        console.error("FAILED...", error);
+        setStatus("error");
+      }
+  };
+
   return (
     <StyledContacts id="contacts">
       <Container>
@@ -18,11 +41,27 @@ export const Contacts = () => {
         <ContactsWrapper>
           <FormTitle>Let’s stay in touch</FormTitle>
           <FlexWrapper $justify="space-between" $gap="40px">
-            <Form>
-              <AnimateField type="text" placeholder="Your Name" />
-              <AnimateField type="text" placeholder="Phone Number" />
-              <AnimateField type="email" placeholder="Your email" />
-              <TextArea rows={7} placeholder="Your message"></TextArea>
+            <Form ref={form} onSubmit={sendEmail}>
+              <AnimateField
+                type="text"
+                placeholder="Your Name"
+                name="user_name"
+              />
+              <AnimateField
+                type="text"
+                placeholder="Phone Number"
+                name="phone_number"
+              />
+              <AnimateField
+                type="email"
+                placeholder="Your email"
+                name="email"
+              />
+              <TextArea
+                rows={7}
+                placeholder="Your message"
+                name="message"
+              ></TextArea>
               <Button type="submit">Send</Button>
             </Form>
             <ContactInfo />
