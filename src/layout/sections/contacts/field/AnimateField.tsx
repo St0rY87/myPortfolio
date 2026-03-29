@@ -9,8 +9,11 @@ export const AnimateField = (props: {
   pattern?: string;
   title?: string;
   maxlength?: number;
+  isResetForm?: boolean;
 }) => {
-  const { inputRef, lineRef, placeholderRef, containerRef } = useElasticLine();
+  const { inputRef, lineRef, placeholderRef, containerRef } = useElasticLine(
+    props.isResetForm
+  );
 
   return (
     <InputWrapper ref={containerRef}>

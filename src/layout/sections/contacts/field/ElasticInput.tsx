@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-export const useElasticLine = () => {
+export const useElasticLine = (isResetForm?: boolean) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const lineRef = useRef<SVGPathElement>(null);
   const placeholderRef = useRef<HTMLParagraphElement>(null);
@@ -14,6 +14,20 @@ export const useElasticLine = () => {
 
   const getTopValue = () => (window.innerWidth < 576 ? -21 : -25);
 
+  // Effect for resetting the form and animating the placeholder back to its original position
+  useEffect(() => {
+    if (isResetForm && inputRef.current && placeholderRef.current) {
+      const placeholder = placeholderRef.current;
+      gsap.to(placeholder, {
+        top: 0,
+        left: 0,
+        scale: 1,
+        duration: 0.5,
+      });
+      inputRef.current.blur();
+    }
+  }, [isResetForm]);
+// Effect for handling focus and blur events on the input field to animate the line and placeholder
   useEffect(() => {
     const input = inputRef.current;
     const line = lineRef.current;

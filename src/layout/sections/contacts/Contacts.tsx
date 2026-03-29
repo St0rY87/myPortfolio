@@ -18,6 +18,8 @@ export const Contacts = () => {
     "idle" | "loading" | "success" | "error"
   >("idle");
 
+  const [isResetForm, setIsResetForm] = useState(false);
+
   const form = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -38,6 +40,9 @@ export const Contacts = () => {
       setStatus("success");
       toast.success("Message has been sent successfully!");
       form.current.reset();
+      setIsResetForm(true);
+
+      setTimeout(() => setIsResetForm(false), 100);
     } catch (error) {
       console.error("FAILED...", error);
       setStatus("error");
@@ -62,6 +67,7 @@ export const Contacts = () => {
                 pattern="[a-zA-Z ]+"
                 title="Please enter a valid name (letters only)"
                 maxlength={30}
+                isResetForm={isResetForm}
               />
               <AnimateField
                 type="text"
@@ -70,11 +76,13 @@ export const Contacts = () => {
                 name="phone_number"
                 title="Please enter a valid phone number (at least 9 digits)"
                 maxlength={15}
+                isResetForm={isResetForm}
               />
               <AnimateField
                 type="email"
                 placeholder="Your email"
                 name="email"
+                isResetForm={isResetForm}
               />
               <TextArea
                 required
@@ -93,7 +101,7 @@ export const Contacts = () => {
               </Button>
               <ToastContainer
                 position="bottom-left"
-                autoClose={5000}
+                autoClose={4000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick={false}
