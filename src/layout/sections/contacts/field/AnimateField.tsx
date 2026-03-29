@@ -8,7 +8,7 @@ export const AnimateField = (props: { type: string; placeholder: string, name: s
   return (
     <InputWrapper ref={containerRef}>
       <Placeholder ref={placeholderRef}>{props.placeholder}</Placeholder>
-      <Input ref={inputRef} type={props.type} autoComplete="off" name={props.name} />
+      <Input required ref={inputRef} type={props.type} autoComplete="off" name={props.name} />
       <LineSvg
         width="100%"
         height="2"

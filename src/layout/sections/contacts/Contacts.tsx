@@ -18,7 +18,7 @@ export const Contacts = () => {
   >("idle");
 
   const form = useRef<HTMLFormElement>(null);
-  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!form.current) return;
@@ -48,7 +48,7 @@ export const Contacts = () => {
         <ContactsWrapper>
           <FormTitle>Let’s stay in touch</FormTitle>
           <FlexWrapper $justify="space-between" $gap="40px">
-            <Form ref={form} onSubmit={sendEmail}>
+            <Form ref={form} onSubmit={handleSubmit}>
               <AnimateField
                 type="text"
                 placeholder="Your Name"
@@ -65,6 +65,7 @@ export const Contacts = () => {
                 name="email"
               />
               <TextArea
+                required
                 rows={7}
                 placeholder="Your message"
                 name="message"
@@ -243,7 +244,7 @@ const Button = styled.button`
 
   &:disabled {
     cursor: not-allowed;
-    opacity: 0.9;
+    opacity: 0.7;
   }
 
   @media ${theme.media.mobile} {
