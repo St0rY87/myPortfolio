@@ -11,6 +11,7 @@ import {
 } from "../../../components/ContactInfo/ContactInfo";
 import { AnimateField } from "./field/AnimateField";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
 
 export const Contacts = () => {
   const [status, setStatus] = useState<
@@ -18,6 +19,7 @@ export const Contacts = () => {
   >("idle");
 
   const form = useRef<HTMLFormElement>(null);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -30,14 +32,18 @@ export const Contacts = () => {
         "template_hl26369",
         form.current,
         {
-          publicKey: "ko6wMywjRT382kDvA!!!",
+          publicKey: "ko6wMywjRT382kDvA",
         },
       );
       setStatus("success");
+      toast.success("Message has been sent successfully!");
       form.current.reset();
     } catch (error) {
       console.error("FAILED...", error);
       setStatus("error");
+      toast.error(
+        "There was an error sending the message. Please try again later.",
+      );
     }
   };
 
@@ -79,6 +85,18 @@ export const Contacts = () => {
                   "Send"
                 )}
               </Button>
+              <ToastContainer
+                position="bottom-left"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+              />
             </Form>
             <ContactInfo />
           </FlexWrapper>
