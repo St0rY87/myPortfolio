@@ -2,13 +2,29 @@ import styled from "styled-components";
 import { useElasticLine } from "./ElasticInput";
 import { theme } from "../../../../styles/Theme";
 
-export const AnimateField = (props: { type: string; placeholder: string, name: string }) => {
+export const AnimateField = (props: {
+  type: string;
+  placeholder: string;
+  name: string;
+  pattern?: string;
+  title?: string;
+  maxlength?: number;
+}) => {
   const { inputRef, lineRef, placeholderRef, containerRef } = useElasticLine();
 
   return (
     <InputWrapper ref={containerRef}>
       <Placeholder ref={placeholderRef}>{props.placeholder}</Placeholder>
-      <Input required ref={inputRef} type={props.type} autoComplete="off" name={props.name} />
+      <Input
+        required
+        ref={inputRef}
+        type={props.type}
+        autoComplete="off"
+        name={props.name}
+        pattern={props.pattern}
+        title={props.title}
+        maxLength={props.maxlength}
+      />
       <LineSvg
         width="100%"
         height="2"

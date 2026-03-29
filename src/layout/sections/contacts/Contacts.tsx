@@ -59,11 +59,17 @@ export const Contacts = () => {
                 type="text"
                 placeholder="Your Name"
                 name="user_name"
+                pattern="[a-zA-Z ]+"
+                title="Please enter a valid name (letters only)"
+                maxlength={30}
               />
               <AnimateField
                 type="text"
+                pattern="[0-9]{9,}"
                 placeholder="Phone Number"
                 name="phone_number"
+                title="Please enter a valid phone number (at least 9 digits)"
+                maxlength={15}
               />
               <AnimateField
                 type="email"
