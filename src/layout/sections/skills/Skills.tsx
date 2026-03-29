@@ -159,5 +159,33 @@ const SkillsWrapper = styled.div`
 
     grid-template-rows: repeat(3, 118px);
     grid-template-columns: repeat(auto-fit, 115px);
+
+    overflow-x: auto;
+    justify-content: start;
+    grid-auto-flow: column;
+    gap: 10px;
+    border-radius: 0;
+
+    grid-template-rows: repeat(3, 118px);
+    grid-template-columns: repeat(auto-fit, 115px);
+
+    padding-bottom: 7px;
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #fff;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #fff;
+    }
   }
 `;
