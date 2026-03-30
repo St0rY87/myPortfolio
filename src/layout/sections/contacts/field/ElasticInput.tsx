@@ -85,7 +85,7 @@ export const useElasticLine = (isResetForm?: boolean) => {
       input.removeEventListener("focus", handleFocus);
       input.removeEventListener("blur", handleBlur);
     };
-  }, [startPath, endPath]);
+  }, []);
 
   return { inputRef, lineRef, placeholderRef, containerRef };
 };
