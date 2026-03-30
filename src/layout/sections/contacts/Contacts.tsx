@@ -297,7 +297,12 @@ const Loader = styled.span`
 
   position: absolute;
   top: 50%;
-  right: 8%;
+  right: 12px;
+
+  @media ${theme.media.mobile} {
+    width: 17px;
+    right: 7px;
+  }
 
   @keyframes rotation {
     0% {
