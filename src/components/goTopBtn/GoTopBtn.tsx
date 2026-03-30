@@ -28,6 +28,8 @@ export const GoTopBtn = () => {
 
 const StyledGoTopBtn = styled.button<{ $isShowBtn: boolean }>`
   position: fixed;
+  display: grid;
+  place-items: center;
   z-index: 100;
   bottom: 30px;
   right: 30px;
