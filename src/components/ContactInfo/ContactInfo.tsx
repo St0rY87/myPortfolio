@@ -6,7 +6,6 @@ import { Fade } from "react-awesome-reveal";
 export const ContactInfo = () => {
   return (
     <StyledContactInfo>
-      <Fade cascade direction="right" damping={0.3} triggerOnce>
         <ContactItem>
           <Icon iconId="location" width="37" height="36" viewBox="0 0 29 36" />
           <ContactItemInfo>
@@ -37,7 +36,6 @@ export const ContactInfo = () => {
             </ContactItemLink>
           </ContactItemInfo>
         </ContactItem>
-      </Fade>
     </StyledContactInfo>
   );
 };
