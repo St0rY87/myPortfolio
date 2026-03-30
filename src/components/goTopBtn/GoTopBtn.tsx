@@ -58,7 +58,7 @@ const StyledGoTopBtn = styled.button<{ $isShowBtn: boolean }>`
 
   @media (hover: hover) {
     &:hover {
-      opacity: 0.8;
+      background-color: #3d6ced;
     }
   }
 `;
