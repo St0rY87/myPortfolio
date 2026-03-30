@@ -38,9 +38,6 @@ const StyledGoTopBtn = styled.button<{ $isShowBtn: boolean }>`
   opacity: ${(props) => [props.$isShowBtn ? 1 : 0]};
   pointer-events: ${(props) => [props.$isShowBtn ? "auto" : "none"]};
   transition: 0.4s ease-in-out;
-  &:hover {
-    opacity: 0.8;
-  }
   svg {
     fill: #fff;
   }
@@ -55,5 +52,11 @@ const StyledGoTopBtn = styled.button<{ $isShowBtn: boolean }>`
   @media ${theme.media.mobile} {
     bottom: 10px;
     right: 10px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.8;
+    }
   }
 `;
