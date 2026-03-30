@@ -4,7 +4,7 @@ import { Skill } from "./skill/Skill";
 // import { TickerTape } from "../../../components/tickerTape/TickerTape";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
-
+import { Fade } from "react-awesome-reveal"
 const skillsItems = [
   {
     iconId: "ts",
@@ -113,6 +113,7 @@ export const Skills = () => {
       <Container>
         <TitleSection>My Skills</TitleSection>
         <SkillsWrapper>
+          <Fade cascade damping={0.2} triggerOnce>
           {skillsItems.map((item) => (
             <Skill
               key={item.title}
@@ -123,6 +124,7 @@ export const Skills = () => {
               viewBox={item.viewBox}
             />
           ))}
+          </Fade>
         </SkillsWrapper>
       </Container>
       {/* <TickerTape listItems={tickerTape} /> */}
