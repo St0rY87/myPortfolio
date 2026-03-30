@@ -64,7 +64,7 @@ export const Contacts = () => {
                 type="text"
                 placeholder="Your Name"
                 name="user_name"
-                pattern="[a-zA-Z ]+"
+                pattern="[a-zA-Zа-яА-ЯёЁ ]+"
                 title="Please enter a valid name (letters only)"
                 maxlength={30}
                 isResetForm={isResetForm}
