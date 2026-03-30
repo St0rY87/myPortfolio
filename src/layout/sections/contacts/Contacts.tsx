@@ -34,7 +34,7 @@ export const Contacts = () => {
         "template_hl26369",
         form.current,
         {
-          publicKey: "ko6wMywjRT382kDvA!",
+          publicKey: "ko6wMywjRT382kDvA",
         },
       );
       setStatus("success");

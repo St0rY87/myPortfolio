@@ -40,11 +40,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
 
-  /* @media (hover: hover) {
-   *:hover {
-      opacity: 0 !important;
-    }
-  } */
 
 
  `;
