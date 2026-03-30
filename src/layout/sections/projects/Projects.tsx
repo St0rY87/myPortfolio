@@ -13,9 +13,10 @@ import messenger from "../../../assets/images/messenger.jpg";
 import eCommerce from "../../../assets/images/e-commerce.jpg";
 import dashboard from "../../../assets/images/dashboard.jpg";
 import { useState } from "react";
+import { Fade } from "react-awesome-reveal";
 
 // const menuItems = ["All", "React", "JS", "AI"];
-export type menuItemsStatusType = 'all' | 'react' | 'js' | 'ai';
+export type menuItemsStatusType = "all" | "react" | "js" | "ai";
 
 const menuItems: Array<{
   title: string;
@@ -186,33 +187,41 @@ export const Projects = () => {
   }
 
   function changeFilterStatus(value: menuItemsStatusType) {
-    setStatus(value)
+    setStatus(value);
   }
 
   return (
     <StyledProjects id="projects">
       <Container>
+        <Fade direction='up' fraction={1} triggerOnce>
         <TitleSection>Projects</TitleSection>
+        </Fade>
         <FlexWrapper
           $direction="column"
           $align="center"
           $gap="40px"
           $gapMobile="30px"
         >
-          <ProjectMenu menuItems={menuItems} changeFilterStatus={changeFilterStatus} currentStatus={currentStatus} />
+          <ProjectMenu
+            menuItems={menuItems}
+            changeFilterStatus={changeFilterStatus}
+            currentStatus={currentStatus}
+          />
 
           <ProjectsWrapper>
-            {filteredProjects.map((item) => (
-              <Project
-                title={item.title}
-                img={item.img}
-                description={item.description}
-                icon={item.icon}
-                links={item.links}
-                type={item.type}
-                key={crypto.randomUUID()}
-              ></Project>
-            ))}
+            <Fade direction="up" cascade damping={0.2} triggerOnce>
+              {filteredProjects.map((item) => (
+                <Project
+                  title={item.title}
+                  img={item.img}
+                  description={item.description}
+                  icon={item.icon}
+                  links={item.links}
+                  type={item.type}
+                  key={crypto.randomUUID()}
+                ></Project>
+              ))}
+            </Fade>
           </ProjectsWrapper>
         </FlexWrapper>
       </Container>
@@ -250,4 +259,19 @@ const ProjectsWrapper = styled.div`
     padding: unset;
     gap: 30px;
   }
+
+  & > div {
+      width: 100%;
+  max-width: 450px;
+
+  @media (min-width: 950px) {
+    &:first-child {
+      margin-left: auto;
+    }
+    &:last-child {
+      margin-right: auto;
+    }
+  }
+  }
+
 `;

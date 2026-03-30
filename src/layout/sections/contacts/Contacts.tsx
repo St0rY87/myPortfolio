@@ -12,6 +12,7 @@ import {
 import { AnimateField } from "./field/AnimateField";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
+import { Fade } from "react-awesome-reveal";
 
 export const Contacts = () => {
   const [status, setStatus] = useState<
@@ -55,7 +56,9 @@ export const Contacts = () => {
   return (
     <StyledContacts id="contacts">
       <Container>
-        <TitleSection>Contacts</TitleSection>
+        <Fade direction="up" fraction={0.7} triggerOnce>
+          <TitleSection>Contacts</TitleSection>
+        </Fade>
         <ContactsWrapper>
           <FormTitle>Let’s stay in touch</FormTitle>
           <FlexWrapper $justify="space-between" $gap="40px">
@@ -114,12 +117,12 @@ export const Contacts = () => {
             </Form>
             <ContactInfo />
           </FlexWrapper>
-          <Man src={man} alt="" />
+            <Man src={man} alt="" />
         </ContactsWrapper>
 
         <ContactInfoWrapper>
           <ContactInfo />
-          <Man src={man} alt="" />
+            <Man src={man} alt="" />
         </ContactInfoWrapper>
       </Container>
     </StyledContacts>

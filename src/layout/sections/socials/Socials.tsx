@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Container } from "../../../components/Container";
 import { SocialItem } from "./socialItem/SocialItem";
 import { theme } from "../../../styles/Theme";
+import { Fade } from "react-awesome-reveal";
 
 const socialIcons = [
   {
@@ -39,16 +40,18 @@ const Socials = () => {
     <StyledSocials>
       <Container>
         <SocialList>
-          {socialIcons.map(({ url, iconId, width, height, viewBox }) => (
-            <SocialItem
-              key={crypto.randomUUID()}
-              iconId={iconId}
-              width={width}
-              height={height}
-              viewBox={viewBox}
-              url={url}
-            />
-          ))}
+          <Fade direction="down" cascade damping={0.2} fraction={1} triggerOnce>
+            {socialIcons.map(({ url, iconId, width, height, viewBox }) => (
+              <SocialItem
+                key={crypto.randomUUID()}
+                iconId={iconId}
+                width={width}
+                height={height}
+                viewBox={viewBox}
+                url={url}
+              />
+            ))}
+          </Fade>
         </SocialList>
       </Container>
     </StyledSocials>

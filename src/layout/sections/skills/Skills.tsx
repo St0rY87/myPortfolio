@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { TitleSection } from "../../../components/TitleSection";
 import { Skill } from "./skill/Skill";
-// import { TickerTape } from "../../../components/tickerTape/TickerTape";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
-import { Fade } from "react-awesome-reveal"
+import { Fade } from "react-awesome-reveal";
 const skillsItems = [
   {
     iconId: "ts",
@@ -83,51 +82,29 @@ const skillsItems = [
   },
 ];
 
-// const tickerTape = [
-//   "REACT",
-//   "&&",
-//   "REDUX",
-//   "&&",
-//   "JAVASCRIPT",
-//   "&&",
-//   "TYPESCRIPT",
-//   "&&",
-//   "ZOD",
-//   "&&",
-//   "STYLED COMPONENTS",
-//   "&&",
-//   "REACT ROUTER",
-//   "&&",
-//   "BUN",
-//   "&&",
-//   "Node Js",
-//   "&&",
-//   "Docker",
-//   "&&",
-//   "Shadcn/ui",
-// ];
 
 export const Skills = () => {
   return (
     <StyledSkills id="skills">
       <Container>
-        <TitleSection>My Skills</TitleSection>
+        <Fade direction="up" fraction={1} triggerOnce>
+          <TitleSection>My Skills</TitleSection>
+        </Fade>
         <SkillsWrapper>
-          <Fade cascade damping={0.2} triggerOnce>
-          {skillsItems.map((item) => (
-            <Skill
-              key={item.title}
-              iconId={item.iconId}
-              title={item.title}
-              width={item.width}
-              height={item.height}
-              viewBox={item.viewBox}
-            />
-          ))}
+          <Fade cascade direction="up" damping={0.1} triggerOnce>
+            {skillsItems.map((item) => (
+              <Skill
+                key={item.title}
+                iconId={item.iconId}
+                title={item.title}
+                width={item.width}
+                height={item.height}
+                viewBox={item.viewBox}
+              />
+            ))}
           </Fade>
         </SkillsWrapper>
       </Container>
-      {/* <TickerTape listItems={tickerTape} /> */}
     </StyledSkills>
   );
 };
@@ -163,6 +140,7 @@ const SkillsWrapper = styled.div`
     grid-template-columns: repeat(auto-fit, 115px);
 
     overflow-x: auto;
+    overflow-y: hidden;
     justify-content: start;
     grid-auto-flow: column;
     gap: 10px;
