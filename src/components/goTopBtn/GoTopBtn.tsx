@@ -30,7 +30,7 @@ const StyledGoTopBtn = styled.button<{ $isShowBtn: boolean }>`
   position: fixed;
   display: grid;
   place-items: center;
-  z-index: 100;
+  z-index: 10;
   bottom: 30px;
   right: 30px;
   width: 50px;
