@@ -5,7 +5,7 @@ import { theme } from "../../styles/Theme";
 export const Logo = () => {
   return (
     <StyledLogo href="#">
-      <Icon iconId="logo" width="60" height="45" viewBox="0 0 60 40" />
+      <Icon iconId="logo" width="60" height="48" viewBox="0 0 60 40" />
     </StyledLogo>
   );
 };
@@ -18,7 +18,7 @@ const StyledLogo = styled.a`
   }
   svg {
     width: 50px;
-    height: 40px;
+    height: auto;
   }
 
   @media ${theme.media.tablet} {
