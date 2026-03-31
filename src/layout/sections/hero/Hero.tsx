@@ -94,6 +94,10 @@ const StyledHero = styled.section`
     padding-top: 65px;
     min-height: 100dvh;
   }
+  @media (min-width: 900px) and (orientation: landscape),
+         (min-width: 900px) and (orientation: portrait) {
+    min-height: 100dvh;
+  }
 `;
 
 const PhotoWrapper = styled.div`
