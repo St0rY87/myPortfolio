@@ -55,4 +55,10 @@ const StyledLink = styled.a<{ $isActive: boolean }>`
       animation: pulse11 1s;
     }
   }
+
+  @media ((hover: none) and (pointer: coarse)) {
+    &::before {
+      height: 0;
+    }
+  }
 `;
