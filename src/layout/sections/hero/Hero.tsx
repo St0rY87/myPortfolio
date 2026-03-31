@@ -4,6 +4,7 @@ import { TickerTape } from "../../../components/tickerTape/TickerTape";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
 import Typewriter from "typewriter-effect";
+import { Link } from "react-scroll";
 import photo from "../../../assets/images/hero.png";
 
 const tickerTape = [
@@ -68,8 +69,10 @@ export const Hero = () => {
               $margin="50px 0 0"
               $marginTablet="20px 0 0"
             >
-              <Link href="#">See Projects </Link>
-              <Link href="#">Download CV</Link>
+              <HeroLink to="projects" smooth={true} offset={-76}>
+                See Projects
+              </HeroLink>
+              <HeroLink to="#">Download CV</HeroLink>
             </FlexWrapper>
           </FlexWrapper>
         </HeroWrapper>
@@ -175,6 +178,7 @@ const HeroWrapper = styled.div`
   border: 1px solid #ffffff70;
   border-radius: 200px 10px;
   overflow: hidden;
+  cursor:pointer;
 
   @media ${theme.media.tablet} {
     width: min(100%, 550px);
@@ -190,7 +194,7 @@ const HeroWrapper = styled.div`
 
   @media (min-width: 900px) and (orientation: landscape) {
     min-height: 410px;
-    margin-top: 50px;
+    margin-top: 60px;
     width: min(100%, 1000px);
   }
 `;
@@ -229,7 +233,7 @@ const Description = styled.p`
   }
 `;
 
-const Link = styled.a`
+const HeroLink = styled(Link)`
   background-color: ${theme.colors.accentColor};
   font-weight: 600;
   font-size: ${theme.fonts.heroDesc};

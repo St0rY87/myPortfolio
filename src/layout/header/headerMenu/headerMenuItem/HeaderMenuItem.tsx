@@ -8,8 +8,8 @@ export const HeaderMenuItem = (props: { item: string }) => {
         activeClass="active"
         to={`${props.item.toLowerCase()}`}
         smooth={true}
-        spy={true}
         offset={-76}
+        spy={true}
       >
         {props.item}
       </NavLink>
