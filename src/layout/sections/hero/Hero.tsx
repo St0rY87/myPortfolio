@@ -96,7 +96,7 @@ const StyledHero = styled.section`
   }
   @media (min-width: 900px) and (orientation: landscape),
     (orientation: portrait) {
-    min-height: 80dvh;
+    min-height: 100dvh;
   }
 `;
 
