@@ -47,11 +47,12 @@ const StyledLink = styled.a<{ $isActive: boolean }>`
     bottom: 8px;
     transition: all 0.4s ease;
   }
-  &:hover::before {
-    height: 7px;
-    width: 100%;
-    animation: pulse11 1s;
-  }
+
   @media (hover: hover) {
+    &:hover::before {
+      height: 7px;
+      width: 100%;
+      animation: pulse11 1s;
+    }
   }
 `;
