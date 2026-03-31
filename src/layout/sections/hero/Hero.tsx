@@ -95,8 +95,8 @@ const StyledHero = styled.section`
     min-height: 100dvh;
   }
   @media (min-width: 900px) and (orientation: landscape),
-         (min-width: 900px) and (orientation: portrait) {
-    min-height: 100dvh;
+    (orientation: portrait) {
+    min-height: 80dvh;
   }
 `;
 
@@ -157,7 +157,7 @@ const Photo = styled.img`
     object-position: 0 -15%; */
   }
 
-  @media (max-height: 700px) and (orientation: landscape) {
+  @media (min-width: 700px) and (orientation: landscape) {
     width: 250px;
   }
 `;
@@ -188,9 +188,9 @@ const HeroWrapper = styled.div`
     border-radius: 110px 10px;
   }
 
-  @media (max-height: 700px) and (orientation: landscape) {
+  @media (min-width: 900px) and (orientation: landscape) {
     min-height: 410px;
-     margin-top: 50px;
+    margin-top: 50px;
   }
 `;
 
