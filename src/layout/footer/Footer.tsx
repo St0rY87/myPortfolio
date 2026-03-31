@@ -1,105 +1,113 @@
 import styled from "styled-components";
-// import { Logo } from "../../components/logo/Logo";
+import { Logo } from "../../components/logo/Logo";
 import { theme } from "../../styles/Theme";
-
-// export const Footer = () => {
-//   return (
-//     <StyledFooter>
-//       <Logo />
-//       <Copyright>All Rights Reserved 2026©</Copyright>
-//     </StyledFooter>
-//   );
-// };
-
-// const StyledFooter = styled.footer`
-//   padding-block: 30px;
-//   background: ${theme.colors.primaryBg};
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   gap: 20px;
-
-// `;
-
-// const Copyright = styled.small`
-//   font-size: 12px;
-//   color: #fff;
-// `;
 
 export const Footer = () => {
   return (
-    <>
-      <StyledFooter>
-        <Wave>
-          <svg viewBox="0 0 120 28">
-            <path
-              id="wave"
-              d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z"
-            ></path>
-            <path
-              id="wave2"
-              d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z"
-            ></path>
-          </svg>
-        </Wave>
-        {/* <WrapperContent>
-          <Logo />
-         <Copyright>All Rights Reserved 2026©</Copyright>
-        </WrapperContent> */}
-      </StyledFooter>
-    </>
+    <StyledFooter>
+      <Wave>
+        <svg viewBox="0 0 240 28" preserveAspectRatio="none">
+          <path
+            id="wave"
+            d="M0 0C30 0 30 8 60 8C90 8 90 0 120 0C150 0 150.5 8 180.5 8C210.5 8 210 0 240 0V28H0V0Z"
+          />
+          <path
+            id="wave2"
+            d="M0 0C30 0 30 8 60 8C90 8 90 0 120 0C150 0 150.5 8 180.5 8C210.5 8 210 0 240 0V28H0V0Z"
+          />
+        </svg>
+      </Wave>
+      <WrapperContent>
+        <Logo />
+        <Copyright>All Rights Reserved 2026©</Copyright>
+      </WrapperContent>
+    </StyledFooter>
   );
 };
 
 const StyledFooter = styled.footer`
+  position: relative;
   overflow: hidden;
-  /* min-height: 150px; */
-  /* background: ${theme.colors.primaryBg}; */
-  /* display: flex; */
-  /* flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px; */
-  //
+  height: 200px;
+  /* border: 1px solid red; */
+   @media ${theme.media.laptop} {
+    height: 150px;
+  }
+   @media ${theme.media.mobile} {
+    height: 120px;
+  }
 `;
-//   const WrapperContent = styled.div `
+const WrapperContent = styled.div`
 
-//   `
-// const Copyright = styled.small`
-//   font-size: 12px;
-//   color: #fff;
-// `;
+  position: absolute;
+  left: 50%;
+  bottom: 25%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 
+  @media ${theme.media.laptop} {
+    bottom: 15%;
+  }
+`;
+
+const Copyright = styled.small`
+  font-size: 12px;
+  color: #fff;
+`;
 const Wave = styled.div`
-  svg {
-    fill: #355ecf;
-    position: relative;
-    bottom: -60px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 0;
 
-    @media ${theme.media.tablet} {
-      bottom: -5px;
-    }
+  svg {
+    width: clamp(218.75rem, 147.3214rem + 111.6071vw, 281.25rem);  /* 4500-3500 to 1024px*/ 
+    height: inherit;
+    display: block;
   }
 
   svg path {
-    animation: wave 3s linear;
-    animation-iteration-count: infinite;
+    fill: #355ecf;
+    animation: wave 3s linear infinite;
   }
+
   svg #wave {
-    animation-duration: 5s;
+    animation-duration: 8s;
     animation-direction: reverse;
     opacity: 0.6;
   }
 
   svg #wave2 {
-    animation-duration: 7s;
+    animation-duration: 10s;
     opacity: 0.3;
   }
 
   @keyframes wave {
     to {
-      transform: translateX(-100%);
+      transform: translateX(-50%);
     }
+  }
+
+  @media ${theme.media.large} {
+    svg {
+      width: 200%;
+    }
+  }
+
+@media ${theme.media.tablet}{
+  svg {
+    width: 1900px;
+  }
+}
+
+  @media ${theme.media.mobile} {
+    /* svg {
+      width: 2500px;
+    } */
   }
 `;

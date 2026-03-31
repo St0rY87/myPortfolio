@@ -230,6 +230,7 @@ export const Projects = () => {
 };
 
 const StyledProjects = styled.section`
+overflow: hidden;
   background: #fcfcfc;
   padding-block: 80px;
   ${TitleSection} {

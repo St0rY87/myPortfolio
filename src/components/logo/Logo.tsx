@@ -18,7 +18,7 @@ const StyledLogo = styled.a`
   }
   svg {
     width: 50px;
-    height: auto;
+    height: 40px;
   }
 
   @media ${theme.media.tablet} {
