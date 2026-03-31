@@ -55,7 +55,6 @@ export const Hero = () => {
                     loop: true,
                   }}
                 />
-                
               </Name>
             </Greeting>
             <Description>
@@ -96,41 +95,6 @@ const StyledHero = styled.section`
     min-height: 100dvh;
   }
 `;
-
-/* &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    width: 48px;
-    height: 71px;
-  }
-  &:before {
-    left: -75px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: url("data:image/svg+xml;utf8,${encodeURIComponent(arrowRaw)}");
-  }
-  &:after {
-    right: -75px;
-    top: 50%;
-    rotate: 180deg;
-    transform: translateY(50%);
-    background: url("data:image/svg+xml;utf8,${encodeURIComponent(arrowRaw)}");
-  } */
-// `;
-
-// const ButtonWrapper = styled.div`
-//   display: flex;
-//   gap: 20px;
-//   margin: 50px 0 0;
-//   @media ${theme.media.tablet} {
-//     margin: 20px 0 0;
-//   }
-//   @media ${theme.media.mobile} {
-//     gap: 10px;
-//   }
-// `;
 
 const PhotoWrapper = styled.div`
   margin-top: auto;
@@ -188,6 +152,10 @@ const Photo = styled.img`
     /* object-fit: cover;
     object-position: 0 -15%; */
   }
+
+  @media (max-height: 700px) and (orientation: landscape) {
+    width: 250px;
+  }
 `;
 
 const HeroWrapper = styled.div`
@@ -214,6 +182,11 @@ const HeroWrapper = styled.div`
   @media ${theme.media.mobile} {
     padding: 30px 20px;
     border-radius: 110px 10px;
+  }
+
+  @media (max-height: 700px) and (orientation: landscape) {
+    min-height: 410px;
+     margin-top: 50px;
   }
 `;
 
