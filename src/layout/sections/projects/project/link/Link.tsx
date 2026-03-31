@@ -34,29 +34,24 @@ const StyledLink = styled.a<{ $isActive: boolean }>`
 
   position: relative;
   z-index: 0;
-  &:hover {
-    &:before {
-      height: 7px;
-    }
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: ${(props) => (props.$isActive ? "100%" : "0")};
+    height: 7px;
+    background-color: ${theme.colors.accentColor};
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 8px;
+    transition: all 0.4s ease;
   }
-
-
-&::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  width: ${(props) => (props.$isActive ? "100%" : "0")};
-  height: 7px;
-  background-color:${theme.colors.accentColor};
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 8px;
-  transition: all 0.4s ease;
-}
-
-&:hover::before {
-  width: 100%;
-  animation: pulse11 1s;
-}
-
+  &:hover::before {
+    height: 7px;
+    width: 100%;
+    animation: pulse11 1s;
+  }
+  @media (hover: hover) {
+  }
 `;

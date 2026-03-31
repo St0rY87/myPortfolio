@@ -111,15 +111,16 @@ const ImageWrapper = styled.div`
     transform: translate(-50%, -50%);
     transition: 0.5s ease-in-out;
   }
-
-  &:hover {
-    &::before {
-      content: "";
-      opacity: 1;
-    }
-    ${Button} {
-      opacity: 1;
-      top: 44%;
+  @media (hover: hover) {
+    &:hover {
+      &::before {
+        content: "";
+        opacity: 1;
+      }
+      ${Button} {
+        opacity: 1;
+        top: 44%;
+      }
     }
   }
 
