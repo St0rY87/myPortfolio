@@ -191,6 +191,7 @@ const HeroWrapper = styled.div`
   @media (min-width: 900px) and (orientation: landscape) {
     min-height: 410px;
     margin-top: 50px;
+    width: min(100%, 1000px);
   }
 `;
 
