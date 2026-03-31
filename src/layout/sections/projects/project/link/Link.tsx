@@ -57,7 +57,7 @@ const StyledLink = styled.a<{ $isActive: boolean }>`
   }
 
   @media ((hover: none) and (pointer: coarse)) {
-    &::before {
+    &:hover::before {
       height: 0;
     }
   }
