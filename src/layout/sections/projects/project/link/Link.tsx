@@ -48,17 +48,11 @@ const StyledLink = styled.a<{ $isActive: boolean }>`
     transition: all 0.4s ease;
   }
 
-  @media (hover: hover) {
+  @media (hover: hover) and (pointer: fine) {
     &:hover::before {
       height: 7px;
       width: 100%;
-      animation: pulse11 1s;
     }
   }
 
-  @media ((hover: none) and (pointer: coarse)) {
-    &:hover::before {
-      height: 0;
-    }
-  }
 `;
