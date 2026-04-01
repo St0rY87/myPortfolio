@@ -97,10 +97,10 @@ const StyledHero = styled.section`
     padding-top: 65px;
     min-height: 100dvh;
   }
-  /* @media (min-width: 900px) and (orientation: landscape),
+  @media (max-width: 750px) and (orientation: landscape),
     (orientation: portrait) {
     min-height: 100dvh;
-  } */
+  }
 `;
 
 const PhotoWrapper = styled.div`
@@ -160,9 +160,9 @@ const Photo = styled.img`
     object-position: 0 -15%; */
   }
 
-  /* @media (min-width: 700px) and (orientation: landscape) {
+  @media (max-height: 750px) and (orientation: landscape) {
     width: 250px;
-  } */
+  }
 `;
 
 const HeroWrapper = styled.div`
@@ -192,11 +192,11 @@ const HeroWrapper = styled.div`
     border-radius: 110px 10px;
   }
 
-  /* @media (min-width: 900px) and (orientation: landscape) {
+  @media (max-height: 750px) and (orientation: landscape) {
     min-height: 410px;
     margin-top: 60px;
     width: min(100%, 1000px);
-  } */
+  }
 `;
 
 const Greeting = styled.div`
