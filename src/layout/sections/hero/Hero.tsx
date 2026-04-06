@@ -8,27 +8,19 @@ import { Link } from "react-scroll";
 import photo from "../../../assets/images/hero.png";
 
 const tickerTape = [
-  " ",
   "PROBLEM SOLVING",
-  "&&",
   "CREATIVE THINKING",
-  "&&",
   "DEEP EXPERTISE",
-  "&&",
   "TEAM WORKER",
-  "&&",
   "POSITIVE ATTITUDE",
-  "&&",
   "PROBLEM SOLVING",
-  "&&",
   "ATTENTION TO DETAIL",
-  "&&",
   "ADAPTABILITY",
-  "&&",
   "RESILIENCE",
-  "&&",
   "ANIMATIONS",
-  "&&",
+  "PROBLEM SOLVING",
+  "CREATIVE THINKING",
+  "DEEP EXPERTISE",
 ];
 
 export const Hero = () => {

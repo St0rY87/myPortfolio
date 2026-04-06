@@ -2,12 +2,14 @@ import styled from "styled-components";
 import { theme } from "../../styles/Theme";
 import Marquee from "react-fast-marquee";
 
-export const TickerTape = (props: { listItems: Array<string> }) => {
+export const TickerTape = ({listItems}: { listItems: Array<string> }) => {
+  const updatedListItems = [' ', ...listItems.flatMap(item => [item, '&&'])];
+
   return (
     <StyledTickerTape>
       <Marquee speed={40}>
         <WrapperWords>
-          {props.listItems.map((item) => (
+          {updatedListItems.map((item) => (
             <span key={crypto.randomUUID()}>{item}</span>
           ))}
         </WrapperWords>
