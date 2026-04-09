@@ -23,6 +23,7 @@ const StyledTickerTape = styled.div`
   color: #fff;
   background-color: ${theme.colors.accentColor};
   /* background-color: #6666e0; */
+  z-index: 3;
   padding-block: 10px;
   overflow: hidden;
   & span {
