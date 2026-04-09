@@ -69,6 +69,7 @@ export const Hero = () => {
           </FlexWrapper>
         </HeroWrapper>
       </Container>
+      <GridParallax></GridParallax>
       <TickerTape listItems={tickerTape} />
     </StyledHero>
   );
@@ -80,7 +81,10 @@ const StyledHero = styled.section`
   flex-direction: column;
   ${Container} {
     margin-block: auto;
+    z-index: 2;
   }
+
+  position: relative;
 
   @media ${theme.media.tablet} {
     padding-top: 75px;
@@ -94,6 +98,27 @@ const StyledHero = styled.section`
     min-height: 100dvh;
   }
 `;
+
+const GridParallax = styled.div`
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  perspective: 350px;
+  perspective-origin: 50%;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  grid-auto-columns: auto;
+  place-items: center;
+  display: grid;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  transform: none;
+  background-color: #c81ed161;
+  z-index: 1;
+  pointer-events: none;
+`;
+
+
 
 const PhotoWrapper = styled.div`
   margin-top: auto;
@@ -116,7 +141,7 @@ const PhotoWrapper = styled.div`
 const Photo = styled.img`
   display: flex;
   width: 285px;
-  animation: pulseGlow 5s ease-in-out infinite;
+  animation: pulseGlow 6s ease-in-out infinite;
 
   @keyframes pulseGlow {
     0% {
@@ -170,7 +195,7 @@ const HeroWrapper = styled.div`
   border: 1px solid #ffffff70;
   border-radius: 200px 10px;
   overflow: hidden;
-  cursor:pointer;
+  cursor: pointer;
 
   @media ${theme.media.tablet} {
     width: min(100%, 550px);
