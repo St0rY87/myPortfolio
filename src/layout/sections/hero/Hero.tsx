@@ -22,6 +22,10 @@ const tickerTape = [
   "PROBLEM SOLVING",
   "CREATIVE THINKING",
   "DEEP EXPERTISE",
+  "ATTENTION TO DETAIL",
+  "ADAPTABILITY",
+  "RESILIENCE",
+  "ANIMATIONS",
 ];
 
 export const Hero = () => {
@@ -70,12 +74,12 @@ export const Hero = () => {
           </FlexWrapper>
         </HeroWrapper>
       </Container>
-      
+
       <GridParallax>
         <ItemZMinus1>
           <ItemXYOutline />
         </ItemZMinus1>
-        <ItemZMinus2>    
+        <ItemZMinus2>
           <ItemXY>
             <ItemIconWrapper>
               <svg
@@ -189,16 +193,12 @@ export const Hero = () => {
             </ItemIconWrapper>
           </ItemXY>
         </ItemZMinus1>
-        <ItemZPlus1>
-          {/* <ItemXYOutline /> */}
-        </ItemZPlus1>
-        <ItemZPlus2>
-          {/* <ItemXY /> */}
-          </ItemZPlus2>
-        <ItemZMinus2><ItemXY></ItemXY></ItemZMinus2>
-        <ItemZPlus2>
-          {/* <ItemXY /> */}
-          </ItemZPlus2>
+        <ItemZPlus1>{/* <ItemXYOutline /> */}</ItemZPlus1>
+        <ItemZPlus2>{/* <ItemXY /> */}</ItemZPlus2>
+        <ItemZMinus2>
+          <ItemXY></ItemXY>
+        </ItemZMinus2>
+        <ItemZPlus2>{/* <ItemXY /> */}</ItemZPlus2>
         <ItemZPlus2>
           <ItemXYOutline />
         </ItemZPlus2>
@@ -220,9 +220,7 @@ export const Hero = () => {
             </ItemIconWrapper>
           </ItemXY> */}
         </ItemZPlus2>
-        <ItemZPlus1>
-          {/* <ItemXY></ItemXY> */}
-        </ItemZPlus1>
+        <ItemZPlus1>{/* <ItemXY></ItemXY> */}</ItemZPlus1>
         <ItemZPlus2>
           <ItemXY />
         </ItemZPlus2>
@@ -230,9 +228,7 @@ export const Hero = () => {
         <ItemZMinus1>
           <ItemXYOutline />
         </ItemZMinus1>
-        <ItemZ>
-          {/* <ItemXY /> */}
-        </ItemZ>
+        <ItemZ>{/* <ItemXY /> */}</ItemZ>
         <ItemZ>
           <ItemXY />
         </ItemZ>
