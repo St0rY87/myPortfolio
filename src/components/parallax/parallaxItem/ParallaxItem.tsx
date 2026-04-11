@@ -84,7 +84,6 @@ export const ParallaxItem = ({
 };
 
 const ItemZ = styled.div<{ $depth: DepthType }>`
-  transform-style: preserve-3d;
   transform: translate3d(0, 0, ${({ $depth }) => depthMap[$depth]});
   color: rgba(255, 255, 255, 0.7);
    @media ${theme.media.laptop} {

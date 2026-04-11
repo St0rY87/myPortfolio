@@ -41,7 +41,7 @@ export const Parallax = forwardRef<HTMLDivElement>((props, ref) => {
     "depth-plus-2": 0.8, // Самые ближние к зрителю — быстрые
     "depth-plus-1": 0.7, // Близко — быстро
     "depth-minus-1": 0.5, // Далеко — медленно
-    "depth-minus-2": 0.3, // Очень далеко — очень медленно
+    "depth-minus-2": 0.4, // Очень далеко — очень медленно
     default: 0.7, // Скорость по умолчанию
   };
 
@@ -148,7 +148,7 @@ export const Parallax = forwardRef<HTMLDivElement>((props, ref) => {
       viewBox: "0 0 53 53",
     },
     { variant: "none" },
-    { depth: "minus-2" },
+    { variant: "bright" },
     {
       iconId: "parallax-redux",
       width: "30",
@@ -166,7 +166,10 @@ export const Parallax = forwardRef<HTMLDivElement>((props, ref) => {
     { depth: "plus-2" },
     {},
     { depth: "minus-2", variant: "outline" },
-    { depth: "plus-1", variant: "outline" },
+    { iconId: "parallax-js",
+      width: "24",
+      viewBox: "0 0 24 24",
+      depth: "plus-2", },
     { variant: "none" },
     { depth: "minus-2" },
     { iconId: "parallax-react", width: "30", viewBox: "0 0 53 53" },
@@ -197,7 +200,8 @@ export const Parallax = forwardRef<HTMLDivElement>((props, ref) => {
     { width: "24", iconId: "parallax-js", viewBox: "0 0 24 24" },
     { variant: "none" },
     { depth: "plus-1" },
-    { depth: "minus-2", iconId: "parallax-ts", width: "26" },
+    { depth: "minus-1", iconId: "parallax-ts", width: "26" },
+
     { variant: "none" },
     {
       iconId: "parallax-js",
