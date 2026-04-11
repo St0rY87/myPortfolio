@@ -180,7 +180,6 @@ const HeroWrapper = styled.div`
   border: 1px solid #ffffff70;
   border-radius: 200px 10px;
   overflow: hidden;
-  cursor: pointer;
 
   @media ${theme.media.tablet} {
     width: min(100%, 550px);
@@ -244,6 +243,7 @@ const HeroLink = styled(Link)`
   color: ${theme.colors.accentFontColor};
   border-radius: 10px;
   transition: 0.2s ease-in-out;
+  cursor: pointer;
   & + &,
   & + &:hover {
     background-color: unset;

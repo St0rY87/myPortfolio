@@ -1,86 +1,9 @@
-// import styled from "styled-components";
-// import { Icon } from "../icon/Icon";
-
-// type ParallaxItemPropsType = {
-//   iconId?: string;
-//   width?: string;
-//   height?: string;
-//   viewBox?: string;
-
-//   depth?: "plus-2" | "plus-1" | "minus-1" | "minus-2" | "0";
-//   outline?: boolean;
-//   bright?: boolean;
-//   dull?: boolean;
-// };
-
-// export const ParallaxItem = ({
-//   iconId,
-//   width,
-//   height,
-//   viewBox,
-
-//   bright = false,
-//   dull = false,
-//   outline = false,
-//   depth = "0",
-// }: ParallaxItemPropsType) => {
-//   return (
-//     <ItemZ $depth={depth}>
-//       <ItemXY $outline={outline} $bright={bright} $dull={dull}>
-//         <Icon iconId={iconId} width={width} height={height} viewBox={viewBox} />
-//       </ItemXY>
-//     </ItemZ>
-//   );
-// };
-
-// const getDepthValue = (depth: string): string => {
-//   switch (depth) {
-//     case "plus-2":
-//       return "6rem";
-//     case "plus-1":
-//       return "3rem";
-//     case "minus-1":
-//       return "-3rem";
-//     case "minus-2":
-//       return "-6rem";
-//     default:
-//       return "0rem";
-//   }
-// };
-
-// const ItemZ = styled.div<{ $depth: string }>`
-//   transform-style: preserve-3d;
-//   transform: translate3d(0, 0, ${(props) => getDepthValue(props.$depth)});
-// `;
-
-// const ItemXY = styled.div<{
-//   $outline?: boolean;
-//   $dull?: boolean;
-//   $bright?: boolean;
-// }>`
-
-//   background-color: ${(props) => {
-//     if (props.$outline) return "transparent";
-//     if (props.$bright) return "rgba(255, 255, 255, 0.2)";
-//     if (props.$dull) return "rgba(255, 255, 255, 0.05)";
-//     return "rgba(255, 255, 255, 0.1)";
-//   }};
-
-//   border: 1px solid
-//     ${(props) => (props.$outline ? "rgba(255, 255, 255, 0.1)" : "none")};
-//   border-radius: 1rem;
-//   justify-content: center;
-//   align-items: center;
-//   width: 4rem;
-//   height: 4rem;
-//   display: flex;
-// `;
-
 import styled from "styled-components";
 import { Icon } from "../../icon/Icon";
+import { theme } from "../../../styles/Theme";
 
-type DepthType = "plus-2" | "plus-1" | "minus-1" | "minus-2" | "0";
-type VariantType = "outline" | "bright" | "dull" | "default" | "none";
+export type DepthType = "plus-2" | "plus-1" | "minus-1" | "minus-2" | "0";
+export type VariantType = "outline" | "bright" | "dull" | "default" | "none";
 
 type ParallaxItemPropsType = {
   iconId?: string;
@@ -122,6 +45,17 @@ const depthMap: Record<DepthType, string> = {
   "0": "0rem",
 };
 
+// Функция для получения класса глубины (нужен для JS логики)
+const getDepthClass = (depth: DepthType): string => {
+  switch (depth) {
+    case "plus-2": return "depth-plus-2";
+    case "plus-1": return "depth-plus-1";
+    case "minus-1": return "depth-minus-1";
+    case "minus-2": return "depth-minus-2";
+    default: return "";
+  }
+};
+
 export const ParallaxItem = ({
   iconId,
   width,
@@ -131,10 +65,11 @@ export const ParallaxItem = ({
   variant = "default",
 }: ParallaxItemPropsType) => {
   const showIcon = variant !== "none";
+  const depthClass = getDepthClass(depth);
   
   return (
-    <ItemZ $depth={depth}>
-      <ItemXY $variant={variant}>
+    <ItemZ $depth={depth} className={depthClass}>
+      <ItemXY $variant={variant} className="item-x-y">
         {showIcon && (
           <Icon
             iconId={iconId}
@@ -152,6 +87,15 @@ const ItemZ = styled.div<{ $depth: DepthType }>`
   transform-style: preserve-3d;
   transform: translate3d(0, 0, ${({ $depth }) => depthMap[$depth]});
   color: rgba(255, 255, 255, 0.7);
+   @media ${theme.media.laptop} {
+    opacity: 0.8;
+   }
+   @media ${theme.media.tablet} {
+    &:nth-child(1), &:nth-child(6), &:nth-child(8), &:nth-child(26) {
+      opacity: 0;
+    }
+   }
+
 `;
 
 const ItemXY = styled.div<{ $variant: VariantType }>`
@@ -163,4 +107,8 @@ const ItemXY = styled.div<{ $variant: VariantType }>`
   width: 4rem;
   height: 4rem;
   display: flex;
+  @media ${theme.media.laptop} {
+    transform: none !important;
+   }
+  
 `;
