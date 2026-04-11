@@ -7,6 +7,7 @@ import Typewriter from "typewriter-effect";
 import { Link } from "react-scroll";
 import photo from "../../../assets/images/hero.png";
 import React from "react";
+import { ParallaxItem } from "../../../components/parallaxItem/ParallaxItem";
 
 const tickerTape = [
   "PROBLEM SOLVING",
@@ -252,12 +253,11 @@ export const Hero = () => {
         </ItemZPlus1>
         <ItemZ>
           <ItemXYOutline />
-        </ItemZ>
-        <ItemZ>
-          <ItemXY />
-        </ItemZ>
+        </ItemZ >
+         <ParallaxItem width="24" iconId="js" />
+       
       </GridParallax>
-      <TickerTape listItems={tickerTape} />
+      <TickerTape listItems={tickerTape}/>
     </StyledHero>
   );
 };
