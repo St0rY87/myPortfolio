@@ -77,10 +77,10 @@
 // `;
 
 import styled from "styled-components";
-import { Icon } from "../icon/Icon";
+import { Icon } from "../../icon/Icon";
 
 type DepthType = "plus-2" | "plus-1" | "minus-1" | "minus-2" | "0";
-type VariantType = "outline" | "bright" | "dull" | "default";
+type VariantType = "outline" | "bright" | "dull" | "default" | "none";
 
 type ParallaxItemPropsType = {
   iconId?: string;
@@ -108,6 +108,10 @@ const variantStyles = {
     background: "rgba(255, 255, 255, 0.1)",
     border: "none",
   },
+  none: {
+    background: "",
+    border: "none",
+  },
 };
 
 const depthMap: Record<DepthType, string> = {
@@ -126,10 +130,19 @@ export const ParallaxItem = ({
   depth = "0",
   variant = "default",
 }: ParallaxItemPropsType) => {
+  const showIcon = variant !== "none";
+  
   return (
     <ItemZ $depth={depth}>
       <ItemXY $variant={variant}>
-        <Icon iconId={iconId} width={width} height={height} viewBox={viewBox} />
+        {showIcon && (
+          <Icon
+            iconId={iconId}
+            width={width}
+            height={height}
+            viewBox={viewBox}
+          />
+        )}
       </ItemXY>
     </ItemZ>
   );
@@ -138,6 +151,7 @@ export const ParallaxItem = ({
 const ItemZ = styled.div<{ $depth: DepthType }>`
   transform-style: preserve-3d;
   transform: translate3d(0, 0, ${({ $depth }) => depthMap[$depth]});
+  color: rgba(255, 255, 255, 0.7);
 `;
 
 const ItemXY = styled.div<{ $variant: VariantType }>`
