@@ -19,7 +19,7 @@ type GridItem = {
   variant?: VariantType;
 };
 
-export const Parallax = forwardRef<HTMLDivElement>((props, ref) => {
+export const Parallax = forwardRef<HTMLDivElement>((_, ref) => {
   const [isDesktop, setIsDesktop] = useState(() => window.innerWidth > 1024);
 
   const internalRef = useRef<HTMLDivElement>(null);

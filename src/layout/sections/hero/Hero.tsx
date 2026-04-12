@@ -7,7 +7,6 @@ import Typewriter from "typewriter-effect";
 import { Link } from "react-scroll";
 import photo from "../../../assets/images/hero.png";
 import { Parallax } from "../../../components/parallax/Parallax";
-import React from "react";
 
 const tickerTape = [
   "PROBLEM SOLVING",
