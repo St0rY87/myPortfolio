@@ -1,12 +1,10 @@
-// Parallax.tsx
-import React, { useEffect, useRef, useCallback, forwardRef } from "react";
+import { useEffect, useRef, useCallback, forwardRef, useState } from "react";
 import styled from "styled-components";
 import {
   DepthType,
   VariantType,
   ParallaxItem,
 } from "./parallaxItem/ParallaxItem";
-import { theme } from "../../styles/Theme";
 
 type DepthSpeedMap = {
   [key: string]: number;
@@ -22,7 +20,8 @@ type GridItem = {
 };
 
 export const Parallax = forwardRef<HTMLDivElement>((props, ref) => {
-  // Внутренний ref на случай, если внешний не передан
+  const [isDesktop, setIsDesktop] = useState(() => window.innerWidth > 1024);
+
   const internalRef = useRef<HTMLDivElement>(null);
   const movingElementsRef = useRef<NodeListOf<Element> | null>(null);
   const animationRef = useRef<number>();
@@ -38,11 +37,11 @@ export const Parallax = forwardRef<HTMLDivElement>((props, ref) => {
   };
 
   const depthSpeeds: DepthSpeedMap = {
-    "depth-plus-2": 0.8, // Самые ближние к зрителю — быстрые
-    "depth-plus-1": 0.7, // Близко — быстро
-    "depth-minus-1": 0.5, // Далеко — медленно
-    "depth-minus-2": 0.4, // Очень далеко — очень медленно
-    default: 0.7, // Скорость по умолчанию
+    "depth-plus-2": 0.8,
+    "depth-plus-1": 0.7,
+    "depth-minus-1": 0.5,
+    "depth-minus-2": 0.4,
+    default: 0.7,
   };
 
   const getElementSpeed = useCallback((element: Element): number => {
@@ -62,14 +61,13 @@ export const Parallax = forwardRef<HTMLDivElement>((props, ref) => {
       const moveX = x * speed;
       const moveY = y * speed;
       (element as HTMLElement).style.transform =
-        `translate3d(${moveX}px, ${moveY}px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`;
+        `translate3d(${moveX}px, ${moveY}px, 0px)`;
     },
     [],
   );
 
   const updateTargetFromMouse = useCallback(
     (clientX: number, clientY: number) => {
-      // Используем весь viewport как область отслеживания
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 2;
 
@@ -101,19 +99,26 @@ export const Parallax = forwardRef<HTMLDivElement>((props, ref) => {
     animationRef.current = requestAnimationFrame(animate);
   }, [settings.smoothness, getElementSpeed, applyTransform]);
 
-  // Эффект для инициализации
   useEffect(() => {
-    // Получаем DOM элемент из ref
-    const container =
-      (ref && typeof ref === "object" && ref.current) || internalRef.current;
-    if (!container) {
+    const checkScreenSize = () => {
+      setIsDesktop(window.innerWidth > 1024);
+    };
+
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) {
       return;
     }
 
+    const container =
+      (ref && typeof ref === "object" && ref.current) || internalRef.current;
+    if (!container) return;
+
     const movingElements = container.querySelectorAll(".item-x-y");
-    if (movingElements.length === 0) {
-      return;
-    }
+    if (movingElements.length === 0) return;
 
     movingElementsRef.current = movingElements;
     animate();
@@ -137,7 +142,7 @@ export const Parallax = forwardRef<HTMLDivElement>((props, ref) => {
       document.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
     };
-  }, [ref, animate, updateTargetFromMouse]);
+  }, [isDesktop, ref, animate, updateTargetFromMouse]);
 
   const gridItems: GridItem[] = [
     { iconId: "parallax-ts", width: "26" },
@@ -166,10 +171,12 @@ export const Parallax = forwardRef<HTMLDivElement>((props, ref) => {
     { depth: "plus-2" },
     {},
     { depth: "minus-2", variant: "outline" },
-    { iconId: "parallax-js",
+    {
+      iconId: "parallax-js",
       width: "24",
       viewBox: "0 0 24 24",
-      depth: "plus-2", },
+      depth: "plus-2",
+    },
     { variant: "none" },
     { depth: "minus-2" },
     { iconId: "parallax-react", width: "30", viewBox: "0 0 53 53" },
@@ -201,7 +208,6 @@ export const Parallax = forwardRef<HTMLDivElement>((props, ref) => {
     { variant: "none" },
     { depth: "plus-1" },
     { depth: "minus-1", iconId: "parallax-ts", width: "26" },
-
     { variant: "none" },
     {
       iconId: "parallax-js",
@@ -215,7 +221,7 @@ export const Parallax = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <StyledParallax ref={internalRef}>
       {gridItems.map((item, index) => (
-        <ParallaxItem key={crypto.randomUUID()} {...item} />
+        <ParallaxItem key={index} {...item} />
       ))}
     </StyledParallax>
   );
@@ -239,7 +245,4 @@ const StyledParallax = styled.div`
   transform: none;
   z-index: 1;
   pointer-events: none;
-  @media ${theme.media.laptop} {
-      transform: none !important;
-     }
 `;

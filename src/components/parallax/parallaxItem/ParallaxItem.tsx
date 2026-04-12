@@ -48,11 +48,16 @@ const depthMap: Record<DepthType, string> = {
 // Функция для получения класса глубины (нужен для JS логики)
 const getDepthClass = (depth: DepthType): string => {
   switch (depth) {
-    case "plus-2": return "depth-plus-2";
-    case "plus-1": return "depth-plus-1";
-    case "minus-1": return "depth-minus-1";
-    case "minus-2": return "depth-minus-2";
-    default: return "";
+    case "plus-2":
+      return "depth-plus-2";
+    case "plus-1":
+      return "depth-plus-1";
+    case "minus-1":
+      return "depth-minus-1";
+    case "minus-2":
+      return "depth-minus-2";
+    default:
+      return "";
   }
 };
 
@@ -66,7 +71,7 @@ export const ParallaxItem = ({
 }: ParallaxItemPropsType) => {
   const showIcon = variant !== "none";
   const depthClass = getDepthClass(depth);
-  
+
   return (
     <ItemZ $depth={depth} className={depthClass}>
       <ItemXY $variant={variant} className="item-x-y">
@@ -83,18 +88,44 @@ export const ParallaxItem = ({
   );
 };
 
+
+
 const ItemZ = styled.div<{ $depth: DepthType }>`
   transform: translate3d(0, 0, ${({ $depth }) => depthMap[$depth]});
   color: rgba(255, 255, 255, 0.7);
-   @media ${theme.media.laptop} {
+  @media ${theme.media.laptop} {
+    scale: 0.8;
     opacity: 0.8;
-   }
-   @media ${theme.media.tablet} {
-    &:nth-child(1), &:nth-child(6), &:nth-child(8), &:nth-child(26) {
+    &:nth-child(2),
+    &:nth-child(4),
+    &:nth-child(28) {
       opacity: 0;
     }
-   }
+  }
+  @media ${theme.media.tablet} {
+    &:nth-child(12),
+    &:nth-child(35) {
+      opacity: 0;
+    }
 
+    &:nth-child(2) {
+      opacity: 0.8;
+    }
+  }
+  @media ${theme.media.mobile} {
+     
+    scale: 0.6;
+    opacity: 0.6;
+    & {
+      opacity: 1;
+    }
+
+    &:nth-child(2),
+    &:nth-child(6),
+    &:nth-child(10) {
+      opacity: 0;
+    }
+  }
 `;
 
 const ItemXY = styled.div<{ $variant: VariantType }>`
@@ -107,7 +138,5 @@ const ItemXY = styled.div<{ $variant: VariantType }>`
   height: 4rem;
   display: flex;
   @media ${theme.media.laptop} {
-    transform: none !important;
-   }
-  
+  }
 `;
