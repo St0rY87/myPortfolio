@@ -48,11 +48,9 @@ export const Hero = () => {
     };
 
     updateSizes();
-    // window.addEventListener("resize", updateSizes);
     window.addEventListener("orientationchange", updateSizes);
 
     return () => {
-      // window.removeEventListener("resize", updateSizes);
       window.removeEventListener("orientationchange", updateSizes);
     };
   }, []);
@@ -70,7 +68,7 @@ export const Hero = () => {
             $gapMobile="10px"
           >
             <Greeting>
-              <span>Hello, my name’s</span>{" "}
+              <span>Hello, my name’s</span>
               <Name>
                 <p>Dmitriy Savin</p>
                 <Typewriter
@@ -123,12 +121,11 @@ const StyledHero = styled.section`
   }
   @media (max-width: 750px) and (orientation: landscape),
     (orientation: portrait) {
-    min-height: 100vh;
+     min-height: var(--hero-height);
   }
 
   @media ${theme.media.mobile} {
     padding-top: 65px;
-    min-height: var(--hero-height);
   }
 `;
 
