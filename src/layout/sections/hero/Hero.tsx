@@ -48,11 +48,11 @@ export const Hero = () => {
     };
 
     updateSizes();
-    window.addEventListener("resize", updateSizes);
+    // window.addEventListener("resize", updateSizes);
     window.addEventListener("orientationchange", updateSizes);
 
     return () => {
-      window.removeEventListener("resize", updateSizes);
+      // window.removeEventListener("resize", updateSizes);
       window.removeEventListener("orientationchange", updateSizes);
     };
   }, []);
