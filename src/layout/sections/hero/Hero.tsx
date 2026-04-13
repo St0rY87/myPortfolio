@@ -95,12 +95,12 @@ const StyledHero = styled.section`
     padding-top: 75px;
   }
   @media ${theme.media.mobile} {
-    /* padding-top: 65px; */
+    padding-top: 65px;
     /* min-height: unset; */
   }
   @media (max-width: 750px) and (orientation: landscape),
     (orientation: portrait) {
-    min-height: 100vh;
+    min-height: 95vh;
   }
 `;
 
