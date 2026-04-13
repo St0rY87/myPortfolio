@@ -74,7 +74,7 @@ export const Hero = () => {
           </FlexWrapper>
         </HeroWrapper>
       </Container>
-      <Parallax />
+      {/* <Parallax /> */}
       <TickerTape listItems={tickerTape} />
     </StyledHero>
   );
