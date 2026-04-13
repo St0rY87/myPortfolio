@@ -36,15 +36,14 @@ export const Hero = () => {
       const viewportHeight = window.innerHeight;
       const topBarHeight = Math.max(0, screenHeight - viewportHeight);
       const safeHeight = screenHeight - topBarHeight;
-      
 
       document.documentElement.style.setProperty(
         "--hero-height",
-        `${safeHeight}px`
+        `${safeHeight}px`,
       );
       document.documentElement.style.setProperty(
         "--top-bar-height",
-        `${topBarHeight}px`
+        `${topBarHeight}px`,
       );
     };
 
@@ -122,16 +121,15 @@ const StyledHero = styled.section`
   @media ${theme.media.tablet} {
     padding-top: 75px;
   }
-   @media (max-width: 750px) and (orientation: landscape),
+  @media (max-width: 750px) and (orientation: landscape),
     (orientation: portrait) {
     min-height: 100vh;
   }
 
   @media ${theme.media.mobile} {
     padding-top: 65px;
-    min-height: calc(100vh - var(--top-bar-height));
+    min-height: var(--hero-height);
   }
- 
 `;
 
 const PhotoWrapper = styled.div`
