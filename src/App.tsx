@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import "./App.css";
 import { GoTopBtn } from "./components/goTopBtn/GoTopBtn";
 import { Footer } from "./layout/footer/Footer";
@@ -10,23 +9,6 @@ import { Skills } from "./layout/sections/skills/Skills";
 import Socials from "./layout/sections/socials/Socials";
 
 function App() {
-  useEffect(() => {
-    const setVh = () => {
-      document.documentElement.style.setProperty(
-        "--vh",
-        `${window.innerHeight * 0.01}px`,
-      );
-    };
-
-    setVh();
-    window.addEventListener("resize", setVh);
-    window.addEventListener("orientationchange", setVh);
-    return () => {
-      window.removeEventListener("resize", setVh);
-      window.removeEventListener("orientationchange", setVh);
-    };
-  }, []);
-
   return (
     <div className="App">
       <Header />
@@ -38,7 +20,7 @@ function App() {
         <Socials />
       </main>
       <Footer />
-      <GoTopBtn />
+      <GoTopBtn/>
     </div>
   );
 }

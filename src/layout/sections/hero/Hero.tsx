@@ -81,7 +81,7 @@ export const Hero = () => {
 };
 
 const StyledHero = styled.section`
-  min-height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   ${Container} {
@@ -95,12 +95,12 @@ const StyledHero = styled.section`
     padding-top: 75px;
   }
   @media ${theme.media.mobile} {
-    padding-top: 65px;
-    min-height: calc(var(--vh, 1vh) * 100);
+    /* padding-top: 65px; */
+    /* min-height: 100dvh; */
   }
   @media (max-width: 750px) and (orientation: landscape),
     (orientation: portrait) {
-    min-height: calc(var(--vh, 1vh) * 100);
+    min-height: 100dvh;
   }
 `;
 
