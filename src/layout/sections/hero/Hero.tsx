@@ -81,7 +81,7 @@ export const Hero = () => {
 };
 
 const StyledHero = styled.section`
-  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   display: flex;
   flex-direction: column;
   ${Container} {
@@ -96,11 +96,11 @@ const StyledHero = styled.section`
   }
   @media ${theme.media.mobile} {
     padding-top: 65px;
-    /* min-height: 100dvh; */
+    min-height: calc(var(--vh, 1vh) * 100);
   }
   @media (max-width: 750px) and (orientation: landscape),
     (orientation: portrait) {
-    /* min-height: 100dvh; */
+    min-height: calc(var(--vh, 1vh) * 100);
   }
 `;
 
