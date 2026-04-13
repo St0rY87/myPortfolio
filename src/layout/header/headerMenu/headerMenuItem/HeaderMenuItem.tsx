@@ -1,24 +1,24 @@
 import styled from "styled-components";
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
 
 export const HeaderMenuItem = (props: { item: string }) => {
   return (
     <ListItem>
-      <NavLink
-        activeClass="active"
-        to={`${props.item.toLowerCase()}`}
-        smooth={true}
+      <Link
+        // activeClass="active"
+        // to={`${props.item.toLowerCase()}`}
+        // smooth={true}
         // offset={-76}
-        spy={true}
+        // spy={true}
       >
         {props.item}
-      </NavLink>
+      </Link>
     </ListItem>
   );
 };
 
 const ListItem = styled.li``;
-const NavLink = styled(Link)`
+const Link = styled.li`
   font-size: 20px;
   padding: 10px 15px;
   border-radius: 8px;
