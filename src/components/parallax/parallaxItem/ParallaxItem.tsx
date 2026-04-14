@@ -88,11 +88,14 @@ export const ParallaxItem = ({
   );
 };
 
-
-
 const ItemZ = styled.div<{ $depth: DepthType }>`
   transform: translate3d(0, 0, ${({ $depth }) => depthMap[$depth]});
   color: rgba(255, 255, 255, 0.7);
+  &:nth-child(32),
+  &:nth-child(33),
+  &:nth-child(34) {
+    display: none;
+  }
   @media ${theme.media.laptop} {
     scale: 0.8;
     opacity: 0.8;
@@ -113,16 +116,25 @@ const ItemZ = styled.div<{ $depth: DepthType }>`
     }
   }
   @media ${theme.media.mobile} {
-     
-    scale: 0.6;
-    opacity: 0.6;
+    scale: 0.7;
     & {
-      opacity: 1;
+      opacity: 0.7;
     }
-
+    &:nth-child(32),
+    &:nth-child(33),
+    &:nth-child(34) {
+      display: block;
+    }
+    &:nth-child(1),
     &:nth-child(2),
-    &:nth-child(6),
-    &:nth-child(10) {
+    &:nth-child(8),
+    &:nth-child(9),
+    &:nth-child(10),
+    &:nth-child(17),
+    &:nth-child(23),
+    &:nth-child(17),
+    &:nth-child(23),
+    &:nth-child(30) {
       opacity: 0;
     }
   }

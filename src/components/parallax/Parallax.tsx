@@ -5,6 +5,7 @@ import {
   VariantType,
   ParallaxItem,
 } from "./parallaxItem/ParallaxItem";
+import { theme } from "../../styles/Theme";
 
 type DepthSpeedMap = {
   [key: string]: number;
@@ -216,6 +217,14 @@ export const Parallax = forwardRef<HTMLDivElement>((_, ref) => {
       depth: "plus-2",
     },
     { iconId: "parallax-router", width: "30", viewBox: "0 -7 55 55" },
+    { variant: "none" },
+    { variant: "none" },
+    {
+      iconId: "parallax-redux",
+      width: "30",
+      depth: "minus-1",
+      viewBox: "0 0 53 53",
+    },
   ];
 
   return (
@@ -245,4 +254,8 @@ const StyledParallax = styled.div`
   transform: none;
   z-index: 1;
   pointer-events: none;
+
+  @media ${theme.media.mobile} {
+    grid-template-columns: repeat(5, auto);
+  }
 `;
