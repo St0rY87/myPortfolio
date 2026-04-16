@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Icon } from "../icon/Icon";
-import { theme } from "../../styles/Theme";
+// import { theme } from "../../styles/Theme";
 
 export const Logo = () => {
   return (
@@ -21,7 +21,7 @@ const StyledLogo = styled.a`
     height: auto;
   }
 
-  @media ${theme.media.tablet} {
+ @media ${({ theme }) => theme.media.tablet} {
     svg {
       width: 45px;
     }

@@ -1,5 +1,7 @@
 import "./App.css";
 import { GoTopBtn } from "./components/goTopBtn/GoTopBtn";
+import { ThemeProvider } from "./context/ThemeContext";
+import { GlobalStyles } from "./styles/GlobalStyles";
 import { Footer } from "./layout/footer/Footer";
 import { Header } from "./layout/header/Header";
 import { Contacts } from "./layout/sections/contacts/Contacts";
@@ -10,18 +12,21 @@ import Socials from "./layout/sections/socials/Socials";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <Hero />
-        <Skills />
-        <Projects />
-        <Contacts />
-        <Socials />
-      </main>
-      <Footer />
-      <GoTopBtn/>
-    </div>
+    <ThemeProvider>
+      <GlobalStyles />
+      <div className="App">
+        <Header />
+        <main>
+          <Hero />
+          {/* <Skills />
+          <Projects />
+          <Contacts />
+          <Socials /> */}
+        </main>
+        {/* <Footer />
+        <GoTopBtn /> */}
+      </div>
+    </ThemeProvider>
   );
 }
 
