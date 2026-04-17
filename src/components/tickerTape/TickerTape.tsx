@@ -64,10 +64,9 @@ export const TickerTape = ({listItems}: { listItems: Array<string> }) => {
 };
 
 const StyledTickerTape = styled.div`
-   font-size: ${({ theme }) => theme.fonts.tickerTape};;
+   font-size: ${({ theme }) => theme.fonts.tickerTape};
   color: #fff;
-  background-color: ${({ theme }) => theme.colors.accentColor};
-  /* background-color: #6666e0; */
+  background-color: ${({ theme }) => theme.colors.tickerTapeColor};
   z-index: 3;
   padding-block: 10px;
   overflow: hidden;

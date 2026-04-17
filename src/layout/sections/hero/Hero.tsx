@@ -563,6 +563,7 @@ const Greeting = styled.div`
 
 const Name = styled.h1`
   color: #2157f2;
+  color: ${({theme}) => theme.colors.accentColor};
   font-size: 58px;
   font-size: inherit;
   p {

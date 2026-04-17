@@ -78,10 +78,8 @@ import { FlexWrapper } from "../../components/FlexWrapper";
 import moon from "../../assets/images/moon.png";
 import sun from "../../assets/images/sun.svg";
 import { Container } from "../../components/Container";
-// import { theme } from "../../styles/Theme";
 import { HeaderMenu } from "./headerMenu/HeaderMenu";
 import { MobileMenu } from "./mobileMenu/MobileMenu";
-import { useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
 
 const menuItems = ["Home", "Skills", "Projects", "Contacts"];
@@ -124,7 +122,7 @@ const StyledHeader = styled.header`
 
 const ThemeToggle = styled.button`
   padding: 10px;
-
+  height: 60px;
   border: none;
   background-color: transparent;
   cursor: pointer;

@@ -55,6 +55,8 @@ export const lightTheme = {
     thirdFontColor: "#D2D2D2",
 
     mainBoxShadow: "0 0 21px 0 #fdfdfd",
+
+    tickerTapeColor: "#2157F2",
   },
   media: {
     large: "screen and (min-width:1980px)",
@@ -79,7 +81,7 @@ export const darkTheme = {
       "linear-gradient(180deg, rgba(18, 35, 70, 0.2) 0%, rgba(10, 25, 50, 0.2) 47.12%, rgba(5, 20, 40, 0.2) 98.08%);",
     thirdBg: "#fff",
 
-    accentColor: "#2157F2",
+    accentColor: "#0f3ab6",
     secondColor: "#2a5fd9",
 
     accentFontColor: "#fff",
@@ -87,6 +89,8 @@ export const darkTheme = {
     thirdFontColor: "#888888",
 
     mainBoxShadow: "0 0 21px 0 rgba(255,255,255,0.1)",
+
+    tickerTapeColor: "#1e0f81",
   },
   media: {
     large: "screen and (min-width:1980px)",

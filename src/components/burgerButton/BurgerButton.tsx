@@ -110,7 +110,7 @@ const StyledBurgerButton = styled.button`
   top: 10px;
   right: 20px;
   width: 75px;
-  height: 65px;
+  height: 60px;
   z-index: 9999;
   background: transparent;
   border: none;
