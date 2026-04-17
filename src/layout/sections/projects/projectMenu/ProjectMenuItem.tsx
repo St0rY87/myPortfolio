@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { theme } from "../../../../styles/Theme";
 import { menuItemsStatusType } from "../Projects";
 
 type ProjectMenuItemProps = {
@@ -40,9 +39,8 @@ const ListItem = styled.li`
   }
 
   &:first-child a {
-    /* background-color: ${theme.colors.accentColor}; */
-    background-color: ${theme.colors.accentColor};
-    color: ${theme.colors.accentFontColor};
+    background-color: ${({theme}) => theme.colors.accentColor};
+    color: ${({theme}) => theme.colors.accentFontColor};
     border-radius: 10px;
     &:before {
       background: unset;
@@ -56,15 +54,15 @@ const Link = styled.a<{ $active?: boolean }>`
   line-height: 1.5;
   font-size: 22px;
   text-align: center;
-  color: ${theme.colors.secondFontColor};
+  color: ${({theme}) => theme.colors.secondFontColor};
   font-weight: 600;
   border-radius: 10px;
 
-  transition: 0.3s ease-in-out;
+  transition: 0.1s ease-in-out;
 
   &:hover {
-    background-color: ${theme.colors.accentColor};
-    color: ${theme.colors.accentFontColor};
+    background-color: ${({theme}) => theme.colors.accentColor};
+    color: ${({theme}) => theme.colors.accentFontColor};
 
     &:before {
       background: unset;
@@ -74,34 +72,17 @@ const Link = styled.a<{ $active?: boolean }>`
   position: relative;
   z-index: 0;
 
-  /* &:before {
-    content: "";
-    position: absolute;
-    top: 10%;
-    right: 0;
-    width: 2px;
-    height: 80%;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgb(255, 255, 255) 25%,
-      rgb(255, 255, 255) 77%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    opacity: 0.3;
-  } */
 
   ${(props) =>
     props.$active &&
     css<{ $active?: boolean }>`
-      background-color: ${theme.colors.accentColor};
-      color: ${theme.colors.accentFontColor};
+      background-color: ${({theme}) => theme.colors.accentColor};
+      color: ${({theme}) => theme.colors.accentFontColor};
     `}
 
-  @media ${theme.media.tablet} {
-    /* padding: 0px 20px; */
+  @media ${({theme}) => theme.media.tablet} {
   }
-  @media ${theme.media.mobile} {
+  @media ${({theme}) => theme.media.mobile} {
     padding: 0px 15px;
     font-size: 16px;
   }

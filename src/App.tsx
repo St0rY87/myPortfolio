@@ -18,10 +18,10 @@ function App() {
         <Header />
         <main>
           <Hero />
-          {/* <Skills />
+          <Skills />
           <Projects />
-          <Contacts />
-          <Socials /> */}
+          {/* <Contacts /> */}
+          {/* <Socials /> */}
         </main>
         {/* <Footer />
         <GoTopBtn /> */}

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { ProjectMenuItem } from "./ProjectMenuItem";
-import { theme } from "../../../../styles/Theme";
 
 // export const ProjectMenu = (props: { menuItems: Array<string> }) => {
 //   return (
@@ -70,7 +69,7 @@ margin-inline: auto;
 
   gap: 10px;
 
-  @media ${theme.media.mobile} {
+  @media ${({theme}) => theme.media.mobile} {
     border-radius: 7px;
     gap: 5px;
   }

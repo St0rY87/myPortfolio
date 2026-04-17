@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../../../../styles/Theme";
 
 type LinkPropsType = {
   name: string;
@@ -25,6 +24,7 @@ export const Link = (props: LinkPropsType) => {
 const StyledLink = styled.a<{ $isActive: boolean }>`
   padding-block: 10px;
   color: #fff;
+  color: ${({theme}) => theme.colors.fourthFontColor};
   text-decoration: none;
   text-transform: uppercase;
   font-size: 12px;
@@ -41,7 +41,7 @@ const StyledLink = styled.a<{ $isActive: boolean }>`
     z-index: -1;
     width: ${(props) => (props.$isActive ? "100%" : "0")};
     height: 7px;
-    background-color: ${theme.colors.accentColor};
+    background-color: ${({theme}) => theme.colors.cardLinkLineColor};
     left: 50%;
     transform: translateX(-50%);
     bottom: 8px;

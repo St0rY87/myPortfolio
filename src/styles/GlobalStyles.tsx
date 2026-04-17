@@ -71,12 +71,12 @@ export const GlobalStyles = createGlobalStyle`
 
    body {
     font-family: "Roboto", sans-serif;
-    color: ${({ theme }) => theme?.colors?.accentFontColor}  
+    color: ${({ theme }) => theme.colors.accentFontColor}  
    }
 
   a {
     text-decoration: none;
-    color: ${({ theme }) => theme?.colors?.accentFontColor}  
+    color: ${({ theme }) => theme.colors.accentFontColor}  
   }
 
   ul {
@@ -90,7 +90,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   section {
-    background: ${({ theme }) => theme?.colors?.primaryBg }
+    background: ${({ theme }) => theme.colors.primaryBg }
   };  
 
   @media (prefers-reduced-motion: reduce) {

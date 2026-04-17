@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Icon } from "../../../../components/icon/Icon";
-import { theme } from "../../../../styles/Theme";
 
 type SkillPropsType = {
   iconId: string;
@@ -36,14 +35,9 @@ const StyledSkill = styled.div`
   gap: 20px;
   transition: 0.2s ease-in-out;
 
-  @media ${theme.media.mobile} {
+ @media ${({ theme }) => theme.media.mobile} {
     width: 111px;
     height: 117px;
-  }
-
-  &:hover {
-    /* box-shadow: ${theme.colors.mainBoxShadow}, ${theme.colors
-      .mainBoxShadow}; */
   }
 `;
 
@@ -51,5 +45,5 @@ const SkillTitle = styled.h3`
   text-align: center;
   font-weight: 400;
   font-size: 16px;
-  color: ${theme.colors.secondFontColor};
-`;
+  color: #000;
+`

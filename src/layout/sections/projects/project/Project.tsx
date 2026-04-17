@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Icon } from "../../../../components/icon/Icon";
 import { Link } from "./link/Link";
 import { Button } from "../../../../components/Button";
-import { theme } from "../../../../styles/Theme";
 
 type ProjectPropsType = {
   title: string;
@@ -110,7 +109,12 @@ const ImageWrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     transition: 0.5s ease-in-out;
+    color: #fff;
+    &:hover {
+      background-color: ${({theme}) => theme.colors.btnOverlayHover};
+    }
   }
+
   @media (hover: hover) {
     &:hover {
       &::before {
@@ -124,7 +128,7 @@ const ImageWrapper = styled.div`
     }
   }
 
-  @media ${theme.media.tablet} {
+  @media ${({ theme }) => theme.media.tablet} {
     &::before {
       content: "";
       opacity: 1;
@@ -150,7 +154,7 @@ const Title = styled.h3`
   margin-top: 10px;
   /* text-align: center; */
   font-size: 22px;
-  color: ${theme.colors.secondFontColor};
+  color: ${({ theme }) => theme.colors.secondFontColor};
   /* font-weight: 500; */
 `;
 
@@ -171,7 +175,7 @@ const Footer = styled.div`
   width: 100%;
   bottom: 0;
   height: 40px;
-  background-color: #000;
+  background-color: ${({ theme }) => theme.colors.cardBg};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -186,12 +190,12 @@ const Overlay = styled.div<{ $isActive: boolean }>`
   transition: 0.3s linear;
   position: absolute;
   top: ${(props) => (props.$isActive ? "0px" : "calc(-100% + 40px)")};
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: ${({ theme }) => theme.colors.cardOverlay};
   color: #fff;
   width: 100%;
   overflow: auto;
   height: calc(100% - 40px);
-  border-bottom: 1px solid grey;
+  /* border-bottom: 1px solid grey; */
   padding: 20px 15px;
 `;
 const OverlayTitle = styled.h4`
