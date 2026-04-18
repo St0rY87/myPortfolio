@@ -3,15 +3,15 @@ import styled from "styled-components";
 import { TitleSection } from "../../../components/TitleSection";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Container } from "../../../components/Container";
-import {
-  ContactInfo,
-  StyledContactInfo,
-} from "../../../components/contactInfo/ContactInfo";
 import { AnimateField } from "./field/AnimateField";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import { Fade } from "react-awesome-reveal";
 import { Man, StyledMan } from "../../../components/man/Man";
+import {
+  ContactInfo,
+  StyledContactInfo,
+} from "../../../components/contactInfo/ContactInfo";
 
 export const Contacts = () => {
   const [status, setStatus] = useState<
@@ -137,7 +137,6 @@ const StyledContacts = styled.section`
     padding: 30px 0 50px;
   }
 `;
-
 
 const ContactInfoWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.thirdBg};
