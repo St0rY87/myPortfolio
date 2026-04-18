@@ -11,7 +11,7 @@ import { Man, StyledMan } from "../../../components/man/Man";
 import {
   ContactInfo,
   StyledContactInfo,
-} from "../../../components/ContactInfo/ContactInfo";
+} from "../../../components/contactInfo/ContactInfo";
 
 export const Contacts = () => {
   const [status, setStatus] = useState<
