@@ -8,10 +8,7 @@ import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import { Fade } from "react-awesome-reveal";
 import { Man, StyledMan } from "../../../components/man/Man";
-import {
-  ContactInfo,
-  StyledContactInfo,
-} from "../../../components/contactInfo/ContactInfo";
+import { ContactInfo, StyledContactInfo } from "../../../components/contactInfo/ContactInfo";
 
 export const Contacts = () => {
   const [status, setStatus] = useState<
