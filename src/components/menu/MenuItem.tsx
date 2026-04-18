@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../styles/Theme";
-
 export const MenuItem = (props: { item: string }) => {
   return (
     <ListItem>
@@ -18,7 +16,7 @@ const Link = styled.a`
   font-weight: 400;
   font-size: 32px;
   text-align: center;
-  color: ${theme.colors.accentFontColor};
+  color: ${({ theme }) => theme.colors.accentFontColor};
 
   transition: 0.3s ease-in-out;
   &:hover {

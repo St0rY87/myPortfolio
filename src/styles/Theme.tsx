@@ -1,5 +1,21 @@
 import "styled-components";
 
+const media = {
+  large: "screen and (min-width:1980px)",
+  desktopLaptop: "screen and (min-width: 769px)",
+  laptop: "screen and (max-width: 1024px)",
+  tablet: "screen and (max-width: 768px)",
+  mobile: "screen and (max-width: 576px)",
+};
+
+const fonts = {
+  heroTitle: "clamp(34px, 24.069px + 2.7586vw, 58px)",
+  heroDesc: "clamp(18px, 17.1724px + 0.2299vw, 20px)",
+  tickerTape: "clamp(18px, 14.6897px + 0.9195vw, 26px)",
+  mainTitle: "clamp(30px, 21.7241px + 2.2989vw, 50px)",
+  contactsTitle: "clamp(26px, 17.7241px + 2.2989vw, 46px)",
+};
+
 export const lightTheme = {
   colors: {
     primaryBg: "linear-gradient(90deg, #a6bcfc 1.92%, #7293ef 96.15%);",
@@ -34,20 +50,8 @@ export const lightTheme = {
     manColor2: "#6392E8",
     manColor3: "#3A4279",
   },
-  media: {
-    large: "screen and (min-width:1980px)",
-    desktopLaptop: "screen and (min-width: 769px)",
-    laptop: "screen and (max-width: 1024px)",
-    tablet: "screen and (max-width: 768px)",
-    mobile: "screen and (max-width: 576px)",
-  },
-  fonts: {
-    heroTitle: "clamp(34px, 24.069px + 2.7586vw, 58px)",
-    heroDesc: "clamp(18px, 17.1724px + 0.2299vw, 20px)",
-    tickerTape: "clamp(18px, 14.6897px + 0.9195vw, 26px)",
-    mainTitle: "clamp(30px, 21.7241px + 2.2989vw, 50px)",
-    contactsTitle: "clamp(26px, 17.7241px + 2.2989vw, 46px)",
-  },
+  media,
+  fonts,
 };
 
 export const darkTheme = {
@@ -82,26 +86,14 @@ export const darkTheme = {
     manColor2: "#1c3373",
     manColor3: "#0b1347",
   },
-  media: {
-    large: "screen and (min-width:1980px)",
-    desktopLaptop: "screen and (min-width: 769px)",
-    laptop: "screen and (max-width: 1024px)",
-    tablet: "screen and (max-width: 768px)",
-    mobile: "screen and (max-width: 576px)",
-  },
-  fonts: {
-    heroTitle: "clamp(34px, 24.069px + 2.7586vw, 58px)",
-    heroDesc: "clamp(18px, 17.1724px + 0.2299vw, 20px)",
-    tickerTape: "clamp(18px, 14.6897px + 0.9195vw, 26px)",
-    mainTitle: "clamp(30px, 21.7241px + 2.2989vw, 50px)",
-    contactsTitle: "clamp(26px, 17.7241px + 2.2989vw, 46px)",
-  },
+  media,
+  fonts,
 };
+
+export const theme = lightTheme;
 
 export type Theme = typeof lightTheme;
 
 declare module "styled-components" {
   export interface DefaultTheme extends Theme {}
 }
-
-

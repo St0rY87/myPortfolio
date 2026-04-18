@@ -144,18 +144,14 @@ const CardWrapper = styled.div`
   z-index: 0;
   border-radius: 15px;
   overflow: hidden;
-  /* height: 200px; */
-  /* box-shadow: 0 0 8px 8px rgba(255, 255, 255, 0.27); */
   box-shadow: 0 0 6px 2px rgb(79 75 75 / 27%);
   position: relative;
 `;
 
 const Title = styled.h3`
   margin-top: 10px;
-  /* text-align: center; */
   font-size: 22px;
   color: ${({ theme }) => theme.colors.secondFontColor};
-  /* font-weight: 500; */
 `;
 
 const Img = styled.img`

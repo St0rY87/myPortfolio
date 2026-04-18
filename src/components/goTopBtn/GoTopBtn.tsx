@@ -58,8 +58,6 @@ const StyledGoTopBtn = styled.button<{ $isShowBtn: boolean }>`
 
   @media (hover: hover) {
     &:hover {
-      /* background-color: #2b5eeb; */
-      /* background-color: #1847c9; */
       background-color: ${({theme}) => theme.colors.btnGoTopBg};
       transform: translateY(-8px);
     }

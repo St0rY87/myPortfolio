@@ -85,26 +85,9 @@ const Input = styled.input`
   font-size: 14px;
   color: #000;
   background: transparent;
-  /* padding: 10px 0 6px; */
-
   &:focus {
     outline: none;
   }
-
-  /* &:-webkit-autofill,
-  &:-webkit-autofill:hover,
-  &:-webkit-autofill:focus,
-  &:-webkit-autofill:active {
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: #000;
-    background-clip: text;
-    transition: background-color 5000s ease-in-out 0s;
-    box-shadow: inset 0 0 0px 1000px transparent;
-  }
-
-  &:-moz-autofill {
-    background-color: transparent !important;
-  } */
 `;
 
 const LineSvg = styled.svg`
