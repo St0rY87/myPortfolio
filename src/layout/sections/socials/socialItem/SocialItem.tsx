@@ -45,7 +45,6 @@ const SocialLink = styled.a`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: 0.3s ease-in-out;
   & svg {
     color: ${({theme}) => theme.colors.accentColor};
   }
@@ -56,10 +55,6 @@ const SocialLink = styled.a`
     }
   }
 
-  svg {
-    /* fill: #2157f2; */
-    transition: 0.3s ease-in-out;
-  }
 
   @media ${ ({theme}) => theme.media.mobile} {
     width: 60px;

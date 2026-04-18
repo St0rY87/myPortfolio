@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Icon } from "../icon/Icon";
-import { theme } from "../../styles/Theme";
 import { animateScroll as scroll } from "react-scroll";
 
 export const GoTopBtn = () => {
@@ -36,29 +35,33 @@ const StyledGoTopBtn = styled.button<{ $isShowBtn: boolean }>`
   width: 50px;
   aspect-ratio: 1;
   border-radius: 15px;
-  background-color: ${theme.colors.accentColor};
+  background-color: ${({theme}) => theme.colors.accentColor};
   opacity: ${(props) => [props.$isShowBtn ? 1 : 0]};
   pointer-events: ${(props) => [props.$isShowBtn ? "auto" : "none"]};
-  transition: 0.4s ease-in-out;
-  svg {
-    fill: #fff;
+  transition: 0.3s ease-in-out;
+  & svg {
+      fill: #fff;
   }
+  
 
-  @media ${theme.media.tablet} {
+  @media ${({theme}) => theme.media.tablet} {
     bottom: 20px;
     right: 20px;
     width: 40px;
     border-radius: 10px;
   }
 
-  @media ${theme.media.mobile} {
+  @media ${({theme}) => theme.media.mobile} {
     bottom: 10px;
     right: 10px;
   }
 
   @media (hover: hover) {
     &:hover {
-      background-color: #3d6ced;
+      /* background-color: #2b5eeb; */
+      /* background-color: #1847c9; */
+      background-color: ${({theme}) => theme.colors.btnGoTopBg};
+      transform: translateY(-8px);
     }
   }
 `;

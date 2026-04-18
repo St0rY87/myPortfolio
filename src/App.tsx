@@ -24,7 +24,7 @@ function App() {
           <Socials />
         </main>
         <Footer />
-        {/* <GoTopBtn /> */}
+        <GoTopBtn />
       </div>
     </ThemeProvider>
   );
