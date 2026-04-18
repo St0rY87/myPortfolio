@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Container } from "../../../components/Container";
 import { SocialItem } from "./socialItem/SocialItem";
-import { theme } from "../../../styles/Theme";
 import { Fade } from "react-awesome-reveal";
 
 const socialIcons = [
@@ -61,22 +60,10 @@ const Socials = () => {
 export default Socials;
 
 const StyledSocials = styled.section`
-  background: ${theme.colors.thirdBg};
+  background: rgb(4 20 66 / 79%);
+  background: ${({ theme }) => theme.colors.thirdBg};
+  background: #fff;
   padding: 60px;
-  /* margin-bottom: -175px; */
-  background-color: #fff;
-/* 
-  @media ${theme.media.laptop} {
-    margin-bottom: -145px;
-  }
-  @media ${theme.media.tablet} {
-    padding-block: 50px;
-    margin-bottom: -85px;
-  }
-  @media ${theme.media.mobile} {
-    padding-block: 40px;
-    margin-bottom: -55px;
-  } */
 `;
 
 const SocialList = styled.ul`
@@ -88,7 +75,7 @@ const SocialList = styled.ul`
   position: relative;
   z-index: 1;
 
-  @media ${theme.media.mobile} {
+  @media ${({ theme }) => theme.media.mobile} {
     gap: 20px;
   }
 `;

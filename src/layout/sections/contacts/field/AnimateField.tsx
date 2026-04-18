@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useElasticLine } from "./ElasticInput";
-import { theme } from "../../../../styles/Theme";
 
 export const AnimateField = (props: {
   type: string;
@@ -69,7 +68,7 @@ const Placeholder = styled.p`
   transform-origin: left;
   margin: 0;
 
-  @media ${theme.media.mobile} {
+  @media ${({theme}) => theme.media.mobile} {
     font-size: 12px;
   }
 `;

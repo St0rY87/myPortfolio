@@ -20,11 +20,11 @@ function App() {
           <Hero />
           <Skills />
           <Projects />
-          {/* <Contacts /> */}
-          {/* <Socials /> */}
+          <Contacts />
+          <Socials />
         </main>
-        {/* <Footer />
-        <GoTopBtn /> */}
+        <Footer />
+        {/* <GoTopBtn /> */}
       </div>
     </ThemeProvider>
   );

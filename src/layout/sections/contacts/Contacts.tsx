@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import styled from "styled-components";
 import { TitleSection } from "../../../components/TitleSection";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { theme } from "../../../styles/Theme";
 import man from "../../../assets/images/man-with-laptop.svg";
 import { Container } from "../../../components/Container";
 import {
@@ -131,10 +130,10 @@ export const Contacts = () => {
 
 const StyledContacts = styled.section`
   padding-block: 80px;
-  @media ${theme.media.tablet} {
+  @media ${({theme}) => theme.media.tablet} {
     padding-block: 60px;
   }
-  @media ${theme.media.mobile} {
+  @media ${({theme}) => theme.media.mobile} {
     padding: 30px 0 50px;
   }
 `;
@@ -147,22 +146,22 @@ const Man = styled.img`
   right: 75px;
   width: 220px;
 
-  @media ${theme.media.tablet} {
+  @media ${({theme}) => theme.media.tablet} {
     display: none;
   }
 `;
 
 const ContactInfoWrapper = styled.div`
-  background-color: ${theme.colors.thirdBg};
+  background-color: ${({theme}) => theme.colors.thirdBg};
   background-color: #fff;
   border-radius: 50px;
   padding: 50px;
   margin-top: 20px;
   position: relative;
-  @media ${theme.media.desktopLaptop} {
+  @media ${({theme}) => theme.media.desktopLaptop} {
     display: none;
   }
-  @media ${theme.media.mobile} {
+  @media ${({theme}) => theme.media.mobile} {
     padding: 30px;
   }
   ${Man} {
@@ -191,10 +190,10 @@ const Form = styled.form`
     align-self: center;
   }
 
-  @media ${theme.media.tablet} {
+  @media ${({theme}) => theme.media.tablet} {
     margin-inline: auto;
   }
-  @media ${theme.media.mobile} {
+  @media ${({theme}) => theme.media.mobile} {
     gap: 20px;
   }
 `;
@@ -211,11 +210,11 @@ const ContactsWrapper = styled.div`
 
   position: relative;
 
-  @media ${theme.media.laptop} {
+  @media ${({theme}) => theme.media.laptop} {
     padding: 50px;
   }
 
-  @media ${theme.media.tablet} {
+  @media ${({theme}) => theme.media.tablet} {
     ${StyledContactInfo} {
       display: none;
     }
@@ -223,16 +222,16 @@ const ContactsWrapper = styled.div`
       display: none;
     }
   }
-  @media ${theme.media.mobile} {
+  @media ${({theme}) => theme.media.mobile} {
     padding: 30px;
   }
 `;
 
 const FormTitle = styled.h3`
-  color: ${theme.colors.accentColor};
-  font-size: ${theme.fonts.contactsTitle};
+  color: ${({theme}) => theme.colors.accentColor};
+  font-size: ${({theme}) => theme.fonts.contactsTitle};
   font-weight: bold;
-  @media ${theme.media.tablet} {
+  @media ${({theme}) => theme.media.tablet} {
     text-align: center;
   }
 `;
@@ -249,13 +248,13 @@ const baseTextStyles = `
 // const Field = styled.input`
 //   ${baseTextStyles}
 //   border: none;
-//   border-bottom: 2px solid ${theme.colors.thirdFontColor};
+//   border-bottom: 2px solid ${({theme}) => theme.colors.thirdFontColor};
 //   padding: 10px 0 6px;
 // `;
 
 const TextArea = styled.textarea`
   ${baseTextStyles}
-  border: 2px solid ${theme.colors.thirdFontColor};
+  border: 2px solid ${({theme}) => theme.colors.thirdFontColor};
   padding: 10px;
   resize: vertical;
 `;
@@ -263,7 +262,7 @@ const Button = styled.button`
   border-radius: 10px;
   height: 40px;
   width: 170px;
-  background-color: ${theme.colors.accentColor};
+  background-color: ${({theme}) => theme.colors.accentColor};
   font-size: 14px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -282,7 +281,7 @@ const Button = styled.button`
     opacity: 0.7;
   }
 
-  @media ${theme.media.mobile} {
+  @media ${({theme}) => theme.media.mobile} {
     width: 140px;
     margin-top: 0;
   }
@@ -302,7 +301,7 @@ const Loader = styled.span`
   top: 50%;
   right: 12px;
 
-  @media ${theme.media.mobile} {
+  @media ${({theme}) => theme.media.mobile} {
     width: 17px;
     right: 7px;
   }

@@ -195,7 +195,7 @@ const Overlay = styled.div<{ $isActive: boolean }>`
   width: 100%;
   overflow: auto;
   height: calc(100% - 40px);
-  /* border-bottom: 1px solid grey; */
+  border-bottom: 1px solid grey;
   padding: 20px 15px;
 `;
 const OverlayTitle = styled.h4`

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Icon } from "../icon/Icon";
-import { theme } from "../../styles/Theme";
 
 export const ContactInfo = () => {
   return (
@@ -49,7 +48,8 @@ const ContactItem = styled.div`
   display: flex;
   align-items: center;
   gap: 25px;
-  @media ${theme.media.mobile} {
+  color: ${({theme}) => theme.colors.accentColor};
+  @media ${({theme}) => theme.media.mobile} {
     gap: 20px;
   }
 `;

@@ -509,8 +509,7 @@ export const Projects = () => {
 
 const StyledProjects = styled.section`
   overflow: hidden;
-  background: #fcfcfc;
-   background-color: ${({theme}) => theme.colors.thirdBg};
+  background: ${({theme}) => theme.colors.thirdBg};
   padding-block: 80px;
   ${TitleSection} {
     color: ${({ theme }) => theme.colors.secondFontColor};

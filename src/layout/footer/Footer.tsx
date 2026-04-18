@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Logo } from "../../components/logo/Logo";
-import { theme } from "../../styles/Theme";
 
 export const Footer = () => {
   return (
@@ -26,19 +25,23 @@ export const Footer = () => {
 };
 
 const StyledFooter = styled.footer`
+  background: rgb(4 20 66 / 79%);
+  background: #000339;
+  background: ${({ theme }) => theme.colors.thirdBg};
+  background: #fff;
+
   position: relative;
   overflow: hidden;
   height: 200px;
   /* border: 1px solid red; */
-   @media ${theme.media.laptop} {
+  @media ${({ theme }) => theme.media.laptop} {
     height: 150px;
   }
-   @media ${theme.media.mobile} {
+  @media ${({ theme }) => theme.media.mobile} {
     height: 120px;
   }
 `;
 const WrapperContent = styled.div`
-
   position: absolute;
   left: 50%;
   bottom: 25%;
@@ -48,7 +51,7 @@ const WrapperContent = styled.div`
   align-items: center;
   gap: 10px;
 
-  @media ${theme.media.laptop} {
+  @media ${({ theme }) => theme.media.laptop} {
     bottom: 15%;
   }
 `;
@@ -66,25 +69,31 @@ const Wave = styled.div`
   line-height: 0;
 
   svg {
-    width: clamp(218.75rem, 147.3214rem + 111.6071vw, 281.25rem);  /* 4500-3500 to 1024px*/ 
+    width: clamp(
+      218.75rem,
+      147.3214rem + 111.6071vw,
+      281.25rem
+    ); /* 4500-3500 to 1024px*/
     height: inherit;
     display: block;
   }
 
   svg path {
     fill: #355ecf;
+    fill: #051850;  
+    fill: ${({ theme }) => theme.colors.waveColor};
     animation: wave 3s linear infinite;
   }
 
   svg #wave {
     animation-duration: 8s;
     animation-direction: reverse;
-    opacity: 0.6;
+    opacity: ${({ theme }) => theme.colors.wave1opacity};
   }
 
   svg #wave2 {
     animation-duration: 10s;
-    opacity: 0.3;
+    opacity: ${({ theme }) => theme.colors.wave2opacity};
   }
 
   @keyframes wave {
@@ -93,19 +102,19 @@ const Wave = styled.div`
     }
   }
 
-  @media ${theme.media.large} {
+  @media ${({ theme }) => theme.media.large} {
     svg {
       width: 200%;
     }
   }
 
-@media ${theme.media.tablet}{
-  svg {
-    width: 1900px;
+  @media ${({ theme }) => theme.media.tablet} {
+    svg {
+      width: 1900px;
+    }
   }
-}
 
-  @media ${theme.media.mobile} {
+  @media ${({ theme }) => theme.media.mobile} {
     /* svg {
       width: 2500px;
     } */

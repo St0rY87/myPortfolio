@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Icon } from "../../../../components/icon/Icon";
-import { theme } from "../../../../styles/Theme";
 
 type SocialItemProps = {
   iconId: string;
@@ -46,20 +45,23 @@ const SocialLink = styled.a`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: 0.6s ease-in-out;
+  transition: 0.3s ease-in-out;
+  & svg {
+    color: ${({theme}) => theme.colors.accentColor};
+  }
   &:hover {
-    background-color: #2157f2;
+    background-color: ${({theme}) => theme.colors.accentColor};
     & svg {
-      fill: #e4eafb;
+      color: #e4eafb;
     }
   }
 
   svg {
-    fill: #2157f2;
+    /* fill: #2157f2; */
     transition: 0.3s ease-in-out;
   }
 
-  @media ${theme.media.mobile} {
+  @media ${ ({theme}) => theme.media.mobile} {
     width: 60px;
     svg {
       width: 35px;

@@ -59,10 +59,14 @@ export const lightTheme = {
 
     tickerTapeColor: "#2157F2",
 
-    cardBg: ' #000',
-    cardLinkLineColor: '#2157F2',
-    cardOverlay: 'rgb(0 0 0 / 90%)',
-    btnOverlayHover: '#3566ee',
+    cardBg: " #000",
+    cardLinkLineColor: "#2157F2",
+    cardOverlay: "rgb(0 0 0 / 90%)",
+    btnOverlayHover: "#3566ee",
+
+    waveColor: "#355ecf",
+    wave1opacity: "0.6",
+    wave2opacity: "0.3",
   },
   media: {
     large: "screen and (min-width:1980px)",
@@ -85,23 +89,28 @@ export const darkTheme = {
     primaryBg: "linear-gradient(90deg, #1c3373 10.58%, #051850 84.62%);",
     secondaryBg:
       "linear-gradient(180deg, rgba(18, 35, 70, 0.2) 0%, rgba(10, 25, 50, 0.2) 47.12%, rgba(5, 20, 40, 0.2) 98.08%);",
-    thirdBg: "#041442", 
+    thirdBg: "#041442",
 
     accentColor: "#0f3ab6",
     secondColor: "#2a5fd9",
 
     accentFontColor: "#fff",
     secondFontColor: "#fff",
-    thirdFontColor: "#888888",
+    thirdFontColor: "#D2D2D2",
     fourthFontColor: "#000",
 
     mainBoxShadow: "0 0 21px 0 rgba(255,255,255,0.1)",
 
     tickerTapeColor: "#1e0f81",
-    cardBg: ' #fff',
-    cardLinkLineColor: '#b8c2dd',
-     cardOverlay: 'rgba(2, 15, 54, 0.9);',
-     btnOverlayHover: '#1f47b6',
+    cardBg: " #fff",
+    cardLinkLineColor: "#b8c2dd",
+    cardOverlay: "rgba(2, 15, 54, 0.9);",
+    btnOverlayHover: "#1f47b6",
+
+    waveColor: "#051850",
+    wave1opacity: "0.9",
+    wave2opacity: "0.6",
+    
   },
   media: {
     large: "screen and (min-width:1980px)",
