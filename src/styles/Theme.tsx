@@ -22,7 +22,7 @@ export const lightTheme = {
     secondaryBg:
       "linear-gradient(180deg, rgba(79, 172, 254, 0.2) 0%, rgba(62, 115, 141, 0.2) 47.12%, rgba(29, 88, 140, 0.2) 98.08%);",
     thirdBg: "#fcfcfc",
-    colorBurgerButton: '#fcfcfc',
+    colorBurgerButton: "#fcfcfc",
 
     accentColor: "#2157F2",
     secondColor: "#6190E8",
@@ -50,6 +50,9 @@ export const lightTheme = {
     manColor1: "#5E5D9A",
     manColor2: "#6392E8",
     manColor3: "#3A4279",
+
+    mobileMenu:
+      "linear-gradient(78deg,rgb(37 143 234) 0%, rgb(58 88 208) 47.12%,rgb(2 88 165) 98.08%)",
   },
   media,
   fonts,
@@ -61,7 +64,7 @@ export const darkTheme = {
     secondaryBg:
       "linear-gradient(180deg, rgba(18, 35, 70, 0.2) 0%, rgba(10, 25, 50, 0.2) 47.12%, rgba(5, 20, 40, 0.2) 98.08%);",
     thirdBg: "#041442",
-    colorBurgerButton: '#fcfcfc',
+    colorBurgerButton: "#fcfcfc",
 
     accentColor: "#0f3ab6",
     secondColor: "#2a5fd9",
@@ -87,6 +90,8 @@ export const darkTheme = {
     manColor1: "#060e3d",
     manColor2: "#1c3373",
     manColor3: "#0b1347",
+    mobileMenu:
+      "linear-gradient(78deg,rgb(26 20 114) 0%,rgb(1 9 37) 100.12%,rgb(20 14 103) 100.08%)",
   },
   media,
   fonts,

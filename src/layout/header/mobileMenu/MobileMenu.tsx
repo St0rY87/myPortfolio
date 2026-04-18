@@ -43,22 +43,8 @@ const StyledMobileMenu = styled.nav`
 const MobileMenuPopup = styled.div<{ $isOpen: boolean }>`
   position: fixed;
   z-index: 999;
-  background: linear-gradient(
-    78deg,
-    rgb(37 143 234) 0%,
-    rgb(58 88 208) 47.12%,
-    rgb(2 88 165) 98.08%
-  );
+  background: ${({theme}) => theme.colors.mobileMenu};
 
-  /* background: linear-gradient(
-    78deg,
-    linear-gradient(
-      78deg,
-      rgb(14, 7, 143) 0%,
-      rgb(9, 34, 136) 47.12%,
-      rgb(14, 7, 143) 98.08%
-    )
-  ); */
   display: flex;
   justify-content: center;
   align-items: center;
