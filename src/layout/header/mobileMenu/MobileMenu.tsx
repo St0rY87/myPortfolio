@@ -36,7 +36,7 @@ export const MobileMenu = (props: { menuItems: Array<string> }) => {
 
 const StyledMobileMenu = styled.nav`
   display: none;
-    @media ${({ theme }) => theme.media.tablet} {
+  @media ${({ theme }) => theme.media.tablet} {
     display: block;
   }
 `;
@@ -49,6 +49,16 @@ const MobileMenuPopup = styled.div<{ $isOpen: boolean }>`
     rgb(58 88 208) 47.12%,
     rgb(2 88 165) 98.08%
   );
+
+  /* background: linear-gradient(
+    78deg,
+    linear-gradient(
+      78deg,
+      rgb(14, 7, 143) 0%,
+      rgb(9, 34, 136) 47.12%,
+      rgb(14, 7, 143) 98.08%
+    )
+  ); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +67,6 @@ const MobileMenuPopup = styled.div<{ $isOpen: boolean }>`
   width: 100%;
   left: -100%;
   transition: 0.5s ease-in;
-
 
   ${(props) =>
     props.$isOpen &&

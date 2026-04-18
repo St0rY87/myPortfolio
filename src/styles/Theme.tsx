@@ -22,6 +22,7 @@ export const lightTheme = {
     secondaryBg:
       "linear-gradient(180deg, rgba(79, 172, 254, 0.2) 0%, rgba(62, 115, 141, 0.2) 47.12%, rgba(29, 88, 140, 0.2) 98.08%);",
     thirdBg: "#fcfcfc",
+    colorBurgerButton: '#fcfcfc',
 
     accentColor: "#2157F2",
     secondColor: "#6190E8",
@@ -60,6 +61,7 @@ export const darkTheme = {
     secondaryBg:
       "linear-gradient(180deg, rgba(18, 35, 70, 0.2) 0%, rgba(10, 25, 50, 0.2) 47.12%, rgba(5, 20, 40, 0.2) 98.08%);",
     thirdBg: "#041442",
+    colorBurgerButton: '#fcfcfc',
 
     accentColor: "#0f3ab6",
     secondColor: "#2a5fd9",

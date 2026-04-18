@@ -36,7 +36,7 @@ const StyledBurgerButton = styled.button`
   justify-content: center;
 
   & > svg {
-    fill: ${({ theme }) => theme.colors.thirdBg};
+    fill: ${({ theme }) => theme.colors.colorBurgerButton};
     width: 40px;
     height: 40px;
   }
