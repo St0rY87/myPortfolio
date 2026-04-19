@@ -6,7 +6,7 @@ import Typewriter from "typewriter-effect";
 import { Link } from "react-scroll";
 import photo from "../../../assets/images/hero.png";
 import { Parallax } from "../../../components/parallax/Parallax";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const tickerTape = [
   "PROBLEM SOLVING",
@@ -29,30 +29,30 @@ const tickerTape = [
 ];
 
 export const Hero = () => {
-  useEffect(() => {
-    const updateSizes = () => {
-      const screenHeight = window.screen.height;
-      const viewportHeight = window.innerHeight;
-      const topBarHeight = Math.max(0, screenHeight - viewportHeight);
-      const safeHeight = screenHeight - topBarHeight;
+  // useEffect(() => {
+  //   const updateSizes = () => {
+  //     const screenHeight = window.screen.height;
+  //     const viewportHeight = window.innerHeight;
+  //     const topBarHeight = Math.max(0, screenHeight - viewportHeight);
+  //     const safeHeight = screenHeight - topBarHeight;
 
-      document.documentElement.style.setProperty(
-        "--hero-height",
-        `${safeHeight}px`,
-      );
-      document.documentElement.style.setProperty(
-        "--top-bar-height",
-        `${topBarHeight}px`,
-      );
-    };
+  //     document.documentElement.style.setProperty(
+  //       "--hero-height",
+  //       `${safeHeight}px`,
+  //     );
+  //     document.documentElement.style.setProperty(
+  //       "--top-bar-height",
+  //       `${topBarHeight}px`,
+  //     );
+  //   };
 
-    updateSizes();
-    window.addEventListener("orientationchange", updateSizes);
+  //   updateSizes();
+  //   window.addEventListener("orientationchange", updateSizes);
 
-    return () => {
-      window.removeEventListener("orientationchange", updateSizes);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("orientationchange", updateSizes);
+  //   };
+  // }, []);
   return (
     <StyledHero id="home">
       <Container>
@@ -106,6 +106,7 @@ export const Hero = () => {
 
 const StyledHero = styled.section`
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   ${Container} {
@@ -120,7 +121,8 @@ const StyledHero = styled.section`
   }
   @media (max-width: 750px) and (orientation: landscape),
     (orientation: portrait) {
-     min-height: var(--hero-height);
+     /* min-height: var(--hero-height); */
+     /* min-height: 100svh; */
   }
 
   @media ${({ theme }) => theme.media.mobile} {
