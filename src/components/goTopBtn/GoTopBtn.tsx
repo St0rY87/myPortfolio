@@ -2,7 +2,23 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Icon } from "../icon/Icon";
 
-export const GoTopBtn = ({ topBarHeight }: { topBarHeight: number }) => {
+export const GoTopBtn = () => {
+  // useEffect(() => {
+  //   let topBarHeight = 0;
+  //   const calcTopBarHeight = () => {
+  //     const screenHeight = window.screen.height;
+  //     const viewportHeight = window.innerHeight;
+  //     topBarHeight = Math.max(0, screenHeight - viewportHeight);
+  //   };
+
+  //   calcTopBarHeight();
+  //   window.addEventListener("scroll", calcTopBarHeight);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", calcTopBarHeight);
+  //   };
+  // }, []);
+
   const [isShowBtn, setIsShowBtn] = useState(false);
 
   useEffect(() => {
@@ -19,9 +35,7 @@ export const GoTopBtn = ({ topBarHeight }: { topBarHeight: number }) => {
 
   return (
     <StyledGoTopBtn
-      onClick={() =>
-        window.scrollTo({ top: Math.max(0, -topBarHeight), behavior: "smooth" })
-      }
+      onClick={() => window.scrollTo({ top: -30, behavior: "smooth" })}
       $isShowBtn={isShowBtn}
     >
       <Icon iconId="arrowGoTop" width="30" height="30" viewBox="0 0 24 24" />
