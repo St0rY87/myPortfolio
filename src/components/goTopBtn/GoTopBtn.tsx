@@ -83,14 +83,14 @@ export const GoTopBtn = () => {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
-    document.body.scrollTo({ top: 0, behavior: "smooth" });
 
     setTimeout(() => {
-      window.scrollTo(0, 0);
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    }, 3500);
+      window.scrollTo(0, 1);
+
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 50);
+    }, 400);
   };
 
   return (
