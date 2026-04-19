@@ -90,7 +90,7 @@ export const GoTopBtn = () => {
       window.scrollTo(0, 0);
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0;
-    }, 450);
+    }, 1500);
   };
 
   return (
