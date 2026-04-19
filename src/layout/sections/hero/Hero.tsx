@@ -81,7 +81,7 @@ export const Hero = () => {
 
 const StyledHero = styled.section`
   min-height: 100vh;
-  min-height: 100svh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   ${Container} {
