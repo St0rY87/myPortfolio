@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Icon } from "../icon/Icon";
-// import { animateScroll as scroll } from "react-scroll";
 
 export const GoTopBtn = () => {
   const [isShowBtn, setIsShowBtn] = useState(false);

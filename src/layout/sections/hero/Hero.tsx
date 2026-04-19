@@ -6,7 +6,6 @@ import Typewriter from "typewriter-effect";
 import { Link } from "react-scroll";
 import photo from "../../../assets/images/hero.png";
 import { Parallax } from "../../../components/parallax/Parallax";
-// import { useEffect } from "react";
 
 const tickerTape = [
   "PROBLEM SOLVING",
@@ -29,30 +28,6 @@ const tickerTape = [
 ];
 
 export const Hero = () => {
-  // useEffect(() => {
-  //   const updateSizes = () => {
-  //     const screenHeight = window.screen.height;
-  //     const viewportHeight = window.innerHeight;
-  //     const topBarHeight = Math.max(0, screenHeight - viewportHeight);
-  //     const safeHeight = screenHeight - topBarHeight;
-
-  //     document.documentElement.style.setProperty(
-  //       "--hero-height",
-  //       `${safeHeight}px`,
-  //     );
-  //     document.documentElement.style.setProperty(
-  //       "--top-bar-height",
-  //       `${topBarHeight}px`,
-  //     );
-  //   };
-
-  //   updateSizes();
-  //   window.addEventListener("orientationchange", updateSizes);
-
-  //   return () => {
-  //     window.removeEventListener("orientationchange", updateSizes);
-  //   };
-  // }, []);
   return (
     <StyledHero id="home">
       <Container>
@@ -121,8 +96,6 @@ const StyledHero = styled.section`
   }
   @media (max-width: 750px) and (orientation: landscape),
     (orientation: portrait) {
-     /* min-height: var(--hero-height); */
-     /* min-height: 100svh; */
   }
 
   @media ${({ theme }) => theme.media.mobile} {
@@ -164,8 +137,6 @@ const Photo = styled.img`
       filter: drop-shadow(0 0 51px #fff) drop-shadow(0 0 100px #fff);
     }
   }
-
-
 
   @media ${({ theme }) => theme.media.tablet} {
     width: 100%;
@@ -225,7 +196,7 @@ const Greeting = styled.div`
 
 const Name = styled.h1`
   color: #2157f2;
-  color: ${({theme}) => theme.colors.accentColor};
+  color: ${({ theme }) => theme.colors.accentColor};
   font-size: 58px;
   font-size: inherit;
   p {
@@ -248,7 +219,7 @@ const Description = styled.p`
 `;
 
 const HeroLink = styled(Link)`
-  background-color:${({ theme }) => theme.colors.accentColor};
+  background-color: ${({ theme }) => theme.colors.accentColor};
   font-weight: 600;
   font-size: ${({ theme }) => theme.fonts.heroDesc};
   line-height: 150%;
