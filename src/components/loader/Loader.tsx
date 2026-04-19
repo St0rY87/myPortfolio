@@ -20,7 +20,6 @@ export const Loader = () => {
   );
 };
 
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const LoaderContainer = styled.div`
