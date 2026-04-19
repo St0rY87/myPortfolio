@@ -2,7 +2,32 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Icon } from "../icon/Icon";
 
-export const GoTopBtn = ({ topBarHeight }: { topBarHeight: number }) => {
+// export const GoTopBtn = () => {
+//   const [isShowBtn, setIsShowBtn] = useState(false);
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       setIsShowBtn(window.scrollY > 300);
+//     };
+
+//     window.addEventListener("scroll", handleScroll);
+
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, []);
+
+//   return (
+//     <StyledGoTopBtn
+//       onClick={() => window.scrollTo({ top: -30, behavior: "smooth" })}
+//       $isShowBtn={isShowBtn}
+//     >
+//       <Icon iconId="arrowGoTop" width="30" height="30" viewBox="0 0 24 24" />
+//     </StyledGoTopBtn>
+//   );
+// };
+
+export const GoTopBtn = () => {
   const [isShowBtn, setIsShowBtn] = useState(false);
 
   useEffect(() => {
@@ -17,11 +42,18 @@ export const GoTopBtn = ({ topBarHeight }: { topBarHeight: number }) => {
     };
   }, []);
 
+  const scrollToTop = () => {
+    const scrollElement = document.scrollingElement || document.documentElement;
+    
+    scrollElement.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <StyledGoTopBtn
-      onClick={() =>
-        window.scrollTo({ top: Math.max(0, -topBarHeight), behavior: "smooth" })
-      }
+      onClick={scrollToTop}
       $isShowBtn={isShowBtn}
     >
       <Icon iconId="arrowGoTop" width="30" height="30" viewBox="0 0 24 24" />
