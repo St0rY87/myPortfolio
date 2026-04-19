@@ -9,7 +9,7 @@ type MobileMenuItemProps = {
 export const MobileMenuItem = ({ item, showMenu }: MobileMenuItemProps) => {
   return (
     <ListItem>
-      <NavLink smooth={true}  offset={-62} onClick={showMenu} to={`${item.toLowerCase()}`}>
+      <NavLink smooth={true}  offset={-58} onClick={showMenu} to={`${item.toLowerCase()}`}>
         {item}
       </NavLink>
     </ListItem>
