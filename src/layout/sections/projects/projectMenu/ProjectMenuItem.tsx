@@ -64,9 +64,9 @@ const Link = styled.a<{ $active?: boolean }>`
     background-color: ${({theme}) => theme.colors.accentColor};
     color: ${({theme}) => theme.colors.accentFontColor};
 
-    &:before {
+    /* &:before {
       background: unset;
-    }
+    } */
   }
 
   position: relative;

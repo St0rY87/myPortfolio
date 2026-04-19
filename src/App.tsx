@@ -9,16 +9,33 @@ import { Hero } from "./layout/sections/hero/Hero";
 import { Projects } from "./layout/sections/projects/Projects";
 import { Skills } from "./layout/sections/skills/Skills";
 import Socials from "./layout/sections/socials/Socials";
+import { Loader } from "./components/loader/Loader";
+import { useEffect, useState } from "react";
 
 function App() {
-  
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isLoading]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <ThemeProvider>
       <GlobalStyles />
       <div className="App">
         <Header />
         <main>
-          <Hero  />
+          <Hero />
           <Skills />
           <Projects />
           <Contacts />
@@ -26,6 +43,7 @@ function App() {
         </main>
         <Footer />
         <GoTopBtn />
+        {isLoading && <Loader />}
       </div>
     </ThemeProvider>
   );

@@ -111,6 +111,9 @@ export const Skills = () => {
 const StyledSkills = styled.section`
   padding-block: 80px;
 
+
+  
+
   @media ${({ theme }) => theme.media.mobile} {
     padding-top: 60px;
   }

@@ -65,7 +65,7 @@ export const Contacts = () => {
                 name="user_name"
                 pattern="[a-zA-Zа-яА-ЯёЁ ]+"
                 title="Please enter a valid name (letters only)"
-                maxlength={30}
+                maxlength={15}
                 isResetForm={isResetForm}
               />
               <AnimateField
