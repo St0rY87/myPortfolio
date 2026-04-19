@@ -27,9 +27,12 @@ const tickerTape = [
   "ANIMATIONS",
 ];
 
-export const Hero = () => {
+export const Hero = ({ isDvh }: { isDvh: boolean }) => {
+
+ 
+
   return (
-    <StyledHero id="home">
+    <StyledHero id="home" $isDvh={isDvh}>
       <Container>
         <HeroWrapper>
           <PhotoWrapper>
@@ -79,9 +82,10 @@ export const Hero = () => {
   );
 };
 
-const StyledHero = styled.section`
-  min-height: 100vh;
-  min-height: 100dvh;
+const StyledHero = styled.section<{ $isDvh: boolean }>`
+ min-height: ${({ $isDvh }) => ($isDvh ? "100dvh" : "100svh")};
+    /* min-height: 100vh;
+    min-height: 100svh; */
   display: flex;
   flex-direction: column;
   ${Container} {
