@@ -8,7 +8,7 @@ export const HeaderMenuItem = (props: { item: string }) => {
         activeClass="active"
         to={`${props.item.toLowerCase()}`}
         smooth={true}
-        offset={-76}
+        offset={-80}
         spy={true}
       >
         {props.item}

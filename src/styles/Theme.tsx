@@ -76,7 +76,7 @@ export const darkTheme = {
 
     mainBoxShadow: "0 0 21px 0 rgba(255,255,255,0.1)",
 
-    tickerTapeColor: "#1e0f81",
+    tickerTapeColor: "#0a1370",
     cardBg: " #fff",
     cardLinkLineColor: "#b8c2dd",
     cardOverlay: "rgba(2, 15, 54, 0.9);",
