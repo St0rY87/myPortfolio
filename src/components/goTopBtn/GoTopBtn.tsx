@@ -2,10 +2,8 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Icon } from "../icon/Icon";
 
-export const GoTopBtn = ({ scrollToTop }: { scrollToTop: () => void }) => {
+export const GoTopBtn = () => {
   const [isShowBtn, setIsShowBtn] = useState(false);
-
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,8 +19,7 @@ export const GoTopBtn = ({ scrollToTop }: { scrollToTop: () => void }) => {
 
   return (
     <StyledGoTopBtn
-      // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      onClick={scrollToTop}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       $isShowBtn={isShowBtn}
     >
       <Icon iconId="arrowGoTop" width="30" height="30" viewBox="0 0 24 24" />

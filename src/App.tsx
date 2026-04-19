@@ -9,33 +9,23 @@ import { Hero } from "./layout/sections/hero/Hero";
 import { Projects } from "./layout/sections/projects/Projects";
 import { Skills } from "./layout/sections/skills/Skills";
 import Socials from "./layout/sections/socials/Socials";
-import { useState } from "react";
 
 function App() {
-    const [isDvh, setIsDvh] = useState(false);
-
-    const scrollToTop = () => {
-      setIsDvh(true);
-      window.scrollTo({ top: 0, behavior: "smooth" });
   
-      setTimeout(() => {
-        setIsDvh(false);
-      }, 700);
-    };
   return (
     <ThemeProvider>
       <GlobalStyles />
       <div className="App">
         <Header />
         <main>
-          <Hero isDvh={isDvh} />
+          <Hero  />
           <Skills />
           <Projects />
           <Contacts />
           <Socials />
         </main>
         <Footer />
-        <GoTopBtn scrollToTop={scrollToTop} />
+        <GoTopBtn />
       </div>
     </ThemeProvider>
   );
