@@ -35,8 +35,26 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   section {
-    background: ${({ theme }) => theme.colors.primaryBg }
+    background: ${({ theme }) => theme.colors.primaryBg}
   };  
+
+  ::-webkit-scrollbar {
+    width: 7px;  /* width of the vertical scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;  /* track color */
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #b3b2b2;  /* thumb color */
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b3b2b2;  /* thumb color on hover */
+  }
 
   @media (prefers-reduced-motion: reduce) {
     *,
