@@ -1,11 +1,13 @@
-export const Loader = () => {
+type LoaderProps = {
+  isLoading: boolean;
+};
+
+export const Loader = ({ isLoading }: LoaderProps) => {
   const letters = ["L", "o", "a", "d", "i", "n", "g", "…"];
   const delays = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7];
 
-
-
   return (
-    <LoaderContainer>
+    <LoaderContainer $isLoading={isLoading}>
       <LoadingText>
         {letters.map((letter, index) => (
           <span
@@ -22,7 +24,7 @@ export const Loader = () => {
 
 import styled from "styled-components";
 
-const LoaderContainer = styled.div`
+const LoaderContainer = styled.div<{ $isLoading: boolean }>`
   background-color: #1a1a2e;
   position: relative;
   font-size: 4rem;
@@ -38,6 +40,9 @@ const LoaderContainer = styled.div`
   inset: 0;
   width: 100%;
   height: 100%;
+  opacity: ${(props) => (props.$isLoading ? 1 : 0)};
+  pointer-events: ${(props) => (props.$isLoading ? "auto" : "none")};
+  transition: 0.8s ease-in-out;
 
   @media (max-width: 768px) {
     font-size: 2.5rem;

@@ -43,7 +43,8 @@ function App() {
         </main>
         <Footer />
         <GoTopBtn />
-        {isLoading && <Loader />}
+        {/* {isLoading && <Loader isLoading={isLoading} />} */}
+        <Loader isLoading={isLoading} />
       </div>
     </ThemeProvider>
   );
