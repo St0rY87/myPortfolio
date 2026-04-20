@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useEffect } from "react";
+import { scrollSpy } from "react-scroll";
 import { Logo } from "../../components/logo/Logo";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import moon from "../../assets/images/moon.png";
@@ -12,6 +14,10 @@ const menuItems = ["Home", "Skills", "Projects", "Contacts"];
 
 export const Header = () => {
   const { dark, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    scrollSpy.update();
+  }, []);
 
   return (
     <StyledHeader>

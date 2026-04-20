@@ -10,6 +10,7 @@ export const HeaderMenuItem = (props: { item: string }) => {
         smooth={true}
         offset={-80}
         spy={true}
+        isDynamic={true}
       >
         {props.item}
       </NavLink>
