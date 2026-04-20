@@ -8,7 +8,10 @@ import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import { Fade } from "react-awesome-reveal";
 import { Man, StyledMan } from "../../../components/man/Man";
-import { ContactInfo, StyledContactInfo } from "../../../components/contactInfo/ContactInfo";
+import {
+  ContactInfo,
+  StyledContactInfo,
+} from "../../../components/contactInfo/ContactInfo";
 
 export const Contacts = () => {
   const [status, setStatus] = useState<
@@ -135,37 +138,6 @@ const StyledContacts = styled.section`
   }
 `;
 
-const ContactInfoWrapper = styled.div`
-  background-color: ${({ theme }) => theme.colors.thirdBg};
-  background-color: #fff;
-  border-radius: 50px;
-  padding: 50px;
-  margin-top: 20px;
-  position: relative;
-  @media ${({ theme }) => theme.media.desktopLaptop} {
-    display: none;
-  }
-  @media ${({ theme }) => theme.media.mobile} {
-    padding: 30px;
-  }
-
-  ${StyledMan} {
-    display: block;
-    bottom: -85px;
-    right: 39px;
-    width: 160px;
-  }
-  @media (max-width: 510px) {
-    padding: 30px 0 180px 30px;
-    ${StyledMan} {
-      display: block;
-      bottom: -85px;
-      right: 100px;
-      width: 160px;
-    }
-  }
-`;
-
 const Form = styled.form`
   width: min(100%, 500px);
   display: flex;
@@ -204,11 +176,47 @@ const ContactsWrapper = styled.div`
       display: none;
     }
     ${StyledMan} {
-      display: none;
+      opacity: 0;
+      pointer-events: none;
     }
   }
   @media ${({ theme }) => theme.media.mobile} {
     padding: 30px;
+  }
+`;
+
+const ContactInfoWrapper = styled.div`
+  background-color: ${({ theme }) => theme.colors.thirdBg};
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 50px;
+  margin-top: 20px;
+  position: relative;
+
+  @media ${({ theme }) => theme.media.desktopLaptop} {
+    display: none;
+  }
+
+  @media ${({ theme }) => theme.media.tablet} {
+     display: block;
+    ${StyledMan} {
+      bottom: -85px;
+      right: 39px;
+      width: 160px;
+    }
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    padding: 30px;
+  }
+
+  @media (max-width: 510px) {
+    padding: 30px 0 180px 30px;
+    ${StyledMan} {
+      bottom: -85px;
+      right: 100px;
+      width: 160px;
+    }
   }
 `;
 
@@ -229,13 +237,6 @@ const baseTextStyles = `
     color: #CCCCCC;
   }
 `;
-
-// const Field = styled.input`
-//   ${baseTextStyles}
-//   border: none;
-//   border-bottom: 2px solid ${({theme}) => theme.colors.thirdFontColor};
-//   padding: 10px 0 6px;
-// `;
 
 const TextArea = styled.textarea`
   ${baseTextStyles}

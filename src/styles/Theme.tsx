@@ -50,6 +50,8 @@ export const lightTheme = {
     manColor1: "#5E5D9A",
     manColor2: "#6392E8",
     manColor3: "#3A4279",
+    manColor4: "#fff",
+    manColor5: "#94B9FF",
 
     mobileMenu:
       "linear-gradient(78deg,rgb(37 143 234) 0%, rgb(58 88 208) 47.12%,rgb(2 88 165) 98.08%)",
@@ -90,6 +92,8 @@ export const darkTheme = {
     manColor1: "#060e3d",
     manColor2: "#1c3373",
     manColor3: "#0b1347",
+    manColor4: "#d8d9e0",
+    manColor5: "#0e1450",
     mobileMenu:
       "linear-gradient(78deg,rgb(26 20 114) 0%,rgb(1 9 37) 100.12%,rgb(20 14 103) 100.08%)",
   },

@@ -174,7 +174,7 @@ const Man = () => {
         />
         <path
           d="M114.92 136.021L89.0214 210.253H36.9478C36.9478 207.987 37.8183 205.813 39.3672 204.21C40.9169 202.607 43.0178 201.707 45.2086 201.707H82.8821L105.245 136.021H114.92Z"
-          fill="white"
+          fill={theme.colors.manColor4}
         />
         <path
           d="M114.918 136.021H184.786L157.765 210.253H89.0201L114.918 136.021Z"
@@ -194,7 +194,7 @@ const Man = () => {
             gradientUnits="userSpaceOnUse"
           >
             <stop stopColor="white" />
-            <stop offset="1" stopColor="#94B9FF" />
+            <stop offset="1" stopColor={theme.colors.manColor5} />
           </linearGradient>
         </defs>
       </svg>
@@ -209,10 +209,6 @@ const StyledMan = styled.div`
   bottom: -115px;
   right: 75px;
   width: 220px;
-
-  @media ${({ theme }) => theme.media.tablet} {
-    display: none;
-  }
 `;
 
 export { Man, StyledMan };
