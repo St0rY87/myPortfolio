@@ -430,7 +430,7 @@ export const Contacts = () => {
         <ContactsWrapper>
           <FormTitle>Let’s stay in touch</FormTitle>
           <FlexWrapper $justify="space-between" $gap="40px">
-            <Form ref={form} onSubmit={handleSubmit}>
+            <Form noValidate ref={form} onSubmit={handleSubmit}>
               <AnimateField
                 type="text"
                 placeholder="Your Name"
@@ -492,22 +492,25 @@ export const Contacts = () => {
                   onBlur={() => setIsMessageFocused(false)}
                   $hasError={
                     (formErrors.message && isMessageInvalid) ||
-                    (isMessageFocused &&
-                      isMessageTouched &&
-                      isMessageInvalid)
+                    (isMessageFocused && isMessageTouched && isMessageInvalid)
                   }
                 ></TextArea>
-                {(((showSubmitHints && formErrors.message && !isMessageFocused) ||
+                {((showSubmitHints &&
+                  formErrors.message &&
+                  !isMessageFocused) ||
                   isMessageFocused) &&
                   trimmedMessage.length === 0 && (
-                  <TextAreaHint>This field is required</TextAreaHint>
-                ))}
-                {((showSubmitHints && formErrors.message && !isMessageFocused) ||
+                    <TextAreaHint>This field is required</TextAreaHint>
+                  )}
+                {((showSubmitHints &&
+                  formErrors.message &&
+                  !isMessageFocused) ||
                   isMessageFocused) &&
                   trimmedMessage.length > 0 &&
                   trimmedMessage.length < 30 && (
                     <TextAreaHint>
-                      Please type at least 30 characters ({trimmedMessage.length}
+                      Please type at least 30 characters (
+                      {trimmedMessage.length}
                       /30)
                     </TextAreaHint>
                   )}
@@ -571,7 +574,8 @@ const Form = styled.form`
     margin-inline: auto;
   }
   @media ${({ theme }) => theme.media.mobile} {
-    gap: 20px;
+    /* gap: 20px; */
+    gap: 25px;
   }
 `;
 

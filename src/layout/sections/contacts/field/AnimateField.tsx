@@ -423,7 +423,7 @@ const Placeholder = styled.p`
 
 const Input = styled.input`
   width: 100%;
-  height: 100%;
+  height: 30px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -435,6 +435,10 @@ const Input = styled.input`
   background: transparent;
   &:focus {
     outline: none;
+  }
+  @media ${({ theme }) => theme.media.mobile} {
+    height: 25px;
+    font-size: 12px;
   }
 `;
 

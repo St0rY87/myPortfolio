@@ -12,8 +12,9 @@ export const useElasticLine = (isResetForm?: boolean) => {
   const endPath =
     "M1 0.999512C1 0.999512 61.5 7.5 151 7.5C240.5 7.5 301 0.999512 301 0.999512";
 
-  const getTopValue = () => (window.innerWidth < 576 ? -21 : -25);
-
+  // const getTopValue = () => (window.innerWidth < 576 ? -21 : -25);
+  const getTopValue = () => (window.innerWidth < 576 ? -15 : -20);
+  
   // Effect for resetting the form and animating the placeholder back to its original position
   useEffect(() => {
     if (isResetForm && inputRef.current && placeholderRef.current) {
