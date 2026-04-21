@@ -53,7 +53,7 @@ const StyledHeader = styled.header`
 `;
 
 const ThemeToggle = styled.button`
-  padding: 10px;
+  padding: 14px 10px 10px;
   height: 60px;
   border: none;
   background-color: transparent;
