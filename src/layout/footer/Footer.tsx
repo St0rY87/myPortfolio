@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Logo } from "../../components/logo/Logo";
 
 export const Footer = () => {
+  const year = new Date().getFullYear();
   return (
     <StyledFooter>
       <Wave>
@@ -18,7 +19,7 @@ export const Footer = () => {
       </Wave>
       <WrapperContent>
         <Logo />
-        <Copyright>All Rights Reserved 2026©</Copyright>
+        <Copyright>All Rights Reserved {year}©</Copyright>
       </WrapperContent>
     </StyledFooter>
   );
