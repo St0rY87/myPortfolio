@@ -81,7 +81,6 @@ const skillsItems = [
   },
 ];
 
-
 export const Skills = () => {
   return (
     <StyledSkills id="skills">
@@ -111,14 +110,11 @@ export const Skills = () => {
 const StyledSkills = styled.section`
   padding-block: 80px;
 
-
-  
-
   @media ${({ theme }) => theme.media.mobile} {
     padding-top: 60px;
   }
 
- @media ${({ theme }) => theme.media.mobile} {
+  @media ${({ theme }) => theme.media.mobile} {
     padding-top: 30px;
   }
 `;
@@ -131,8 +127,7 @@ const SkillsWrapper = styled.div`
   gap: 30px 20px;
   border-radius: 50px;
 
-@media ${({ theme }) => theme.media.mobile} {
-    overflow-x: scroll;
+  @media ${({ theme }) => theme.media.mobile} {
     justify-content: start;
     grid-auto-flow: column;
     gap: 10px;
@@ -154,10 +149,11 @@ const SkillsWrapper = styled.div`
     padding-bottom: 7px;
 
     &::-webkit-scrollbar {
-      height: 4px;
+      /* height: 4px; */
+      height: 0;
     }
 
-    &::-webkit-scrollbar-track {
+    /* &::-webkit-scrollbar-track {
       background: transparent;
     }
 
@@ -168,6 +164,6 @@ const SkillsWrapper = styled.div`
 
     &::-webkit-scrollbar-thumb:hover {
       background: #fff;
-    }
+    } */
   }
 `;
