@@ -6,6 +6,7 @@ import Typewriter from "typewriter-effect";
 import { Link } from "react-scroll";
 import photo from "../../../assets/images/hero.png";
 import { Parallax } from "../../../components/parallax/Parallax";
+import cv from "../../../assets/cv.pdf"
 
 const tickerTape = [
   "PROBLEM SOLVING",
@@ -28,9 +29,6 @@ const tickerTape = [
 ];
 
 export const Hero = () => {
-
- 
-
   return (
     <StyledHero id="home">
       <Container>
@@ -71,7 +69,7 @@ export const Hero = () => {
               <HeroLink to="projects" smooth={true} offset={-76}>
                 See Projects
               </HeroLink>
-              <HeroLink to="#">Download CV</HeroLink>
+              <HeroLink as="a" download href={cv} to=''>Download CV</HeroLink>
             </FlexWrapper>
           </FlexWrapper>
         </HeroWrapper>
