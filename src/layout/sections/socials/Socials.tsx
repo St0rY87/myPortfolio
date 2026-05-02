@@ -9,28 +9,28 @@ const socialIcons = [
     width: "40",
     height: "44",
     viewBox: "0 0 40 44",
-    url: "#",
+    url: "https://github.com/St0ry87",
   },
   {
     iconId: "insta",
     width: "40",
     height: "40",
     viewBox: "0 0 40 40",
-    url: "#",
+    url: "https://www.instagram.com/savindima87",
   },
   {
     iconId: "linkedin",
     width: "40",
     height: "40",
     viewBox: "0 0 40 40",
-    url: "#",
+    url: "https://www.linkedin.com/in/dmitriy-savin-432a52219",
   },
   {
     iconId: "telegram",
     width: "40",
     height: "37",
     viewBox: "0 0 40 37",
-    url: "#",
+    url: "https://t.me/St0rY87",
   },
 ];
 
