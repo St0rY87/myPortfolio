@@ -6,7 +6,7 @@ import Typewriter from "typewriter-effect";
 import { Link } from "react-scroll";
 import photo from "../../../assets/images/hero.png";
 import { Parallax } from "../../../components/parallax/Parallax";
-import cv from "../../../assets/cv.pdf"
+import cv from "../../../assets/cv.pdf";
 
 const tickerTape = [
   "PROBLEM SOLVING",
@@ -66,10 +66,16 @@ export const Hero = () => {
               $margin="50px 0 0"
               $marginTablet="20px 0 0"
             >
-              <HeroLink to="projects" smooth={true} offset={-76}>
-                See Projects
-              </HeroLink>
-              <HeroLink as="a" download href={cv} to=''>Download CV</HeroLink>
+              <WrapperHeroLink>
+                <HeroLink to="projects" smooth={true} offset={-76}>
+                  See Projects
+                </HeroLink>
+              </WrapperHeroLink>
+              <WrapperHeroLink>
+                <HeroLink as="a" download href={cv} to="">
+                  Download CV
+                </HeroLink>
+              </WrapperHeroLink>
             </FlexWrapper>
           </FlexWrapper>
         </HeroWrapper>
@@ -219,23 +225,19 @@ const Description = styled.p`
   }
 `;
 
-const HeroLink = styled(Link)`
-  background-color: ${({ theme }) => theme.colors.accentColor};
-  font-weight: 600;
-  font-size: ${({ theme }) => theme.fonts.heroDesc};
-  line-height: 150%;
-  padding: 10px 25px;
-  color: ${({ theme }) => theme.colors.accentFontColor};
-  border-radius: 10px;
-  transition: 0.2s ease-in-out;
-  cursor: pointer;
-  & + &,
-  & + &:hover {
+const WrapperHeroLink = styled.div`
+  display: flex;
+  &:hover a {
+    transform: translateY(-5px);
+  }
+
+  & + & a,
+  & + & a:hover {
     background-color: unset;
     transform: unset;
   }
 
-  & + & {
+  & + & a {
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -254,13 +256,14 @@ const HeroLink = styled(Link)`
       z-index: -1;
       opacity: 0;
     }
-    &:hover {
+  }
+  & + &:hover {
+    & a {
       transition: transform 0.3s ease-in-out 0.7s;
-
       transform: translateY(-5px);
     }
 
-    &:hover::before {
+    & a::before {
       width: 200px;
       height: 200px;
       animation: ripple78 1s ease-out;
@@ -285,10 +288,18 @@ const HeroLink = styled(Link)`
       }
     }
   }
+`;
 
-  &:hover {
-    transform: translateY(-5px);
-  }
+const HeroLink = styled(Link)`
+  background-color: ${({ theme }) => theme.colors.accentColor};
+  font-weight: 600;
+  font-size: ${({ theme }) => theme.fonts.heroDesc};
+  line-height: 150%;
+  padding: 10px 25px;
+  color: ${({ theme }) => theme.colors.accentFontColor};
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
 
   @media ${({ theme }) => theme.media.tablet} {
     font-weight: 400;
