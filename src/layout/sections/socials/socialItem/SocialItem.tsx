@@ -31,9 +31,13 @@ export const SocialItem = ({
 };
 
 const StyledSocialItem = styled.li`
-  transition: 0.3s ease-in-out;
-  &:hover {
+  cursor: pointer;
+  &:hover a {
     transform: translateY(-5px);
+    background-color: ${({ theme }) => theme.colors.accentColor};
+  }
+  &:hover svg {
+    color: #e4eafb;
   }
 `;
 
@@ -45,23 +49,14 @@ const SocialLink = styled.a`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
   & svg {
-    color: ${({theme}) => theme.colors.accentColor};
+    color: ${({ theme }) => theme.colors.accentColor};
   }
-  &:hover {
-    background-color: ${({theme}) => theme.colors.accentColor};
-    & svg {
-      color: #e4eafb;
-    }
-  }
-
-
-  @media ${ ({theme}) => theme.media.mobile} {
+  @media ${({ theme }) => theme.media.mobile} {
     width: 60px;
     svg {
       width: 35px;
     }
   }
 `;
-
-
