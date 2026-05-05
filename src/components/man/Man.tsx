@@ -46,7 +46,7 @@ const Man = () => {
         );
     };
 
-    const mainTimeline = gsap.timeline({ repeat: -1, repeatDelay: 3 });
+    const mainTimeline = gsap.timeline({ repeat: -1, repeatDelay: 2 });
 
     mainTimeline.add(blink());
 
