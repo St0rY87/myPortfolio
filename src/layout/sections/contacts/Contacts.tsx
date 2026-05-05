@@ -515,7 +515,9 @@ export const Contacts = () => {
                     </TextAreaHint>
                   )}
               </TextAreaWrapper>
-              <Button disabled={status === "loading"} type="submit">
+            
+              <WrapperButton>
+                  <Button disabled={status === "loading"} type="submit">
                 {status === "loading" ? (
                   <>
                     Sending... <Loader />
@@ -524,6 +526,7 @@ export const Contacts = () => {
                   "Send"
                 )}
               </Button>
+              </WrapperButton>
               <ToastContainer
                 position="bottom-left"
                 autoClose={4000}
@@ -574,7 +577,6 @@ const Form = styled.form`
     margin-inline: auto;
   }
   @media ${({ theme }) => theme.media.mobile} {
-    /* gap: 20px; */
     gap: 25px;
   }
 `;
@@ -692,6 +694,14 @@ const TextArea = styled.textarea<{ $hasError?: boolean }>`
   width: 100%;
 `;
 
+const WrapperButton = styled.div`
+  align-self: center;
+   &:hover button{
+    transition: transform 0.3s;
+    transform: translateY(-4px);
+  }
+`
+
 const Button = styled.button`
   border-radius: 10px;
   height: 40px;
@@ -705,10 +715,6 @@ const Button = styled.button`
   transition: 0.2s ease-in-out;
   margin-top: 10px;
   position: relative;
-  &:hover {
-    transition: transform 0.3s;
-    transform: translateY(-4px);
-  }
 
   &:disabled {
     cursor: not-allowed;

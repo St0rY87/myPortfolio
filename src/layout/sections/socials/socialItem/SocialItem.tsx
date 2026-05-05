@@ -31,13 +31,8 @@ export const SocialItem = ({
 };
 
 const StyledSocialItem = styled.li`
-  cursor: pointer;
   &:hover a {
     transform: translateY(-5px);
-    background-color: ${({ theme }) => theme.colors.accentColor};
-  }
-  &:hover svg {
-    color: #e4eafb;
   }
 `;
 
@@ -53,6 +48,13 @@ const SocialLink = styled.a`
   & svg {
     color: ${({ theme }) => theme.colors.accentColor};
   }
+  &:hover svg {
+    color: #e4eafb;
+  }
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.accentColor};
+  }
+
   @media ${({ theme }) => theme.media.mobile} {
     width: 60px;
     svg {

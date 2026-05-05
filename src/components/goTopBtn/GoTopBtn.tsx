@@ -18,17 +18,33 @@ export const GoTopBtn = () => {
   }, []);
 
   return (
-    <StyledGoTopBtn
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      $isShowBtn={isShowBtn}
-    >
-      <Icon iconId="arrowGoTop" width="30" height="30" viewBox="0 0 24 24" />
-    </StyledGoTopBtn>
+    <WrapperButton>
+      <StyledGoTopBtn
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        $isShowBtn={isShowBtn}
+      >
+        <Icon iconId="arrowGoTop" width="30" height="30" viewBox="0 0 24 24" />
+      </StyledGoTopBtn>
+    </WrapperButton>
   );
 };
+const WrapperButton = styled.div`
+  position: fixed;
+  display: grid;
+  place-items: center;
+  z-index: 10;
+  bottom: 30px;
+  right: 30px;
+
+  @media (hover: hover) {
+    &:hover button {
+      transform: translateY(-8px);
+    }
+  }
+  
+`;
 
 const StyledGoTopBtn = styled.button<{ $isShowBtn: boolean }>`
-  position: fixed;
   display: grid;
   place-items: center;
   z-index: 10;
@@ -60,7 +76,7 @@ const StyledGoTopBtn = styled.button<{ $isShowBtn: boolean }>`
   @media (hover: hover) {
     &:hover {
       background-color: ${({ theme }) => theme.colors.btnGoTopBg};
-      transform: translateY(-8px);
+      /* transform: translateY(-8px); */
     }
   }
 `;
