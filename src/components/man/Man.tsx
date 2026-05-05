@@ -9,39 +9,51 @@ const Man = () => {
     const eyes = document.querySelectorAll(".eye");
     const eyebrows = document.querySelectorAll(".eyebrow");
 
-    if (eyes.length && eyebrows.length) {
-      gsap.set(".eye", { transformOrigin: "center" });
-      gsap.fromTo(
-        ".eye",
-        { scale: 1 },
-        {
-          scaleY: 0.3,
-          repeat: -1,
-          yoyo: true,
-          repeatDelay: 0.5,
-          ease: "power2.out",
-        },
-      );
+    if (!eyes.length || !eyebrows.length) return;
 
-      gsap.fromTo(
-        ".eyebrow",
-        { y: 0 },
-        {
-          y: -1,
-          repeat: -1,
-          yoyo: true,
-          repeatDelay: 0.5,
-          ease: "power2.easeOut",
-        },
-      );
-    }
+    gsap.set(".eye", { transformOrigin: "center" });
+
+    const blink = () => {
+      return gsap
+        .timeline()
+        .to(".eye", {
+          scaleY: 0.2,
+          duration: 0.4,
+          ease: "power2.in",
+        })
+        .to(
+          ".eyebrow",
+          {
+            y: -1,
+            duration: 0.4,
+            ease: "power2.in",
+          },
+          0,
+        )
+        .to(".eye", {
+          scaleY: 1,
+          duration: 0.4,
+          ease: "power2.out",
+        })
+        .to(
+          ".eyebrow",
+          {
+            y: 0,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+          "<",
+        );
+    };
+
+    const mainTimeline = gsap.timeline({ repeat: -1, repeatDelay: 3 });
+
+    mainTimeline.add(blink());
 
     return () => {
-      gsap.killTweensOf(".eye");
-      gsap.killTweensOf(".eyebrow");
+      mainTimeline.kill();
     };
   }, []);
-
   return (
     <StyledMan>
       <svg viewBox="0 0 231 333" fill="none" xmlns="http://www.w3.org/2000/svg">
