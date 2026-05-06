@@ -240,7 +240,7 @@ const StyledProjects = styled.section`
   }
 
   @media ${({ theme }) => theme.media.mobile} {
-    padding-top: 30px;
+    padding-block: 30px;
   }
 `;
 
