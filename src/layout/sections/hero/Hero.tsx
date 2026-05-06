@@ -132,7 +132,6 @@ const Photo = styled.img`
   display: flex;
   scale: 1.05;
   width: 285px;
-  /* width: 265px; */
   animation: pulseGlow 6s ease-in-out infinite;
 
   @keyframes pulseGlow {
@@ -149,11 +148,8 @@ const Photo = styled.img`
 
   @media ${({ theme }) => theme.media.tablet} {
     width: 100%;
-    /* margin-top: 20px; */
     scale: 1.1;
     margin-top: 45px;
-    /* object-fit: cover;
-    object-position: 0 -15%; */
   }
 
   @media (max-height: 750px) and (orientation: landscape) {
